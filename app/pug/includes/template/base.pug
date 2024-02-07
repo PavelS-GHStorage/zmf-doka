@@ -1,0 +1,23 @@
+block variables
+
+include ../bemto/bemto.pug
+include ../__mixins.pug
+
+doctype html
+html(lang="ru")
+	block head
+		include ../partials/head
+
+	body
+		.wrapper(class=wrapperClass || '')
+			block header
+				include ../partials/header
+			main.main(class=mainClass || '')
+				block main
+			block footer
+				include ../partials/footer
+		.popups
+			include ../__popups
+
+		block scripts
+			include ../partials/scripts

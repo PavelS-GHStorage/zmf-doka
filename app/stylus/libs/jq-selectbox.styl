@@ -1,0 +1,108 @@
+.jq-selectbox
+	width 100%
+	max-width 318px
+	@media $tPortraitMax
+		max-width 100%
+	&.focused .jq-selectbox__select
+		border none
+	&.opened
+		z-index 10 !important
+		.jq-selectbox__trigger-arrow
+			transform scaleY(-1)
+	ul
+		max-height 325px
+		padding 0 18px
+	li
+		padding 14px 0 15px
+		color #636363
+		font 300 14px/17px 'Montserrat'
+		white-space normal
+		border none
+		transition color .3s
+		cursor pointer
+		@media $mLandscapeMax
+			font-size 12px
+			line-height 14px
+		&:not(:first-child)
+			border-top 1px solid #f2f2f2
+		&.sel, &.selected, &:hover
+			background #fff
+			color red
+		& + li
+			margin-top 0
+		&:before
+			display none
+			content none
+	&__select
+		position relative
+		width 100%
+		min-width auto
+		height 46px
+		padding-right 36px
+		padding-top 0
+		padding-left 0
+		line-height 46px
+		font-family $baseFontFamily
+		border-radius 23px
+		background #f0f0f0
+		border none
+		box-shadow none
+		@media $mLandscapeMax
+			height 36px
+			font-size 12px
+			line-height 36px
+			border-radius 19px
+		&-text
+			height 46px
+			color #636363
+			font-size 14px
+			line-height 46px
+			font-weight 300
+			padding 0 0 0 27px
+			max-width 100%
+			width 100% !important
+			@media $mLandscapeMax
+				height 36px
+				font-size 12px
+				line-height 36px
+				padding 0 0 0 17px
+		&:hover, &:active
+			background #f0f0f0
+		&:active
+			box-shadow none
+	&__trigger
+		position absolute
+		top 0
+		right 0
+		width 36px
+		height 100%
+		border-left none
+		&-arrow
+			width 8px
+			height 5px
+			position absolute
+			top 20px
+			right 20px
+			border none
+			@media $mLandscapeMax
+				top 16px
+			&:before
+				@extend .psElem
+				width 8px
+				height 5px
+				background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAQAAADSmGXeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfkBQYUOAJONPXjAAAAU0lEQVQI1yXLoQ0CQRAAwFkUDUEHJDSAIDmPJYTky/gCcOyZf01A0NstgvETOXu3L9CPDht7n36nR5+87CK3HppVOHm6KCVvOXLktZSo/16MdoYfFYEZ9GCzgSkAAAAASUVORK5CYII=') no-repeat center
+	&__dropdown
+		width auto !important
+		min-width 100%
+		max-width none
+		top 50px !important
+		padding 0
+		margin 0
+		font-family 'Montserrat'
+		border-radius none
+		background white
+		border none
+		box-shadow 0 5px 20px #e8e8e8
+		overflow hidden
+		@media $mLandscapeMax
+			top 38px !important

@@ -1,0 +1,4 @@
+node_modules/
+prod
+prod_zip/
+*.mp4

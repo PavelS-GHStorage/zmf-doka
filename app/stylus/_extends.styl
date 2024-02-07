@@ -1,0 +1,22 @@
+.psElem
+	content ''
+	display block
+	box-sizing border-box
+
+.centerPos
+	left 50%
+	top 50%
+	transform translate(-50%,-50%)
+
+.container
+	width 100%
+	max-width 1166px
+	margin 0 auto
+	@media $desktopMax
+		max-width 994px
+	@media $tPortraitMax
+		max-width 736px
+	@media $mLandscapeMax
+		max-width 450px
+	@media $mPortraitMax
+		max-width calc(100% - 30px)

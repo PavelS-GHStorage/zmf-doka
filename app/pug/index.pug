@@ -1,0 +1,72 @@
+include includes/bemto/bemto.pug
+include includes/__mixins
+
+doctype html
+html(lang="ru")
+	- var title = "Разводящая";
+	include includes/partials/head
+	style(type='text/css').
+		.container {
+			width: 100%;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		.row {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+		}
+		.col {
+			width: calc(50% - 20px);
+		}
+		.page-list {
+			display: block;
+			margin: 10px 0 0 !important;
+		}
+		.page-list-item {
+			margin: 0 0 10px !important;
+		}
+		.page-list-item:before {
+			display: none;
+			content: none;
+		}
+		.page-list-item a {
+			color: #1c1c1c;
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 400;
+			border-bottom: 1px solid #1c1c1c;
+			transition: color 0.5s, border 0.5s;
+			-webkit-transition: color 0.5s, border 0.5s;
+		}
+		h3 {
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 28px;
+		}
+		.page-list-item a:hover {
+			border-bottom-color: transparent;
+		}
+
+	body
+		.wrapper(style="overflow-x: hidden; padding-top: 40px; padding-bottom: 40px")
+			main.main
+				.container
+					.row
+						.col
+							h3 Страницы
+									ul.page-list
+										li.page-list-item
+											a(target="_blank" href="01-main.html").link Главная
+
+						//- .col
+							h3 Попапы
+									ul.page-list
+										li.page-list-item
+											a(target="_blank" href="#service").link.js-mfp Запишитесь на техническое обслуживание вашего автомобиля
+
+		.hidden-block
+			include includes/__popups
+
+		script(src="static/js/vendor.js")
+		script(src="static/js/own.js")
