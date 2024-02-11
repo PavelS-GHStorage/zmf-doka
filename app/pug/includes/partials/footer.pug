@@ -1,1 +1,49 @@
 +b('footer').footer
+	+e.container
+		+e.columns
+			+e.column
+				+e.column-content
+					+e('a')(href="/").logo
+						+e('img')(src=rootPath+"logo-inverse.png").logo-img
+					+e('p').text © ООО “Дока-Бани”, 2012 - 2024 г.. Сайт носит исключительно информационный характер и не является публичной офертой, определяемой положениями ГК РФ. Для получения подробной информации о наличии, видах, характеристиках и стоимости домов обращайтесь в офис продаж.
+					+e('a')(href="/").privacy-policy Политика конфиденциальности
+			+e.column.--about
+				+e('p').column-title О компании
+				+e.column-content
+					+e('ul').list
+						+e('li').list-item ООО "Дока"
+						+e('li').list-item ИНН: 7449140550
+						+e('li').list-item ОГРН: 1197456056610
+						+e('li').list-item Способы оплаты: безналичный расчёт, наличный, кредит
+						+e('li').list-item Гарантия: на все виды работ
+			+e.column
+				+e('p').column-title Типовые проекты
+				+e.column-content
+					+e('ul').list
+						+e('li').list-item
+							+e('a')(href="#").list-item-link Модульные бани
+						+e('li').list-item
+							+e('a')(href="#").list-item-link Модульные дома
+						+e('li').list-item
+							+e('a')(href="#").list-item-link Дачные домики
+						+e('li').list-item
+							+e('a')(href="#").list-item-link Банные чаны
+			+e.column
+				+e('p').column-title Контакты
+				+e.column-content
+					+e.list
+						+e.list-item
+							+e.city
+								+e('button')(type="button").city-togglle г. Челябинск
+								+e.city-dropdown
+									+e('ul').city-items
+										+e('li').city-item
+											+e('button')(type="button").city-button.city-button--selected г. Челябинск
+										+e('li').city-item
+											+e('button')(type="button").city-button г. Екатеринбург
+										+e('li').city-item
+											+e('button')(type="button").city-button г. Тюмень
+						+e.list-item
+							a(href="tel:88006003499") 8 (800) 600 34 99
+						+e.list-item
+							a(href="mailto:7502674@mail.ru") 7502674@mail.ru

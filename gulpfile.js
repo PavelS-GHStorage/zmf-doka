@@ -164,9 +164,9 @@ gulp.task("css-vendor", () => {
 	return gulp
 		.src([
 			"node_modules/magnific-popup/dist/magnific-popup.css",
-			"node_modules/swiper/dist/css/swiper.css",
 			"node_modules/jquery-form-styler/dist/jquery.formstyler.css",
 			"node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css",
+			"node_modules/swiper/swiper-bundle.min.css",
 		])
 		.pipe(sourcemaps.init())
 		.pipe(
@@ -198,8 +198,8 @@ gulp.task("js-vendor", () => {
 				"node_modules/jquery/dist/jquery.js",
 				"node_modules/jquery-migrate/dist/jquery-migrate.js",
 				"node_modules/jquery-form-styler/dist/jquery.formstyler.min.js",
-				"node_modules/swiper/dist/js/swiper.js",
 				"node_modules/magnific-popup/dist/jquery.magnific-popup.js",
+				"node_modules/swiper/swiper-bundle.min.js",
 				src.app.js + "libs/jquery.maskedinput.min.js",
 				src.app.js + "libs/jquery.tipsy.js",
 			])

@@ -1,0 +1,78 @@
+.nav-mobile
+	display none
+	position fixed
+	left 0
+	right 0
+	top 0
+	bottom 0
+	padding-top 45px
+	background-color #292825
+	z-index 15
+	@media $tPortrait
+		display none !important
+	&__scroll
+		height 100%
+		overflow-y auto
+	&__close-btn
+		display block
+		position absolute
+		top 0
+		right 0
+		width 34px
+		height 34px
+		padding 0
+		background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANBAMAAACAxflPAAAAMFBMVEUAAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDKBS+1AAAAD3RSTlMAraiyo76b+vTp4sa3DQV03v4xAAAAUklEQVQI12PoYQAC5gaG/QpA2n8DA+MnBgaWz0C2vAKDvwGQZvzyDMgFAv31AmCa6ycDGOTPTwBRLB8vfQJSQMVALWC9YDPOg/TKBzCUguRYCwANWxN89UPYMgAAAABJRU5ErkJggg==') no-repeat center
+		z-index 1
+	&__list-item
+		position relative
+		border-top 1px solid #2E2D29
+		a[href*='tel']
+			padding 11px 13px 9px
+			font-size 14px
+		address
+			display block
+			color grey
+			font-size 12px
+			font-weight 400
+			line-height 16px
+			padding 10px 16px 9px 12px
+		&--phone, &--address
+			padding-left 24px
+			&:before
+				content ''
+				display block
+				position absolute
+				background-repeat no-repeat
+				background-position center
+				z-index 1
+		&--phone
+			&:before
+				top 13px
+				left 15px
+				width 12px
+				height 12px
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAASFBMVEUAAAA9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQLevFvAAAAF3RSTlMA1fHPFwfcv7N+alUuEvTp38SEdWxdDf5XQEoAAABQSURBVAjXTctZDoAgDEXRMhSQwVnf/ndqQ6h6v3qSPorWmkYjSFWxCi5FEuyKDDivuIFCbxMMfRlsTHyUygK/IGQHoH94uXpjN/9A7UzBxgcvuARJouuYswAAAABJRU5ErkJggg==')
+		&--address
+			&:before
+				top 12px
+				left 15px
+				width 8px
+				height 12px
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAMCAMAAABoQAyvAAAAS1BMVEUAAAA9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkRsO3/3AAAAGHRSTlMA185Y9/PHjYd7FAwG4cK0opWAc2xqNiYNzQZeAAAARklEQVQI1x3GxQHAMADDQIWpjN5/0qa5h2WY0uzt3Wv020kK7skSQQ5YhVSBUxhl6EuRthIlmoYFrnFewPYedNUrMjjb4AMGFgSZHII0EQAAAABJRU5ErkJggg==')
+	&__list-href
+		display block
+		width 100%
+		color grey
+		font-size 12px
+		font-weight 400
+		line-height 16px
+		padding 12px 15px 7px
+	&__bottom
+		& ^[0]__list
+			margin-bottom 18px
+
+	.social
+		margin-left 16px
+		@media $mPortraitIphoe6Max
+			justify-content center
+			margin-left 0

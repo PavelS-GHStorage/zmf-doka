@@ -1,0 +1,15 @@
+mixin nav-mobile()
+	+b('nav').nav-mobile
+		+e('button')(type="button").close-btn.js-close-nav
+		+e.scroll
+			+e('ul').list
+				each item in nav.desktop
+					+e('li').list-item
+						+e('a').list-href(href=item.href, class=item.active ? '--active' : '', data-anchor-btn=item.anchor) #{item.title}
+			+e.bottom
+				+e('ul').list
+					+e('li').list-item.--address
+						address Москва, ул. Иловайская, д. 12Ас1 Круглосуточно, без выходных
+					+e('li').list-item.--phone
+						+e('a')(href="tel:89268448545").list-href +7 (926) 844-85-45
+				include ../blocks/social.pug 

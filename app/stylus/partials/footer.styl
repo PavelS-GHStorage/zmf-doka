@@ -1,2 +1,86 @@
 .footer
-	display block
+	padding 40px 0
+	background-color #1a1919
+	&__container
+		@extend .container
+	&__columns
+		display flex
+		gap 130px
+
+	&__column
+		max-width 290px
+		&--about
+			max-width 230px
+	&__column-title
+		margin-bottom 8px
+		color #fff
+		font-size 14px
+		font-weight bold
+		line-height 16px
+	&__column-content
+		display flex
+		flex-direction column
+		align-items flex-start
+		gap 12px
+	// &__logo
+	// &__logo-img
+	&__text
+		color #c4c4c4
+		font-size 14px
+		line-height 16px
+	&__privacy-policy
+		color #c4c4c4
+		font-size 14px
+		line-height 16px
+		border-bottom 1px solid #c4c4c4
+		transition color $duration, border $duration
+		&:hover
+			color #fff
+			border-bottom-color transparent
+
+	// &__list
+	&__list-item
+		margin-bottom 8px
+		color #c4c4c4
+		font-size 14px
+		line-height 16px
+		a[href^="tel:"],
+		a[href^="mailto:"]
+			color #c4c4c4
+			transition color $duration, border $duration
+			&:hover
+				color #fff
+		a[href^="tel:"]
+			font-weight bold
+		a[href^="mailto:"]
+			border-bottom 1px solid #c4c4c4
+			&:hover
+				color #fff
+				border-bottom-color transparent
+	&__list-item-link
+		color #c4c4c4
+		transition color $duration
+		&:hover
+			color #fff
+	&__city
+		position relative
+	&__city-togglle
+		padding-right 20px
+		color #c4c4c4
+		font-size 14px
+		line-height 16px
+	&__city-dropdown
+		position absolute
+		opacity 0
+		visibility hidden
+		padding 20px
+		background-color #a5a5a5
+		border-radius 12px
+	// &__city-items
+	// &__city-item
+	&__city-button
+		color #c4c4c4
+		font-size 14px
+		line-height 16px
+		&--selected
+			font-weight bold

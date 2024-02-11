@@ -1,0 +1,105 @@
+.section-reviews
+	min-height 518px
+	padding-top 50px
+	padding-bottom 56px
+	@media screen and (max-width: 1660px)
+		min-height 476px
+		margin-top 0
+	@media $desktopMax
+		min-height auto
+		padding-top 62px
+		padding-bottom 62px
+	@media $mLandscapeMax
+		padding-top 38px
+		padding-bottom 44px
+	&__container
+		position relative
+		padding-right 500px
+		@extend .container
+		@media $desktopMax
+			padding-right 0
+	&__content
+		max-width 634px
+	&__rating
+		display flex
+		align-items center
+		margin-bottom 40px
+		@media $mLandscapeMax
+			margin-bottom 16px
+		&:before
+			@extend .psElem
+			width 90px
+			height 13px
+			margin-right 10px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAANCAMAAAAe/Yl/AAAATlBMVEUAAAD/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQjZAwt0AAAAGXRSTlMAluyPnA7xo4dTLBMK5Ne9u6yAdHJjWRkGPY5/zAAAAIZJREFUOMuVkEkKxDAMBC05zj772v//aBCJILeW+mKqKDCo7GvXX/ERlY0qOnu4SkcrgOZAVDKqAMSBqHg0T2+5w3aT1zTHVCx64rzREq6CkZyw+1vCVTSqTn4jphKR+EcGXGWi78EfA64y0XDww4CrTHQB+kEBNeAqEa2qdSnLqH0z5CoYba8pKg5v7NlMAAAAAElFTkSuQmCC') no-repeat left center
+	&__rating-text
+		color #a3a3a3
+		font-size 16px
+		font-weight 400
+		line-height 16px
+		strong
+			color #3c3736
+			font-weight 600
+		a
+			color #2865d4
+			line-height 16px
+			border-bottom 1px solid #2865d4
+			transition border $duration
+			&:hover
+				border-bottom-color transparent
+	&__title
+		margin-bottom 34px
+		line-height 36px
+		@media $tPortraitMax
+			line-height 30px
+		@media $mLandscapeMax
+			margin-bottom 23px
+			line-height 22px
+	&__text
+		margin-bottom 44px
+		color #767676
+		font-size 18px
+		line-height 24px
+		@media $tPortraitMax
+			font-size 14px
+			line-height 17px
+		@media $mLandscapeMax
+			margin-bottom 22px
+	&__reviews-all-href
+		display inline-block
+		vertical-align baseline
+		position relative
+		color #6c6c6c
+		font-size 14px
+		font-weight 600
+		line-height 17px
+		&:after
+			@extend .psElem
+			position absolute
+			top 5px
+			right -24px
+			width 14px
+			height 8px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAIBAMAAAA7P9P/AAAAIVBMVEUAAABsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGwEjjlSAAAACnRSTlMA0viKfnbPr1NS5vpoCAAAACdJREFUCNdjAAEmAwYwYF7CAAGzAhgCBQUFxYqWwGkw6AqAqYPpAwDQvgbXdWgVTAAAAABJRU5ErkJggg==') no-repeat center
+		span
+			padding-bottom 4px
+			border-bottom 1px dashed #6c6c6c
+			transition border $duration
+		&:hover
+			span
+				border-bottom-color transparent
+	&__reviews
+		position absolute
+		top -68px
+		left calc(100% - 517px)
+		z-index 1
+		@media screen and (max-width: 1660px)
+			top -8px
+		@media $desktopMax
+			display none
+	&__reviews-overimg
+		width 806px
+		@media screen and (max-width: 1660px)
+			width 500px
+	&__reviews-img
+		max-width 100%

@@ -1,0 +1,14 @@
++b('section').section-methodology
+	+e.container
+		+e('h2').title.common-title-h3
+			strong Методология производства
+		+e.items
+			each item in methodology
+				+e.item
+					+e.item-card
+						+e('a')(href="#").item-card-overimg
+							+e('img')(src=(rootPath + item.img) alt="").item-card-img
+						+e('a')(href="#").item-card-title #{item.title}
+						+e.item-card-text #{item.text}
+		+e.bottom
+			+e('a')(href="#").more.btn--more Узнать подробнее

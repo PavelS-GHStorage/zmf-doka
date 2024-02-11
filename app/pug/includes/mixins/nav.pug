@@ -1,0 +1,19 @@
+mixin nav()
+	+b('nav').nav.js-nav
+		+e('ul').list
+			each item in nav.desktop
+				+e('li').list-item(class=(item.subitems ? '--have-sublist' : ''))
+					+e('a').list-href(href=item.href class=item.active ? '--active' : '' ) #{item.title}
+					if (item.subitems)
+						+e('ul').sublist
+							each subitem in item.subitems
+								+e('li').sublist-item
+									+e('a')(href=subitem.href).sublist-href
+										span #{subitem.title}
+			+e('li').list-item.--button
+				+e('button')(type="button").list-button.js-nav-toggle
+					span
+		+e.second-level
+			+e('ul').list
+				+e('li').list-item
+					+e('a')(href="#").list-href О компании

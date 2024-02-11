@@ -1,2 +1,306 @@
 .header
-	display block
+	position relative
+	background-color  #fff
+	@media $mLandscapeMax
+		position fixed
+		top 0
+		left 0
+		width 100%
+		height 45px
+		box-shadow 0 5px 10px #f4f4f4
+		z-index 1
+	&__wrapper
+		position relative
+		width 100%
+	&__container
+		@extend .container
+	&__top
+		display flex
+		align-items center
+		width 100%
+		padding-top 16px
+		padding-bottom 29px
+		border-bottom 1px solid #f1f1f1
+		@media $mLandscapeMax
+			padding-top 0
+			padding-bottom 0
+			border-bottom none
+	&__logo
+		display flex
+		align-items center
+		user-select none
+		&--min
+			display none
+	&__logo-overimg
+		width 137px
+		max-height 50px
+		margin-right 24px
+		@media $mLandscapeMax
+			width 45px
+			height 45px
+			margin-right 0
+	&__logo-img
+		width 100%
+		@media $mLandscapeMax
+			display none
+		&--min
+			display none
+			@media $mLandscapeMax
+				display block
+	&__logo-title
+		position relative
+		max-width 160px
+		color #323232
+		font-size 12px
+		line-height 14px
+		@media $tPortraitMax
+			display none
+	&__right
+		display flex
+		align-items center
+		margin-left auto
+	&__right-item
+		margin-right 42px
+		@media $desktopMax
+			margin-right 32px
+		@media $tPortraitMax
+			margin-right 24px
+		&--rating
+			@media $mLandscapeMax
+				display none
+		&--social
+			@media $mLandscapeMax
+				display none
+		&:last-child
+			margin-right 0
+	&__rating
+		display block
+		width 170px
+		color #222222
+		font-size 12px
+		line-height 14px
+		user-select none
+		&:before
+			content ''
+			display block
+			margin-bottom 8px
+			width 110px
+			height 15px
+			background url('../../static/images/rating.png') no-repeat center
+		span
+			color #2865d4
+			break-before 1px solid #2865d4
+	&__social
+		display flex
+		align-items center
+	&__social-text
+		position relative
+		margin-right 9px
+		margin-top 5px
+		padding-left 14px
+		font-size 12px
+		line-height 14px
+		@media $tPortraitMax
+			display none
+		strong
+			display block
+			font-weight 600
+		&:before
+			@extend .psElem
+			position absolute
+			top 2px
+			left 0
+			width 7px
+			height 7px
+			background-color #4caf50
+			border-radius 4px
+			margin-right 9px
+			margin-top 2px
+	&__social-items
+		display flex
+		align-items center
+	&__social-item
+		margin-right 11px
+		@media $tPortraitMax
+			margin-right 15px
+		&:last-child
+			margin-right 0
+	&__social-href
+		display flex
+		justify-content center
+		align-items center
+		width 34px
+		height 34px
+		font-size 0
+		color transparent
+		background-repeat no-repeat
+		background-position center
+		background-color #000
+		border-radius 50%
+		user-select none
+		transition background $duration
+		&:hover
+			background-color #eb9b00
+		&--tgm
+			background-image url('../../static/images/ico-telegram.png')
+		&--wsp
+			background-image url('../../static/images/ico-whatsapp.png')
+		&--vk
+			background-image url('../../static/images/ico-vk.png')
+	&__schedule
+		display flex
+		align-items flex-start
+		justify-content flex-end
+		font-size 12px
+		line-height 14px
+		margin-bottom 2px
+		white-space nowrap
+		@media $mLandscapeMax
+			display none
+		&:before
+			@extend .psElem
+			width 7px
+			height 7px
+			background-color #4caf50
+			border-radius 4px
+			margin-right 7px
+			margin-top 3px
+	&__phone
+		display block
+		margin-bottom 8px
+		text-align right
+		color inherit
+		font-size 21px
+		font-weight 700
+		line-height 25px
+		white-space nowrap
+		@media $mLandscapeMax
+			width 36px
+			height 36px
+			border-radius 18px
+			font-size 0
+			line-height 0
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAMAAADHVLbdAAAAVFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU4H24AAAAG3RSTlMA8suj5in2wqeCJd7PtbCakYZ7aGBNPDUaEw/z2IqjAAAAXUlEQVQI103MWQ6AIAxF0ZZBEed5ePvfpxYSy/2AnDQtBWY2D/1BOtVOvKtrcVDP4kbtP1plWoilI2CobAF6+Q9POQt0Xt7W5MMjAIcUpdYKuYpy18Q6T92bNY6HF9FUBylnGxA4AAAAAElFTkSuQmCC') no-repeat center, #fff
+	&__free-call
+		font-style italic
+		font-size 10px
+		line-height 12px
+		text-align right
+		color #8b8b8b
+	&__burger
+		display none
+		position relative
+		width 45px
+		height 45px
+		margin-left 5px
+		margin-right -13px
+		padding 0
+		background-color #fff
+		@media $mLandscapeMax
+			display block
+		i
+			display block
+			position absolute
+			width 21px
+			height 2px
+			bottom 16px
+			left 10px
+			background-color #3A3835
+			transition-delay .13s
+			transition-timing-function cubic-bezier(.55,.055,.675,.19)
+			transition-duration .13s
+			&:before, &:after
+				@extend .psElem
+				position absolute
+				width 21px
+				height 2px
+				background-color #3A3835
+				transition-timing-function ease
+				transition-duration .15s
+				transition-property transform
+			&:before
+				top -5px
+				transition top .12s cubic-bezier(.33333,.66667,.66667,1) .2s,transform .13s cubic-bezier(.55,.055,.675,.19)
+			&:after
+				top -10px
+				bottom -10px
+				transition top .2s cubic-bezier(.33333,.66667,.66667,1) .2s,opacity .1s linear
+		&--active
+			i
+				transition-delay .22s
+				transition-timing-function cubic-bezier(.215,.61,.355,1)
+				transform translate3d(0,-5px,0) rotate(-45deg)
+				&:before
+					top 0
+					transition top .1s cubic-bezier(.33333,0,.66667,.33333) .16s,transform .13s cubic-bezier(.215,.61,.355,1) .25s
+					transform rotate(-90deg)
+				&:after
+					top 0
+					transition top .2s cubic-bezier(.33333,0,.66667,.33333),opacity .1s linear .22s
+					opacity 0
+	&__bottom
+		height 58px
+		@media $desktopMax
+			height 50px
+		@media $mLandscapeMax
+			display none
+		& ^[0]__logo
+			display block
+			position absolute
+			top 4px
+			left -44px
+			width 44px
+			height 50px
+			margin 0
+			opacity 0
+			visibility hidden
+			transition opacity $duration, visibility $duration
+			z-index 1
+			@media (max-width: 1300px)
+				display none
+		&.fixed
+			& ^[0]__logo
+				opacity 1
+				visibility visible
+			& ^[0]__bottom-wrap
+				position fixed
+				top 0
+				left 50%
+				transform translateX(-50%)
+				&:after
+					opacity 1
+					visibility visible
+	&__bottom-wrap
+		position relative
+		width 100%
+		max-width 1166px
+		z-index 100
+		@media $desktopMax
+			max-width 994px
+		@media $tPortraitMax
+			max-width 736px
+		@media $mLandscapeMax
+			max-width 450px
+		@media $mPortraitMax
+			max-width calc(100% - 30px)
+		&:before,
+		&:after
+			@extend .psElem
+			position absolute
+			top 0
+			left 50%
+			transform translateX(-50%)
+			width 100vw
+			height 100%
+			pointer-events none
+		&:before
+			background-color #fff
+			z-index -2
+		&:after
+			box-shadow 0 5px 10px #f4f4f4
+			opacity 0
+			visibility hidden
+			transition opacity $duration, visibility $duration
+			z-index -1
+		/ .wrapper--inner &
+			border-bottom 1px solid #f1f1f1

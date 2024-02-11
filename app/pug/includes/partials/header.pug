@@ -1,1 +1,40 @@
 +b('header').header
+	+e.wrapper
+		+e.container
+			+e.top
+				+e('a')(href="/").logo
+					+e('span').logo-overimg
+						+e('img')(src=rootPath+"logo.png" alt="").logo-img
+						+e('img')(src=rootPath+"logo-min.png" alt="").logo-img.--min
+					+e('span').logo-title Строим дома и бани под ключ в Челябинске и области
+						strong  более 10 лет
+				+e.right
+					+e.right-item.--rating
+						+e('a')(href="#").rating
+							strong 4,9 рейтинг в
+							span  Яндекс Картах
+							|  на основании 56 отзывов
+					+e.right-item.--social
+						+e.social
+							+e('p').social-text
+								strong Задайте вопрос
+								|  мы ONLINE
+							+e.social-items
+								+e.social-item
+									+e('a')(href="#").social-href.--tgm Telegram
+								+e.social-item
+									+e('a')(href="#").social-href.--wsp Whatsapp
+								+e.social-item
+									+e('a')(href="#").social-href.--vk Vk
+					+e.right-item.--phone
+						+e('p').schedule Без выходных с 10:00 до 20:00
+						+e('a')(href="tel:88006003499").phone 8 800 600-34-99
+						+e('p').free-call Бесплатный звонок по России
+				+e('button')(type="button").burger.js-burger
+					i
+			+e.bottom
+				+e.bottom-wrap
+					+e('a')(href="/").logo.--min
+						+e('img')(src=rootPath+"/logo-min.png" alt="").logo-img
+					+nav()
+	+nav-mobile()

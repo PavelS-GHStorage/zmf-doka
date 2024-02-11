@@ -1,0 +1,31 @@
+.btn
+	display inline-block
+	vertical-align top
+	padding 17px 72px
+	text-align center
+	color #262626
+	font-size 12px
+	font-weight 500
+	line-height 14px
+	text-transform uppercase
+	background-color #fff
+	border-radius 24px
+	transition background $duration, box-shadow $duration
+	user-select none
+	cursor pointer
+	&--large
+		padding-left 55px
+		padding-right 55px
+		border-radius 30px
+	&--secondary,
+	&--more
+		color white
+		background-color #171717
+	&--more
+		font-weight 500
+		padding 29px 99px
+		border-radius 36px
+		box-shadow -3.6px 3.5px 10px rgba(38,38,38,0.35), inset 0 0 12px 6px rgba(255,255,255,0.27)
+		&:hover
+			background-color #f19100
+			box-shadow -3.6px 3.5px 10px rgba(38,38,38, 0), inset 0 0 12px 6px rgba(255, 255, 255, 0)

@@ -1,1 +1,190 @@
-{}
+{
+	"nav": {
+		"desktop": [
+			{
+				"title": "Модульные Бани",
+				"href": "#",
+				"active": false,
+				"subitems": [
+					{ "title": "Серия «Садовые дома Малыш»", "href": "#" },
+					{ "title": "Серия «Дачные дома Егерь»", "href": "#" },
+					{ "title": "Серия «Дачные дома Оливер»", "href": "#" },
+					{ "title": "Серия «Дачные дома Янтарь»", "href": "#" },
+					{ "title": "Серия «Дачные дома Уралец»", "href": "#" }
+				]
+			},
+			{
+				"title": "Модульные Дома",
+				"href": "#",
+				"active": false,
+				"subitems": [
+					{ "title": "Серия «Садовые дома Малыш»", "href": "#" },
+					{ "title": "Серия «Дачные дома Егерь»", "href": "#" },
+					{ "title": "Серия «Дачные дома Оливер»", "href": "#" },
+					{ "title": "Серия «Дачные дома Янтарь»", "href": "#" },
+					{ "title": "Серия «Дачные дома Уралец»", "href": "#" }
+				]
+			},
+			{
+				"title": "Дачные Домики",
+				"href": "#",
+				"active": false,
+				"subitems": [
+					{ "title": "Серия «Садовые дома Малыш»", "href": "#" },
+					{ "title": "Серия «Дачные дома Егерь»", "href": "#" },
+					{ "title": "Серия «Дачные дома Оливер»", "href": "#" },
+					{ "title": "Серия «Дачные дома Янтарь»", "href": "#" },
+					{ "title": "Серия «Дачные дома Уралец»", "href": "#" }
+				]
+			},
+			{
+				"title": "Банные Чаны",
+				"href": "#",
+				"active": false
+			},
+			{
+				"title": "Избранное",
+				"href": "#",
+				"active": false
+			},
+			{
+				"title": "Отзывы",
+				"href": "#",
+				"active": false
+			},
+			{
+				"title": "Контакты",
+				"href": "#",
+				"active": false
+			}
+		],
+		"footer": [
+			{
+				"head": {
+					"title": "Калькулятор обслуживания",
+					"href": "#",
+					"anchor": "calculator"
+				},
+				"items": [
+					{
+						"title": "Пример работ",
+						"href": "#",
+						"anchor": "example"
+					},
+					{
+						"title": "Отзывы",
+						"href": "#",
+						"anchor": "reviews"
+					},
+					{
+						"title": "Контакты",
+						"href": "#",
+						"anchor": "contacts"
+					}
+				]
+			}
+		]
+	},
+
+	"objects": [
+		{
+			"title": "Модульные <br>дома",
+			"count": true,
+			"bigSize": true,
+			"cover": "object.jpg"
+		},
+		{
+			"title": "Модульные Бани",
+			"count": true,
+			"cover": "object2.jpg"
+		},
+		{
+			"title": "Банные чаны",
+			"cover": "object3.jpg"
+		}
+	],
+
+	"promotions": [
+		{
+			"title": "При покупке бани <strong>банная печь в подарок!</strong>",
+			"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+			"img": "promotion.png"
+		},
+		{
+			"title": "Стеклянная дверь <strong>в подарок!</strong>",
+			"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+			"img": "promotion2.png",
+			"dark": true
+		},
+		{
+			"title": "При покупке бани <strong>банная печь в подарок!</strong>",
+			"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+			"img": "promotion.png"
+		},
+		{
+			"title": "Стеклянная дверь <strong>в подарок!</strong>",
+			"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+			"img": "promotion2.png",
+			"dark": true
+		},
+		{
+			"title": "При покупке бани <strong>банная печь в подарок!</strong>",
+			"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+			"img": "promotion.png"
+		},
+		{
+			"title": "Стеклянная дверь <strong>в подарок!</strong>",
+			"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+			"img": "promotion2.png",
+			"dark": true
+		}
+	],
+
+	"methodology": [
+		{
+			"title": "Надёжная обработка каркаса огнебиозащитым составом",
+			"text": "Специальные составы убивают бактерии и не дают развиваться грибку. Антисептик предотвращает заражение материала насекомыми и их личинками. Пожароустойчивые эмульсии делают каркас абсолютно безопасными для проживания людей.",
+			"img": "methodology/1.png"
+		},
+		{
+			"title": "Электричество с заземлением, дифференциальный автомат ",
+			"text": "Высокая безопасность использования электронных приборов во время эксплуатации бани. С дифавтоматом можно не бояться короткого замыкания, утечки тока, перегрузки сети. Вся электрика монтируется строго по ГОСТу.",
+			"img": "methodology/2.png"
+		},
+		{
+			"title": "Правильно установленные укосины в стене каркаса",
+			"text": "Укосины значительно повышают прочность конструкции не давая каркасу здания менять свою геометрию. Они обеспечивают ему сохранение формы в течение всего срока эксплуатации строения. Каркас выполнен согласно СНИП и ГОСТу.",
+			"img": "methodology/3.png"
+		},
+		{
+			"title": "Кровельное покрытие Профлист МП-20 окрашенный",
+			"text": "Оптимально сочетает в себе хорошую несущую способность, малый вес, эстетичный внешний вид и доступную стоимость. Устойчив к коррозии,  к ветровым и снеговым нагрузкам, не боится контакта с атмосферной влагой.",
+			"img": "methodology/4.png"
+		},
+		{
+			"title": "Утепление объектов ТеплоKNAUF Insulation",
+			"text": "Низкая теплопроводность, пожаробезопасность и устойчивость к огню, высокий уровень звукопоглощения, влагостойкость, натуральный состав, долгий срок службы и гарантия от производителя не менее 50 лет.",
+			"img": "methodology/5.png"
+		},
+		{
+			"title": "Наличие вентиляционного клапана в каждом отделение",
+			"text": "Удаляет отработанную воздушную массу из помещения. Интенсивное просушивание помещения после эксплуатации бани помогает предотвратить преждевременное появление плесени и гниение отделки.",
+			"img": "methodology/6.png"
+		},
+		{
+			"title": "Основание бани из доски 150х50 мм. камерной сушки",
+			"text": "Усиленный нижний каркас,жесткость для перевозки и дополнительное утепление в составе 150 мм. ",
+			"img": "methodology/7.png"
+		},
+		{
+			"title": "Нержавеющая система дымохода и бак на печь от производителя Ferrum",
+			"text": "Коррозионно-устойчивая сталь, лазерная сварка, наличие в стали ниобия и титана. С помощью таких свойств, сталь имеет высокие и пластичные свойства и отличную жаростойкость, сталь устойчива к серьёзным перепадам температуры до 850º.",
+			"img": "methodology/8.png"
+		},
+		{
+			"title": "Защитный короб для дымохода в подкровельном пространстве",
+			"text": "Защитный короб из стекломагниевого листа и утеплённый проходной узел максимальная безопасность при эксплуатации бани.",
+			"img": "methodology/9.png"
+		}
+	]
+}

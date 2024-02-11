@@ -38,9 +38,7 @@
 		"jquery": "3.5.1",
 		"jquery-form-styler": "^2.0.2",
 		"jquery-migrate": "3.2.0",
-		"magnific-popup": "1.1.0",
-		"swiper": "4.5.1",
-		"sticky-sidebar": "3.3.1"
+		"magnific-popup": "1.1.0"
 	},
 	"browserslist": [
 		"last 2 versions",
@@ -49,5 +47,8 @@
 		"not OperaMini all",
 		"ie >= 11",
 		"Edge >= 12"
-	]
+	],
+	"dependencies": {
+		"swiper": "^11.0.6"
+	}
 }

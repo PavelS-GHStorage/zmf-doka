@@ -1,0 +1,21 @@
++b('section').section-objects
+	+e.container
+		+e('h2').title.common-title-h2 Изготавливаем объекты
+			strong  с учётом всех особенностей нашего климата
+		+e('p').text.common-subtext Используем высококачественные материалы, которые выдерживают низкие температуры и обладают высокой степенью теплоизоляции.
+		+e.items
+			each item in objects
+				+e.item(class=(item.bigSize ? '--big' : ''))
+					+e('a')(href="#" style="background-image: url('"+ rootPath + item.cover +"');").item-card
+						+e('div').item-card-content
+							+e('div').item-card-top
+								+e('div').item-card-title !{item.title}
+								if (item.count)
+									+e('div').item-card-count
+										strong 50+
+										|  проектов
+							+e('div').item-card-bottom
+								+e('div').item-card-button Смотреть проекты
+								+e('div').item-card-price от
+									strong 30 000
+									|  ₽/мес.
