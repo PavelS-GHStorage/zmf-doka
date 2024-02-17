@@ -186,5 +186,64 @@
 			"text": "Защитный короб из стекломагниевого листа и утеплённый проходной узел максимальная безопасность при эксплуатации бани.",
 			"img": "methodology/9.png"
 		}
+	],
+
+	"actions": [
+		{
+			"type": "Статья",
+			"title": "Чем хороша баня “Тайга 2.0”?",
+			"img": "actions/action.jpg",
+			"date": "31 декабря 2024",
+			"size": "--big"
+		},
+		{
+			"type": "Статья",
+			"title": "Преимущества бани “A-Frame”",
+			"img": "actions/action2.jpg",
+			"date": "31 декабря 2024"
+		},
+		{
+			"type": "Статья",
+			"title": "Как выбрать печь?",
+			"img": "actions/action3.jpg",
+			"date": "31 декабря 2024"
+		},
+		{
+			"type": "Статья",
+			"title": "Пропитка для дерева от влаги и гниения",
+			"img": "actions/action4.jpg",
+			"date": "31 декабря 2024",
+			"size": "--middle"
+		}
+	],
+
+	"gallery": [
+		{ "img": "gallery/1.jpg" },
+		{ "img": "gallery/2.jpg" },
+		{ "img": "gallery/3.jpg" },
+		{ "img": "gallery/4.jpg" },
+		{ "img": "gallery/5.jpg" },
+		{ "img": "gallery/6.jpg" },
+		{ "img": "gallery/7.jpg" },
+		{ "img": "gallery/8.jpg" },
+		{ "img": "gallery/9.jpg" },
+		{ "img": "gallery/1.jpg" },
+		{ "img": "gallery/2.jpg" },
+		{ "img": "gallery/3.jpg" },
+		{ "img": "gallery/4.jpg" },
+		{ "img": "gallery/5.jpg" },
+		{ "img": "gallery/6.jpg" }
+	],
+
+	"history": [
+		{
+			"gallery": [
+				"history/1.jpg",
+				"history/1.jpg",
+				"history/1.jpg",
+				"history/1.jpg",
+				"history/1.jpg"
+			]
+		}
 	]
 }

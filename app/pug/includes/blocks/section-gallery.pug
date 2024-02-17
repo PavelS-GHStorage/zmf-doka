@@ -1,0 +1,17 @@
++b('section').section-gallery
+	+e.container
+		+e('h2').title.common-title-h2 Посмотрите фото и видео
+			strong еще большего количества готовых объектов
+		+e('p').text.common-subtext Современный стиль, высокое качество, надёжное исполнение с удобной рассрочкой
+		+e.items
+			each item in gallery
+				+e.item
+						+e('a')(href="rootPath + item.img" style="background-image: url('"+ rootPath + item.img +"');").item-card
+		+e.bottom.common-bottom
+			+e('a')(href="#").more.btn--more Загрузить еще
+			+b.pagination
+				+e('input')(type="text" value="1").input
+				+e.count из 6
+				+e.buttons
+					+e('a')(href="#").button.--prev.--disabled
+					+e('a')(href="#").button.--next

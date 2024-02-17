@@ -1,0 +1,100 @@
++b('section').section-history
+	+e.container
+		+e('h2').title.common-title-h2 За последний год нами было реализовано
+			strong  более 450&nbsp;объектов
+		+e('p').text.common-subtext Посмотрите обзоры и отзывы на несколько объектов, построенных в прошлом году
+		+e.items
+			- for (let i = 0; i < 3; ++i)
+				+e.item
+					+e.card
+						+e.card-top
+							+e.card-gallery
+								+e.card-gallery-big
+									.swiper-container
+										.swiper.js-swiper-history-gallery-big
+											.swiper-wrapper
+												each img in history[0].gallery
+													.swiper-slide
+														+e.card-gallery-overimg
+															+e('img')(src=(rootPath + img) alt="").card-gallery-img
+										.swiper-button-prev
+										.swiper-button-next
+								+e.card-gallery-thumbs
+									.swiper.js-swiper-history-gallery-thumbs
+										.swiper-wrapper
+											each img in history[0].gallery
+												.swiper-slide
+													+e.card-gallery-overimg
+														+e('img')(src=(rootPath + img) alt="").card-gallery-img
+							+e.card-content
+								+e('p').card-title Баня «Таганай»
+								+e.card-content-rows
+									+e.card-content-row
+										+e.card-items
+											+e.card-item
+												+e('p').card-item-title Стоимость:
+												+e('p').card-item-data 590 000
+													span ₽
+											+e.card-item
+												+e('p').card-item-title Срок строительства:
+												+e('p').card-item-data 35
+													span дней
+											+e.card-item
+												+e('p').card-item-title Площадь:
+												+e('p').card-item-data 16,1
+													span м²
+									+e.card-content-row
+										+e.card-props
+											+e.card-prop
+												+e('p').card-prop-title Фундамент:
+												+e('p').card-prop-data Свайный
+											+e.card-prop
+												+e('p').card-prop-title Размер:
+												+e('p').card-prop-data 2,3х7 м
+											+e.card-prop
+												+e('p').card-prop-title Вместимость:
+												+e('p').card-prop-data 6 человек
+											+e.card-prop
+												+e('p').card-prop-title Материал:
+												+e('p').card-prop-data Сосна
+											+e.card-prop
+												+e('p').card-prop-title Комнат:
+												+e('p').card-prop-data 2
+											+e.card-prop
+												+e('p').card-prop-title Особенности:
+												+e('p').card-prop-data с верандой
+									+e.card-content-row
+										+e.card-video
+											+e('a')(href="#" style="background-image: url('"+ rootPath + "video-min.jpg');").card-video-item
+												span
+											+e.card-video-text
+												span
+													a(href="#") Посмотрите видеообзор
+													|  данного формата бани, познакомьтесь с её особенностями, преимуществами и техническими характеристиками.
+						+e.card-bottom
+							+b.reviews
+								+e.item
+									+e.item-left
+										+e.item-overphoto
+											+e('img')(src=rootPath+"review-photo.jpg" alt="").item-photo
+										+e.item-left-bottom
+											+e('p').item-author Елена П.
+											+e('a')(href="#" target="_blank").item-href https://vk.com/client_id
+									+e.item-right
+										+e.item-title «Все сделано качественно, функционально и красиво»
+										+e.item-rating
+											+b.rating
+												+e.ind(style="width: 100%;")
+											+e('time').item-date 23 августа 2023 года
+										+e.item-text Хотела поблагодарить компанию Дока за нашу баню, мы в полном восторге, пользуемся ею около двух месяцев, все сделано качественно, функционально и красиво, печь отличная, внутренняя каменка дает мягкий необжигающий жар. Вообщем, теперь в выходные мы наслаждаемся баней. Отдельное спасибо менеджеру Максиму за то, что учел все наши пожелания!!! Процветания вашей компании и довольных клиентов!
+										+e.item-orig Оригинал отзыва:
+											a(href="https://yandex.ru/profile/205129461060" target="_blank") https://yandex.ru/profile/205129461060
+
+		+e.bottom.common-bottom
+			+e('a')(href="#").more.btn--more Загрузить еще
+			+b.pagination
+				+e('input')(type="text" value="1").input
+				+e.count из 6
+				+e.buttons
+					+e('a')(href="#").button.--prev.--disabled
+					+e('a')(href="#").button.--next

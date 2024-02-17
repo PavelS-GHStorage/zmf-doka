@@ -1,0 +1,22 @@
+.section-gallery
+	padding-top 48px
+	padding-bottom 50px
+	background-color #fbfbfb
+	&__container
+		@extend .container
+	&__title
+		margin-bottom 32px
+	&__text
+		margin-bottom 32px
+	&__items
+		display grid
+		grid-template-columns repeat(3, 1fr)
+		grid-template-rows auto
+		gap 24px
+	&__item-card
+		display block
+		padding-top 72%
+		background-repeat no-repeat
+		background-position center
+		background-size cover
+		border-radius 12px

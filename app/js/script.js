@@ -25,7 +25,7 @@ $(function () {
 				});
 			}
 
-			const swiper = new Swiper('.swiper', {
+			const swiperPromotions = new Swiper('.js-swiper-promotions', {
 				speed: 400,
 				spaceBetween: 24,
 				slidesPerView: 2,
@@ -39,6 +39,30 @@ $(function () {
 					clickable: true,
 				},
 			});
+
+
+			if ($('.js-swiper-history-gallery-thumbs').length && $('.js-swiper-history-gallery-big'.length)) {
+				const swiperHistoryGalleryThumbs = new Swiper('.js-swiper-history-gallery-thumbs', {
+					loop: true,
+					speed: 400,
+					spaceBetween: 8,
+					slidesPerView: 4,
+					freeMode: true,
+					watchSlidesProgress: true,
+				});
+
+				const swiperHistoryGalleryBig = new Swiper('.js-swiper-history-gallery-big', {
+					loop: true,
+					speed: 400,
+					// thumbs: {
+					// 	swiper: swiperHistoryGalleryThumbs,
+					// },
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+				});
+			}
 
 			$(window).on("scroll", function () {
 				var scrollTop = $(window).scrollTop();
@@ -56,3 +80,4 @@ $(function () {
 		},
 	}.init();
 });
+

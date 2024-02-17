@@ -1,0 +1,25 @@
+.rating
+	display inline-block
+	vertical-align baseline
+	position relative
+	width 106px
+	height 19px
+	user-select none
+	overflow hidden
+	&:before
+		@extend .psElem
+		position absolute
+		left 0
+		top 0
+		right 0
+		bottom 0
+		background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGoAAAATCAQAAADSBVAVAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfkBQUOGDQXDs2QAAAA7ElEQVRIx+2X2xGCQAxFDxZgCzawYwHYAZVQgiXYCDSgHYANiA1ACTRw/RAfPFb40qCGLyYnmQ25ybCBxNfZ4tMHeF9RKenEeJNkMCi/DXCclNYkOdSplJp60te6kgdzpPoWCaFI42aUXAzUXwFQjfbKLHmbqR0lNScAzo3PAbBmyYrtPWIOZNOxRE54HqfkqbczIB8zlXlwp6wjWfPk86IoFPbQUMXAiBon29uv7MGlZ/OYJn/gNynv+XNPnGmyXVQGgCMmbhZl5klrm2xpNZRT1OizUCSn0KNq02S3qH3rff8irWEy+F8SZ2IXDc0VOJ+VxuIAAAAASUVORK5CYII=') no-repeat left center
+		z-index 1
+	&__ind
+		position absolute
+		left 0
+		top 0
+		height 100%
+		background-color #ffcd06
+		transition width $duration
+		z-index -1

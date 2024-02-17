@@ -1,13 +1,17 @@
 extends includes/template/base.pug
 
 block variables
-	- var title = 'Главная';
-	- var rootPath = 'static/images/';
+	- const title = 'Главная';
+	- const rootPath = 'static/images/';
 
 block main
 
-	//- include includes/blocks/section-head.pug
-	//- include includes/blocks/section-reviews.pug
-	//- include includes/blocks/section-objects.pug
-	//- include includes/blocks/section-promotions.pug
-	//- include includes/blocks/section-methodology.pug
+	include includes/blocks/section-head.pug
+	include includes/blocks/section-reviews.pug
+	include includes/blocks/section-objects.pug
+	include includes/blocks/section-promotions.pug
+	include includes/blocks/section-materials.pug
+	include includes/blocks/section-methodology.pug
+	include includes/blocks/section-history.pug
+	include includes/blocks/section-gallery.pug
+	include includes/blocks/section-actions.pug

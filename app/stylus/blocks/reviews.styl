@@ -1,0 +1,131 @@
+.reviews
+	&__item
+		display flex
+		justify-content space-between
+		position relative
+		width 100%
+		padding-top 20px
+		padding-bottom 20px
+		border-bottom 1px solid #f7f7f7
+		&:last-child
+			border-bottom none
+		@media $mLandscapeMax
+			flex-wrap wrap
+			justify-content flex-start
+	&__item-left
+		width 135px
+		@media $mLandscapeMax
+			display flex
+			align-items center
+			width 100%
+			margin-bottom 18px
+	&__item-right
+		width calc(100% - 175px)
+		padding-top 5px
+		@media $tPortraitMax
+			padding-top 2px
+		@media $mLandscapeMax
+			width 100%
+			padding-top 0
+	&__item-overphoto
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 135px
+		height 135px
+		border-radius 10px
+		margin-bottom 16px
+		user-select none
+		@media $mLandscapeMax
+			width 45px
+			height 45px
+			margin-right 20px
+			margin-bottom 0
+	&__item-left-bottom
+		line-height 0
+	&__item-author
+		font-size 18px
+		font-weight 600
+		line-height 20px
+		margin-bottom 5px
+		&:last-child
+			margin-bottom 0
+	&__item-href
+		display inline-block
+		vertical-align top
+		max-width 100%
+		color #2865d4
+		font-size 12px
+		line-height 12px
+		font-style italic
+		text-overflow ellipsis
+		white-space nowrap
+		border-bottom 1px solid #2865d4
+		transition border $duration
+		overflow hidden
+		&:hover
+			border-bottom-color transparent
+	&__item-title
+		font-size 24px
+		font-weight 600
+		line-height 27px
+		margin-top -5px
+		margin-bottom 7px
+		@media $tPortraitMax
+			margin-top 0
+			font-size 18px
+			line-height 22px
+		@media $mLandscapeMax
+			margin-bottom 5px
+			font-size 16px
+			line-height 18px
+	&__item-rating
+		display flex
+		align-items flex-end
+		margin-bottom 27px
+		@media $mLandscapeMax
+			margin-bottom 21px
+		.rating
+			margin-left -2px
+			margin-right 10px
+	&__item-date
+		display inline-block
+		vertical-align baseline
+		color #c8c8c8
+		font-size 12px
+		font-weight 300
+		line-height 14px
+	&__item-text
+		color #767575
+		font-size 18px
+		line-height 24px
+		margin-bottom 20px
+		@media $tPortraitMax
+			font-size 14px
+			line-height 17px
+			margin-bottom 18px
+		&:last-child
+			margin-bottom 0
+		p + p
+			margin-top 18px
+		a
+			color #2865d4
+			border-bottom 1px solid #2865d4
+			transition border $duration
+			&:hover
+				border-bottom-color transparent
+	&__item-orig
+		margin-top 16px
+		color #c8c8c8
+		font-size 14px
+		line-height 17px
+		@media $tPortraitMax
+			margin-top 18px
+		a
+			color #2865d4
+			border-bottom 1px solid transparent
+			transition border $duration
+			font-style italic
+			&:hover
+				border-bottom-color #2865d4
