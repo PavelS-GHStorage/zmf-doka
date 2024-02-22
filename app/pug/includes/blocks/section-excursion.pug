@@ -1,0 +1,32 @@
++b('section').section-excursion
+	+e.container
+		+e.wrap(style="background-image: url('../static/images/bg-excursion.png')")
+			+e.content
+				+e('h2').title.common-title-h2
+					strong Скидка при покупке бани до 50&nbsp;000&nbsp;₽ только до 20&nbsp;ноября 
+					| за бесплатную экскурсию по нашему производству
+				+e('p').text.common-subtext На экскурсии вы сможете пообщаться с&nbsp;прорабом и&nbsp;строителями, а также:
+				+e.info
+					+e.info-item
+						+e('p').info-item-title Познакомьтесь
+						+e('p').info-item-text с&nbsp;технологией строительства
+					+e.info-item
+						+e('p').info-item-title Оцените качество
+						+e('p').info-item-text материалов на стройплощадке
+					+e.info-item
+						+e('p').info-item-title Задайте вопросы
+						+e('p').info-item-text руководителю производства
+				+e.callback
+					+b('form').form-callback
+						+e.row
+							+e.field
+								+e('label').field-label Укажите дату:
+								+e('input')(type="text").field-input.js-datepicker
+							+e.field
+								+e('label').field-label Введите номер телефона:
+								+e('input')(type="text" placeholder="+7 ___ ___ __ __").field-input
+						+e.row
+							+e.field
+								+e('button')(type="submit").submit-btn.btn.--accent.--large Запишитесь на экскурсию
+								+e('p').agreement Нажимая на кнопку, вы соглашаетесь с&nbsp;условиями 
+									a(href="#" target="_blank") Политики конфиденциальности

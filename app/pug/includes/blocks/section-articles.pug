@@ -1,4 +1,4 @@
-+b('section').section-actions
++b('section').section-articles
 	+e.container
 		+e.head.common-top
 			+e('h2').title.common-title-h3
@@ -6,7 +6,7 @@
 				| пишем специально для Вас
 			+e('a')(href="#").all-link Все статьи
 		+e.items
-			each item in actions
+			each item in articles
 				+e.item
 					+e('a').item-card(href="#" class=(item.size) style="background-image: url('"+ rootPath + item.img +"');")
 						+e('div').item-card-content

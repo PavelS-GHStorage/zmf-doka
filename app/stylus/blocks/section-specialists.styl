@@ -1,0 +1,95 @@
+.section-specialists
+	padding-top 48px
+	padding-bottom 60px
+	background-color #fbfbfb
+	&__container
+		@extend .container
+	&__title
+		margin-bottom 32px
+	&__text
+		margin-bottom 56px
+	&__item
+		display flex
+		width 100%
+		column-gap 24px
+	&__item-photo
+		width 222px
+		height 318px
+		flex-shrink 0
+		border-radius 24px
+		background-repeat no-repeat
+		background-position center
+		background-size cover
+	&__item-content
+		max-width 260px
+	&__item-name
+		margin-bottom 6px
+		color #2f2f2f
+		font-size 18px
+		line-height 24px
+	&__item-position
+		margin-bottom 24px
+		font-size 16px
+		line-height 19px
+		color #bababa
+	//&__item-props
+	&__item-prop
+		position relative
+		margin-bottom 12px
+		z-index 1
+		&--experience
+			& ^[0]__item-prop-title
+				&:before
+					@extend .psElem
+					position absolute
+					bottom 0
+					left 50%
+					width 83px
+					height 38px
+					background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAmCAMAAACPg1dAAAAAjVBMVEUAAADxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDew5GkAAAALnRSTlMADNf775gG5sWGHxD3y6ukTjAlGdtYRjo18+GQfGZiKxTRsp+BQOrBt3dyu1trljIZAwAAAhpJREFUSMetltnSqjAQhCeEfQdBFHBBwP30+z/eSSXlvxWlKHw3zoXVRaZ7JiEBo9lYPIpzPZtmsFO/LixRzcISJ1VcAWceyb0N7slKAzR3Fs0YQCwdsgFuzqK5BdCparazMx3ZSpXFkWZiE6SP1gaud7Hdqc00UroclP1F72lOBkxvpm60tbkQh4/A1xAcvRkMQgYfO0o5JPr0vCs0URuqbKdqepDwXNRpA2TnJdHUAXUrXQciWSddsTnRHYdpXxntWRlHX0lnrm8A9hTNlQ7NOX+No6MF+hpAMGVAd9KeMDRUzCvM4HwPhRWrVmiQ5LT/VNEkU4fk8uhFADR2Qvfs0/nMQ7XoYJvfKTCYFW+5v/xQ00FDXRiX0a+TsmvAgX8fajaA1fzp3Ka1fQiiDzUh8G/VZkHfZFBcKX3fJ4+YDkX9c6w0GaacVjx/23NHo/TMITB+JTy9AQetYPz9CU0tVBSFvpD8e4CtYxZaCVird+8LAHW56+0hg5PaguDdPEUQHPrBl85tDQljWTpasGiphnRd2wxontSWXlAzPlKujRVdIQlpgMoHzm21BHgyUrMDSjod1sDa8YZvlFA4Z/vjs88sACfDzLO2f7YNAgi6kZo+AN49v3GTEjK7oy06qvF7mjXpvR6M7Kd5sdbAq0wnIYAkLh025qEdWkUIHI3dqz/GiZg3Oxjx8DjexB6qL2NDwnp6yT2nYf4DenRDuu24T98AAAAASUVORK5CYII=') no-repeat center
+					background-size contain
+					transform translateX(-50%)
+		&--projects
+			& ^[0]__item-prop-title
+				&:before
+					@extend .psElem
+					position absolute
+					top 0
+					right 0
+					width 13px
+					height 13px
+					background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANBAMAAACAxflPAAAAHlBMVEUAAAD6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vrxkQD0LbEfAAAACHRSTlMA56eUO5s8+TCBcUgAAABKSURBVAjXY2BgUyxUYQACi46ODgMGBuYOIGhmYMjoAAEHBo2OjhkdHQoMEmBagKGjY+bMGR0NMD5c3gOqnhVEtSLMY2BRbASaDwC0YSD5pLrF2AAAAABJRU5ErkJggg==') no-repeat center
+					background-size contain
+	&__item-prop-info
+		display flex
+		column-gap 12px
+		margin-bottom 12px
+	&__item-prop-title
+		display flex
+		flex-direction column
+		align-items center
+		flex-shrink 0
+		position relative
+		width 86px
+		text-align center
+		color $accent
+		font-size 30px
+		line-height 30px
+		font-weight 600
+		span
+			color $accent
+			font-size 12px
+			line-height 12px
+			text-transform uppercase
+	&__item-prop-data
+		color #aaaaaa
+		font-size 10px
+		line-height 14px
+		font-weight 600
+		letter-spacing .05em
+		text-transform uppercase
+	&__item-prop-education
+		color #7a7a7a
+		font-size 12px
+		line-height 14px
+

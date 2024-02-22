@@ -1,0 +1,17 @@
++b('section').section-faq
+	+e.container
+		+e.grid
+			+e.cell.--content
+				+e('h2').title.common-title-h2 Мы готовы ответить на 
+					strong любой вопрос
+				+e.text
+					p Подготовили для Вас ответы на самые распространенные вопросы, возникающие при строительстве.
+					p Если вдруг нужного ответа нет в списке, но он срочно необходим, звоните, 
+						strong обязательно проконсультируем.
+			+e.cell.--items
+				+e.items
+					each item, index in faq
+						+e.item(class=(index === 0 ? 'active' : null))
+							+e('button')(type="button").item-toggle.js-faq-toggle #{item.title}
+							+e.item-dropdown(style=(index === 0 ? "display: block;" : null))
+								+e.item-text !{item.text}

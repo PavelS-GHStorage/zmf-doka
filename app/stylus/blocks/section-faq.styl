@@ -1,0 +1,67 @@
+.section-faq
+	padding 60px 0
+	&__container
+		@extend .container
+	&__grid
+		display grid
+		grid-template-columns 380px minmax(auto, 696px)
+		justify-content space-between
+		grid-column-gap 24px
+	&__title
+		margin-bottom 29px
+	&__text
+		color #767676
+		font-size 16px
+		line-height 19px
+		p
+			margin-bottom 19px
+			&:last-child
+				margin-bottom 0
+	&__items
+		display flex
+		flex-direction column
+		width 100%
+		gap 10px
+	&__item
+		&.active
+			& ^[0]__item-toggle
+				color #fff
+				background-color $accent
+				&:before
+					background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAKBAMAAABPkMOvAAAAFVBMVEUAAADxkQDxkQDxkQDxkQDxkQDxkQByJxekAAAABnRSTlMAgaWLb4xznjuGAAAAOUlEQVQI12MAAkYBBggQS4TQjGlpAhCBZLNEiIACE1hILImBQS0RLMDAABQCC4CFQAIgIQZniBkhAD86B/f1pXO7AAAAAElFTkSuQmCC')
+	&__item-toggle
+		display flex
+		align-items center
+		justify-content flex-start
+		width 100%
+		padding 16px 42px 16px 12px
+		text-align left
+		color #767676
+		font-size 18px
+		line-height 24px
+		font-weight 600
+		background-color #f5f5f5
+		border-radius 38px
+		transition background $duration, color $duration
+		user-select none
+		&:before
+			@extend .psElem
+			width 42px
+			height 42px
+			margin-right 64px
+			border-radius 50%
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAKBAMAAABPkMOvAAAAElBMVEUAAADS0tLS0tLS0tLS0tLS0tKPnEG+AAAABXRSTlMAiJ+DbEhjgVMAAAA9SURBVAjXHcixEQAQAAPAYAEFvUavMYARcPZfRZIUSe6x4BS8po0P9ej0jUAiZJAMEBlIdxJMAhPBSYP1AUe6BthfLZcsAAAAAElFTkSuQmCC') no-repeat center #fff
+			transition background $duration
+			z-index 1
+	&__item-dropdown
+		display none
+	&__item-text
+		margin-left auto
+		padding 18px 40px 27px 117px
+		color #767676
+		font-size 16px
+		line-height 19px
+		p
+			margin-bottom 16px
+			&:last-child
+				margin-bottom 0

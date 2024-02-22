@@ -167,6 +167,7 @@ gulp.task("css-vendor", () => {
 			"node_modules/jquery-form-styler/dist/jquery.formstyler.css",
 			"node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css",
 			"node_modules/swiper/swiper-bundle.min.css",
+			"node_modules/air-datepicker/air-datepicker.css",
 		])
 		.pipe(sourcemaps.init())
 		.pipe(
@@ -200,6 +201,7 @@ gulp.task("js-vendor", () => {
 				"node_modules/jquery-form-styler/dist/jquery.formstyler.min.js",
 				"node_modules/magnific-popup/dist/jquery.magnific-popup.js",
 				"node_modules/swiper/swiper-bundle.min.js",
+				"node_modules/air-datepicker/air-datepicker.js",
 				src.app.js + "libs/jquery.maskedinput.min.js",
 				src.app.js + "libs/jquery.tipsy.js",
 			])

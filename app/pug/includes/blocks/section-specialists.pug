@@ -1,0 +1,31 @@
++b('section').section-specialists
+	+e.container
+		+e('h2').title.common-title-h2 Познакомьтесь со специалистами, которые  
+			strong на протяжении 10 лет занимаются каркасным строительством
+		+e('p').text.common-subtext Профессиональные сотрудники - главная ценность нашей компании
+		+e.slider
+			.swiper-container
+				.swiper.js-swiper-specialists
+					.swiper-wrapper
+						- for (let i = 0; i < 3; ++i)
+							.swiper-slide
+								+e.item
+									+e.item-photo(style="background-image: url('" + rootPath + "specialist.jpg');")
+									+e.item-content
+										+e('p').item-name Парфенов<br> 
+											strong Александр Евгеньевич
+										+e('p').item-position Начальник производства
+										+e.item-props
+											+e.item-prop.--experience
+												+e.item-prop-info
+													+e.item-prop-title 15
+														span лет
+													+e('p').item-prop-data Опыта в каркасном строительстве
+												+e('p').item-prop-education Высшее техническое образование по специальности “Строительство и эксплуатация зданий и сооружений”.
+											+e.item-prop.--projects
+												+e.item-prop-info
+													+e.item-prop-title 3500
+													+e('p').item-prop-data Выполнено и проконтролировано объектов
+				.swiper-pagination
+				.swiper-button-prev
+				.swiper-button-next

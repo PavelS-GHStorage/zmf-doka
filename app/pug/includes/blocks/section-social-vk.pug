@@ -1,0 +1,13 @@
++b('section').section-social.--vk
+	+e.container
+		+e.grid
+			+e.col.--head
+				+e('h3').title Ещё больше фото и полезных обзоров 
+					strong в нашей группе ВКонтакте
+				+e('a')(href="#").btn.--vk Вконтакте - присоединяйтесь
+				+e('p').text Группа СК "ДОКА" в ВКОНТАКТЕ - расскажем все о каркасном строительстве. О том как выбрать качественную баню / функциональный дом или построить всё самому.
+			+e.col.--body
+				+e.gallery-items
+					- for(let i = 1; i < 7; i++)
+						+e.gallery-item
+							+e('a')(href="#" style="background-image: url('" + rootPath + "/social/photo-" + i + ".jpg');").gallery-photo

@@ -35,7 +35,7 @@
 		"gulp-sourcemaps": "3.0.0",
 		"gulp-stylus": "2.7.1",
 		"gulp-uglify": "3.0.2",
-		"jquery": "3.5.1",
+		"jquery": "3.7.1",
 		"jquery-form-styler": "^2.0.2",
 		"jquery-migrate": "3.2.0",
 		"magnific-popup": "1.1.0"
@@ -49,6 +49,7 @@
 		"Edge >= 12"
 	],
 	"dependencies": {
+		"air-datepicker": "3.4.0",
 		"swiper": "^11.0.6"
 	}
 }

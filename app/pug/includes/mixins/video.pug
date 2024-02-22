@@ -1,0 +1,5 @@
+mixin video(data)
+	+b.video&attributes(attributes)
+		+e('a')(href="#" style="background-image: url('" + rootPath + data.cover +"');").item
+			span
+		+e.description !{data.description}

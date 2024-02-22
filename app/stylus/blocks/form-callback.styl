@@ -1,0 +1,49 @@
+.form-callback
+	display flex
+	flex-direction column
+	width 100%
+	row-gap 24px
+	&__row
+		display grid
+		grid-template-columns repeat(2, 1fr)
+		gap 24px
+	&__field-label,
+	&__field-input
+		display block
+	&__field-label
+		margin-bottom 4px
+		color #767676
+		font-size 12px
+		line-height 14px
+		padding-left 30px
+	&__field-input
+		width 100%
+		height 60px
+		padding 18px 30px
+		color #767676
+		font-size 16px
+		line-height 24px
+		font-weight 500
+		border-radius 30px
+		background-color #efefef
+		border none
+		&:active
+			outline none
+	&__submit-btn
+		width 100%
+		padding-left 30px
+		padding-right 30px
+	&__agreement
+		margin-top 10px
+		padding-left 30px
+		color #bab9b9
+		font-size 10px
+		line-height 12px
+		a
+			color #bab9b9
+			border-bottom 1px solid #bab9b9
+			transition border $duration
+			&:hover
+				border-bottom-color transparent
+		&:first-child
+			margin-top 0

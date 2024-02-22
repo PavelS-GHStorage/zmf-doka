@@ -1,0 +1,141 @@
+.section-contacts
+	padding-top 68px
+	padding-bottom 61px
+	@media $desktopMax
+		padding-top 42px
+		padding-bottom 26px
+	@media $mLandscapeMax
+		padding-top 34px
+		padding-bottom 38px
+	&__container
+		@extend .container
+	&__title
+		margin-bottom 32px
+		@media $desktopMax
+			margin-bottom 24px
+	&__text
+		margin-bottom 48px
+		@media $desktopMax
+			margin-bottom 32px
+	&__tabs
+		min-height 812px
+	&__tabs-controls
+		display flex
+		gap 12px
+		margin-bottom 50px
+	&__tabs-controls-btn
+		display block
+		padding 16px 38px 15px
+		font-size 16px
+		line-height 18px
+		font-weight normal
+		text-transform none
+		border-radius 25px
+		span
+			display block
+			color #262626
+			border-bottom 1px solid #262626
+			transition color $duration, border $duration
+			pointer-events none
+		&:hover,
+		&.active
+			background-color $accent
+			span
+				color #fff
+				border-bottom-color transparent
+	&__tabs-items
+		position relative
+	&__tabs-item
+		position absolute
+		top 0
+		left 0
+		width 100%
+		opacity 0
+		visibility hidden
+		transition all .3s
+		&.active
+			position relative
+			opacity 1
+			visibility visible
+	&__items
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		width 100%
+	&__item
+		display flex
+		margin-bottom 35px
+		@media $desktopMax
+			width calc(50% - 17px)
+			margin-bottom 27px
+		@media $mLandscapeMax
+			width 100%
+			margin-bottom 27px
+		&:hover
+			@media $desktop
+				& ^[0]__item-ico
+					filter grayscale(100%)
+					opacity .35
+		&:first-child
+			padding-top 0
+		&:last-child
+			margin-right 0
+			@media $mLandscapeMax
+				margin-bottom 0
+	&__item-overico
+		width 55px
+		margin-right 17px
+		flex-shrink 0
+	&__item-ico
+		display flex
+		justify-content center
+		filter grayscale(0%)
+		transition filter $duration, opacity $duration
+		max-height 100%
+	&__item-info
+		max-width 231px
+		@media $mLandscapeMax
+			max-width 100%
+	&__item-label,
+	&__item-data
+		/ .MSIE &
+			max-width 231px
+	&__item-label
+		display block
+		color #c5c5c5
+		font-size 12px
+		font-weight 300
+		line-height 14px
+		margin-bottom 9px
+	&__item-data
+		display flex
+		flex-direction column
+		align-items flex-start
+		color #3a3835
+		font-size 16px
+		line-height 20px
+		address, p
+			width 100%
+			display block
+		a
+			color #3a3835
+	&__item-data-subtext
+		color #a6a6a6
+		font-size 10px
+		line-height 12px
+		font-style italic
+	&__map
+		height 450px
+		margin-top 19px
+		@media $desktopMax
+			margin-top 4px
+		@media $mLandscapeMax
+			margin-top 4px
+		& + ^[0]__container ^[0]__items
+			margin-bottom -35px
+			padding-top 60px
+			@media $desktopMax
+				margin-bottom -27px
+				padding-top 28px
+			@media $mLandscapeMax
+				margin-bottom 0

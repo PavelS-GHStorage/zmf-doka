@@ -80,7 +80,6 @@
 	&__card-items
 		display grid
 		grid-template-columns repeat(3, 1fr)
-		grid-template-rows auto
 		gap 24px 48px
 	// &__card-item
 	&__card-item-title
@@ -89,7 +88,7 @@
 		font-size 14px
 		line-height 17px
 	&__card-item-data
-		color #f19100
+		color $accent
 		font-size 30px
 		line-height 34px
 		font-weight 700
@@ -101,7 +100,6 @@
 	&__card-props
 		display grid
 		grid-template-columns repeat(2, minmax(0, 1fr))
-		grid-template-rows auto
 		gap 6px 24px
 	&__card-prop
 		display flex
@@ -168,7 +166,7 @@
 				margin auto
 				border-style solid
 				border-width 5.5px 0 5.5px 9px
-				border-color transparent transparent transparent #f19100
+				border-color transparent transparent transparent $accent
 				transform translateX(2px)
 	&__card-video-text
 		position relative
@@ -190,9 +188,9 @@
 			text-overflow ellipsis
 			overflow hidden
 		a
-			color #f19100
+			color $accent
 			font-weight 600
-			border-bottom 1px solid #f19100
+			border-bottom 1px solid $accent
 			transition border $duration
 			&:hover
 				border-bottom-color transparent

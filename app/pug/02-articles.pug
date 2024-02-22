@@ -1,0 +1,12 @@
+extends includes/template/base.pug
+
+block variables
+	- const title = 'Статьи';
+	- const rootPath = 'static/images/';
+	- const breadcrumbsData = [ 'Главная', title];
+
+block main
+
+	+breadcrumbs(breadcrumbsData, true)
+
+	include includes/blocks/section-articles.pug

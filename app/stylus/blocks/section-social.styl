@@ -1,0 +1,148 @@
+.section-social
+	padding-top 52px
+	padding-bottom 48px
+	&--youtube
+		& ^[0]__grid
+			grid-template-columns 314px minmax(auto, 640px)
+		& ^[0]__gallery-items
+			grid-template-columns repeat(2, 1fr)
+			gap 24px
+	&--vk
+		& ^[0]__grid
+			grid-template-columns 340px minmax(auto, 640px)
+		& ^[0]__gallery-items
+			grid-template-columns repeat(3, 1fr)
+			gap 12px
+	&__container
+		@extend .container
+	&__grid
+		display grid
+		justify-content space-between
+		gap 24px
+	//&__col
+	//	&--head
+	//	&--body
+	&__title
+		margin-bottom 32px
+		color #262626
+		font-size 16px
+		line-height 24px
+		strong
+			font-size 23px
+			font-weight 600
+	&__btn
+		display block
+		width 310px
+		height 74px
+		margin-bottom 12px
+		font-size 0
+		color transparent
+		background-repeat no-repeat
+		background-size contain
+		background-position left top
+		&--youtube
+			background-image url('../images/btn-ytb.png')
+		&--vk
+			background-image url('../images/btn-vk.png')
+	&__text
+		color #ababab
+		font-size 12px
+		line-height 14px
+	&__gallery-items
+		display grid
+		width 100%
+		//&--big
+	//&__gallery-item
+	&__gallery-photo
+		display block
+		position relative
+		width 100%
+		padding-top 56.95%
+		background-repeat no-repeat
+		background-position center
+		background-size cover
+		border-radius 10px
+		overflow hidden
+		&:hover
+			&:before
+				opacity 0
+		&:before
+			@extend .psElem
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			background-color rgba(#000, .4)
+			transition opacity $duration
+			z-index 1
+	&__gallery-card
+		width 100%
+		display flex
+		flex-direction column
+		align-items flex-start
+		gap 10px
+	&__gallery-card-video
+		display block
+		position relative
+		width 100%
+		padding-top 56.95%
+		background-repeat no-repeat
+		background-position center
+		background-size cover
+		border-radius 10px
+		overflow hidden
+		&:hover
+			&:before
+				opacity 0
+		&:before
+			@extend .psElem
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			background-color rgba(#000, .4)
+			transition opacity $duration
+			z-index 1
+		span
+			display block
+			position absolute
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+			width 68px
+			height 48px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAwCAMAAABwvEdpAAAA81BMVEUAAAD9Ihj+Ihf9Ihf+Ihj9Ihf+Ihj+Ihj9Ihf9Ihf+Ihj9Ihj/Ihn+Ixn9Ihf+Ihj+Ihf+Ihf+Ihj+Ihj+Ihn+Ixn+Ihn+Ihn9Ihf9Ihj9Ihj+Ihj+Ihj+Ixj+Ixj+Ihj+Ixn/Ixr+Ixj+Ixj+Ixj+Ihj+Ixr+Ixr9Ihf////9AAD9Ixj9JRn+e3X9BwD9HBH9Fw39Ewj+dG79EAb9DAH/5eT+hX/+WFL/+Pj/8/L/3Nv+oZ3+YVv9Rj79PDX9Myv9Lib9KCD9AwD/7Oz/0M7/x8b/x8X/u7n/srH+qab+p6T+mJX+jYr+f3r+e3f+Z2P+TEd9L1MiAAAAKHRSTlMAsJu0gfyXY/frpaAYC93Dr6qQcFQ9MAbix7+MhmxaRCsUkXl0OCYfZsjyygAAAYVJREFUSMet1YdSAjEQgOEFDw4pAgrSi30viVfovdm77/80XoQZcJx4J8v/AN/kLskGVl1Vw8l8CP0XyRcPM3HYrJZSAF5U7HiNBHH7NFhVREqxJRJDWhWJ1JEYT7hKGqkdAeQiZKUAcIHkQnHQkV4NNKSnQxjpnUEUVQl7YSL3o5QhrUSadnfMFtyHcwh7qMi27g3jacJMbyesVljDkA2n3k7wD6VjLHuZsZbg2yrXxqre61w6JEXW73DWFJykyG7eLeYImiJrN2zGOU2RDbomWZFNWrtQGmwHSn/u0JXnmSmoyuOYmYLTlIdPxpB4Xu66jFmCdgNuR6Zr0O704KO1NlRKQKmMlufeYbbwmlLquWs1h732m80c4WNihtXD25wK1+DomQYaKhmr6XDu76HWkV4GskjvGBIhMrKfAyiQlQAAVMiK7ioJKhJKgFuZqJTguwPyv5XF92nbvCqe3H4lWVh3tOVXBU/gR9Xof6FIUruE39Uz56VgNBXwKpWOnWp6dmMZX42j5eUpb0iyAAAAAElFTkSuQmCC') no-repeat center
+			background-size contain
+			z-index 2
+	&__gallery-card-title
+		color #262626
+		font-size 14px
+		line-height 17px
+		font-weight 600
+	&__gallery-card-props
+		display flex
+		flex-wrap wrap
+		gap 6px
+		width 100%
+	&__gallery-card-prop
+		display block
+		position relative
+		padding-right 8px
+		color #777777
+		font-size 11px
+		line-height 13px
+		&:last-child
+			padding-right 0
+			&:after
+				content none
+		&:after
+			@extend .psElem
+			position absolute
+			right 0
+			top 4px
+			width 3px
+			height 3px
+			border-radius 3px
+			background-color #777777

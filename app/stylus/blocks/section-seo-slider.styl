@@ -1,0 +1,41 @@
+.section-seo-slider
+	padding-top 48px
+	padding-bottom 60px
+	background-color #fbfbfb
+	@media $desktopMax
+		padding-top 38px
+		padding-bottom 50px
+	@media $mLandscapeMax
+		padding-top 24px
+		padding-bottom 34px
+	&__container
+		@extend .container
+	&__slider
+		.swiper-container
+			padding 0 66px
+		.swiper-horizontal
+			padding 0
+	&__item
+		position relative
+		padding-left 54px
+		max-width 375px
+	&__item-title
+		color #222222
+		font-size 20px
+		font-weight 600
+		line-height 24px
+		margin-bottom 20px
+	&__item-text
+		color #767676
+		font-size 14px
+		line-height 17px
+		p
+			margin-bottom 17px
+			&:last-child
+				margin-bottom 0
+		a
+			color $accent
+			border-bottom 1px solid $accent
+			transition border $duration
+			&:hover
+				border-bottom-color transparent

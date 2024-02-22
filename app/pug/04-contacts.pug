@@ -1,0 +1,14 @@
+extends includes/template/base.pug
+
+block variables
+	- const title = 'Контакты';
+	- const rootPath = 'static/images/';
+	- const breadcrumbsData = [ 'Главная', title];
+
+block main
+
+	+breadcrumbs(breadcrumbsData, true)
+
+	include includes/blocks/section-contacts.pug
+	include includes/blocks/section-seo-slider.pug
+	include includes/blocks/section-articles.pug

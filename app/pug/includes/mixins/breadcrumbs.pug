@@ -1,0 +1,23 @@
+mixin breadcrumbs(data, container)
+	+b('nav')(itemscope itemtype="").breadcrumbs&attributes(attributes)
+		if container
+			.container
+				+e('ul')(itemscope itemtype="").list
+					each item, index in data
+						+e('li')(itemprop="itemListElement" itemscope itemtype="").item
+							if (index < data.length - 1)
+								+e('a')(href="#", itemprop="item").link
+									span(itemprop="name") #{item}
+							else
+								+e('span')(itemprop="item").link
+									span(itemprop="name") #{item}
+		else
+			+e('ul')(itemscope itemtype="").list
+				each item, index in data
+					+e('li')(itemprop="itemListElement" itemscope itemtype="").item
+						if (index < data.length - 1)
+							+e('a')(href="#", itemprop="item").link
+								span(itemprop="name") #{item}
+						else
+							+e('span')(itemprop="item").link
+								span(itemprop="name") #{item}

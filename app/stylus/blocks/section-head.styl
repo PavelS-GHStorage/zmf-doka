@@ -63,7 +63,6 @@
 	&__info-items
 		display grid
 		grid-template-columns repeat(3, minmax(156px, auto))
-		grid-template-rows auto
 		gap 24px 58px
 	&__info-item
 		position relative
@@ -102,7 +101,7 @@
 		transition background $duration, box-shadow $duration
 		user-select none
 		&:hover
-			background-color #f19100
+			background-color $accent
 			box-shadow -3.6px 3.5px 10px rgba(38,38,38, 0), inset 0 0 12px 6px rgba(255, 255, 255, 0)
 		@media $mLandscapeMax
 			margin-right 0
@@ -190,7 +189,6 @@
 	&__advantages
 		display grid
 		grid-template-columns repeat(3, minmax(194px, auto))
-		grid-template-rows auto
 		gap 24px 48px
 		width 100%
 		max-width 674px
