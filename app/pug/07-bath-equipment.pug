@@ -1,0 +1,30 @@
+extends includes/template/base.pug
+
+block variables
+	- const title = 'Бани - Серия «A-Frame»';
+	- const rootPath = 'static/images/';
+	- const breadcrumbsData = ['Главная', 'Бани', 'Серия «A-Frame»'];
+
+block main
+	
+	+section-head({ breadcrumbs: breadcrumbsData })
+	include includes/blocks/section-reviews.pug
+	+section-products({
+		title: '<strong>Выберите свою уникальную комплектацию бани «A-Frame»</strong>',
+		subtext: 'Мы разработали удобную планировку, однако вы можете внести в неё любые корректировки. Просто сообщите о вашем пожелании менеджеру.'
+	})(class="bg-gray")
+	+section-promotions({items: promotions, hasSlider: true})
+	include includes/blocks/section-materials.pug
+	include includes/blocks/section-methodology.pug
+	include includes/blocks/section-social-youtube.pug
+	include includes/blocks/section-delivery.pug
+	include includes/blocks/section-history.pug
+	include includes/blocks/section-excursion.pug
+	include includes/blocks/section-faq.pug
+	include includes/blocks/section-gallery.pug
+	include includes/blocks/section-social-vk.pug
+	include includes/blocks/section-specialists.pug
+	+section-contacts()
+	include includes/blocks/section-seo.pug
+	+section-articles({items: articles.min, hasLinkAll: true})
+

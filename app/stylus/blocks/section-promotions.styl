@@ -4,13 +4,14 @@
 	&__container
 		@extend .container
 	&__title
-		margin-bottom 32px
+		margin-bottom 47px
 	&__items
 		display grid
 		grid-template-columns repeat(2, 1fr)
 		gap 24px
 	&__item-card
 		position relative
+		min-height 290px
 		padding 34px 40px
 		background-image linear-gradient(0deg, rgb(255,175,48) 0%, rgb(255,184,68) 50%, rgb(255,200,114) 100%)
 		background-repeat no-repeat
@@ -21,21 +22,20 @@
 		&--dark
 			background-image linear-gradient( 0deg, rgb(49,49,49) 0%, rgb(55,55,55) 49%, rgb(70,70,70) 100%)
 	&__item-card-content
-		display flex
-		flex-direction column
-		align-items flex-start
-		justify-content flex-start
-		gap 32px
 		max-width 310px
 	&__item-card-title
+		margin-bottom 26px
 		color #fff
 		font-size 24px
 		font-weight 500
 		line-height 27px
 	&__item-card-text
+		margin-bottom 34px
 		color #fff
 		font-size 13px
-		line-height 17px
+		line-height 15px
+	&__item-card-button
+		letter-spacing .035em
 	&__item-card-overimg
 		display flex
 		justify-content flex-end
@@ -51,3 +51,5 @@
 		max-width 100%
 		max-height 100%
 		object-fit contain
+	&--page
+		padding-top 7px

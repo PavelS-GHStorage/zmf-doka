@@ -1,13 +1,16 @@
 .section-specialists
-	padding-top 48px
+	padding-top 51px
 	padding-bottom 60px
 	background-color #fbfbfb
 	&__container
 		@extend .container
 	&__title
-		margin-bottom 32px
+		margin-bottom 18px
 	&__text
 		margin-bottom 56px
+	&__slider
+		.swiper-container
+			padding 0 45px
 	&__item
 		display flex
 		width 100%
@@ -22,20 +25,21 @@
 		background-size cover
 	&__item-content
 		max-width 260px
+		padding-top 8px
 	&__item-name
 		margin-bottom 6px
 		color #2f2f2f
 		font-size 18px
-		line-height 24px
+		line-height 22px
 	&__item-position
-		margin-bottom 24px
-		font-size 16px
-		line-height 19px
+		margin-bottom 26px
 		color #bababa
-	//&__item-props
+		font-size 15px
+		line-height 18px
+		font-weight 500
 	&__item-prop
 		position relative
-		margin-bottom 12px
+		margin-bottom 18px
 		z-index 1
 		&--experience
 			& ^[0]__item-prop-title
@@ -63,7 +67,7 @@
 	&__item-prop-info
 		display flex
 		column-gap 12px
-		margin-bottom 12px
+		margin-bottom 18px
 	&__item-prop-title
 		display flex
 		flex-direction column
@@ -85,8 +89,8 @@
 		color #aaaaaa
 		font-size 10px
 		line-height 14px
-		font-weight 600
-		letter-spacing .05em
+		font-weight 700
+		letter-spacing .1em
 		text-transform uppercase
 	&__item-prop-education
 		color #7a7a7a

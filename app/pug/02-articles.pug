@@ -4,9 +4,11 @@ block variables
 	- const title = 'Статьи';
 	- const rootPath = 'static/images/';
 	- const breadcrumbsData = [ 'Главная', title];
+	- const mainClass = 'main--gray';
 
 block main
 
 	+breadcrumbs(breadcrumbsData, true)
 
-	include includes/blocks/section-articles.pug
+	+section-articles({ items: articles.max, hasDownloadMore: true, titleH2: true })(class="--page")
+

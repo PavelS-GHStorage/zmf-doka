@@ -1,7 +1,7 @@
 .section-head
 	position relative
-	padding-top 61px
-	padding-bottom 71px
+	padding-top 49px
+	padding-bottom 53px
 	background-repeat no-repeat
 	background-position center
 	background-size cover
@@ -15,12 +15,13 @@
 		background-position-x calc(45% - 62px)
 	&__container
 		@extend .container
+	&__breadcrumbs
+		margin-bottom 25px
 	&__title
-		max-width 660px
+		max-width 670px
 		margin-bottom 32px
 		font-size 36px
-		font-weight 400
-		line-height 44px
+		line-height 48px
 		@media $desktopMax
 			margin-bottom 35px
 			line-height 43px
@@ -36,11 +37,11 @@
 			font-weight 600
 	&__text
 		position relative
-		padding-left 40px
+		padding-left 45px
 		max-width 668px
-		margin-bottom 39px
+		margin-bottom 36px
 		font-size 18px
-		line-height 24px
+		line-height 22px
 		@media $tPortraitMax
 			margin-bottom 23px
 			font-size 16px
@@ -58,26 +59,26 @@
 			height 2px
 			background-color $accent
 	&__info
-		max-width 660px
-		margin-bottom 32px
+		max-width 630px
+		margin-bottom 35px
 	&__info-items
 		display grid
 		grid-template-columns repeat(3, minmax(156px, auto))
-		gap 24px 58px
+		gap 24px 42px
 	&__info-item
 		position relative
-		padding-left 36px
+		padding-left 40px
 		font-size 14px
-		line-height 16px
+		line-height 17px
 		&:before
-			content ''
-			display block
+			@extend .psElem
 			position absolute
-			top 0
-			left 0
-			width 20px
-			height 18px
+			top 4px
+			left 3px
+			width 18px
+			height 16px
 			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAMAAABsDg4iAAAAeFBMVEUAAAD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgD/kgAllLJBAAAAJ3RSTlMAEZXu4i0eF+a5996KTUT70LBbQDUj6uHWy8WhnIF8dFU3CKePcwsY26F8AAAAvUlEQVQY002Q2ZaCMBAFbyBEAsMmuI8z6iz1/3+oafFgvXROpW/3SWQU2Q7yn1YLLvJQW6AuJK1CaqvYNzdJ1wiTXNVJoeJLM+veyXOS4uJS1pNJI/37eHPKWL/1leZU49TW09Nt+bADpXTB/0sK+cO5wqTNGGanTzbSDifpyDmUlu0J6eaStpbAWdKGvaSRg+3IYpPqL9+pRCszI/lNFuDv5VpoZEwdh9Y+cGB5yeoI+LoDX2jhesqhGuao7u3FDzdPWzZ2AAAAAElFTkSuQmCC') no-repeat center
+			background-size contain
 	&__info-item-title,
 	&__info-item-text
 		color #3a3835
@@ -86,14 +87,14 @@
 	&__buttons
 		display flex
 		align-items center
-		margin-bottom 51px
+		margin-bottom 33px
 		@media $tPortraitMax
 			margin-bottom 27px
 		@media $mLandscapeMax
 			margin-bottom 24px
 	&__callback-btn
 		display block
-		margin-right 30px
+		margin-right 38px
 		padding 24px 63px
 		background-color #262626
 		border-radius 36px
@@ -131,7 +132,6 @@
 			position relative
 			width 81px
 			height 81px
-			border-radius 50%
 			background-color rgba(#e5e4e3, .5)
 			border-radius 40px
 			box-shadow inset 0 0 11.2px 0.8px rgba(255, 255, 255, 0.13)
@@ -173,7 +173,7 @@
 			max-width 220px
 			height 56px
 			margin-left -33px
-			padding 14px 16px 14px 46px
+			padding 14px 16px 14px 48px
 			color #8c8a86
 			font-size 12px
 			line-height 14px
@@ -191,8 +191,7 @@
 		grid-template-columns repeat(3, minmax(194px, auto))
 		gap 24px 48px
 		width 100%
-		max-width 674px
-		margin-bottom -24px
+		max-width 680px
 	&__advantage
 		display flex
 	&__advantage-overico
@@ -208,6 +207,7 @@
 		max-width 100%
 		max-height 100%
 	&__advantage-text
-		color #222222
+		padding-top 4px
+		color #222
 		font-size 12px
 		line-height 14px

@@ -9,6 +9,8 @@ block main
 
 	+breadcrumbs(breadcrumbsData, true)
 
-	include includes/blocks/section-contacts.pug
-	include includes/blocks/section-seo-slider.pug
-	include includes/blocks/section-articles.pug
+	+section-contacts()(class="--page")
+
+	include includes/blocks/section-seo.pug
+
+	+section-articles({items: articles.min, hasLinkAll: true})

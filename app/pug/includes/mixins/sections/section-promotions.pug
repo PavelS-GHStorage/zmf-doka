@@ -1,0 +1,45 @@
+mixin section-promotions(data)
+	- const items = data && (typeof data.items !== 'undefined') ? data.items : [];
+	- const hasSlider = data && (typeof data.hasSlider !== 'undefined') ? data.hasSlider : false;
+
+	+b('section').section-promotions&attributes(attributes)
+		+e.container
+			+e('h2').title.common-title-h2
+				strong Познакомьтесь с акциями и скидками
+				|  от нашей компании
+			if (hasSlider)
+				+e.slider
+					.swiper-container
+						.swiper.js-swiper-promotions
+							.swiper-wrapper
+								each item in items
+									.swiper-slide
+										+e.item-card(class=(item.dark ? '--dark' : ''))
+											+e.item-card-content
+												+e.item-card-title !{item.title}
+												+e.item-card-text #{item.text}
+												+e('a')(href="#").item-card-button.btn Перейти к акции
+											+e.item-card-overimg
+												+e('img')(src=(rootPath + item.img) alt="").item-card-img
+						.swiper-pagination
+						.swiper-button-prev
+						.swiper-button-next
+			else
+				+e.items
+					each item in items
+						+e.item
+							+e.item-card(class=(item.dark ? '--dark' : ''))
+								+e.item-card-content
+									+e.item-card-title !{item.title}
+									+e.item-card-text #{item.text}
+									+e('a')(href="#").item-card-button.btn Перейти к акции
+								+e.item-card-overimg
+									+e('img')(src=(rootPath + item.img) alt="").item-card-img
+				+e.bottom.common-bottom
+					+e('a')(href="#").more.btn--more Загрузить еще
+					+b.pagination
+						+e('input')(type="text" value="1").input
+						+e.count из 6
+						+e.buttons
+							+e('a')(href="#").button.--prev.--disabled
+							+e('a')(href="#").button.--next

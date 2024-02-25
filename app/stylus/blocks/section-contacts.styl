@@ -1,6 +1,6 @@
 .section-contacts
-	padding-top 68px
-	padding-bottom 61px
+	padding-top 52px
+	padding-bottom 50px
 	@media $desktopMax
 		padding-top 42px
 		padding-bottom 26px
@@ -10,7 +10,7 @@
 	&__container
 		@extend .container
 	&__title
-		margin-bottom 32px
+		margin-bottom 18px
 		@media $desktopMax
 			margin-bottom 24px
 	&__text
@@ -18,7 +18,7 @@
 		@media $desktopMax
 			margin-bottom 32px
 	&__tabs
-		min-height 812px
+		min-height 778px
 	&__tabs-controls
 		display flex
 		gap 12px
@@ -30,6 +30,7 @@
 		line-height 18px
 		font-weight normal
 		text-transform none
+		letter-spacing .025em
 		border-radius 25px
 		span
 			display block
@@ -58,30 +59,17 @@
 			opacity 1
 			visibility visible
 	&__items
-		display flex
-		flex-wrap wrap
-		justify-content space-between
+		display grid
+		grid-template-columns repeat(4, 1fr)
+		gap 24px
 		width 100%
 	&__item
 		display flex
-		margin-bottom 35px
-		@media $desktopMax
-			width calc(50% - 17px)
-			margin-bottom 27px
-		@media $mLandscapeMax
-			width 100%
-			margin-bottom 27px
 		&:hover
 			@media $desktop
 				& ^[0]__item-ico
 					filter grayscale(100%)
 					opacity .35
-		&:first-child
-			padding-top 0
-		&:last-child
-			margin-right 0
-			@media $mLandscapeMax
-				margin-bottom 0
 	&__item-overico
 		width 55px
 		margin-right 17px
@@ -125,17 +113,8 @@
 		line-height 12px
 		font-style italic
 	&__map
-		height 450px
-		margin-top 19px
-		@media $desktopMax
-			margin-top 4px
-		@media $mLandscapeMax
-			margin-top 4px
-		& + ^[0]__container ^[0]__items
-			margin-bottom -35px
-			padding-top 60px
-			@media $desktopMax
-				margin-bottom -27px
-				padding-top 28px
-			@media $mLandscapeMax
-				margin-bottom 0
+		height 459px
+		margin-top 52px
+		margin-bottom 54px
+	&--page
+		padding-top 7px

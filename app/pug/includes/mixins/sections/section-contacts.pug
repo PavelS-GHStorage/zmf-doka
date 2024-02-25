@@ -1,0 +1,79 @@
+mixin section-contacts()
+	+b('section').section-contacts&attributes(attributes)
+		+e.container
+			+e('h2').title.common-title-h2 Хотите своими глазами убедиться, что 
+				strong наши объекты - отличный выбор?
+			+e('p').text.common-subtext Приезжайте на нашу выставочную площадку в Челябинске, Екатеринбурге или Тюмени, чтобы вживую посмотреть на качество наших объектов и получить скидку до 50 000 ₽
+		+e.tabs
+			+e.container
+				+e.tabs-controls
+					each item, index in contacts
+						+e.tabs-controls-item
+							+e('button').tabs-controls-btn.btn(type="button" data-btn=(index + 1) class=(item.active ? 'active js-tabs-contacts' : 'js-tabs-contacts'))
+								span #{item.city}
+			+e.tabs-items
+				each item, index in contacts
+					+e.tabs-item(data-tab=(index + 1) class=(item.active ? 'active' : null))
+						+e.container
+							+e.items
+								+e.item
+									+e.item-overico
+										+e('img')(src=rootPath + "contacts-ico.png" alt="").item-ico
+									+e.item-info
+										+e('p').item-label Адрес:
+										+e.item-data
+											address #{item.data}
+								+e.item
+									+e.item-overico
+										+e('img')(src=rootPath + "contacts-ico2.png" alt="").item-ico
+									+e.item-info
+										+e('p').item-label E-mail:
+										+e.item-data
+											a(href="mailto:7502674@mail.ru") 7502674@mail.ru
+								+e.item
+									+e.item-overico
+										+e('img')(src=rootPath + "contacts-ico3.png" alt="").item-ico
+									+e.item-info
+										+e('p').item-label Телефон:
+										+e.item-data
+											a(href="tel:88006003499") 8 (800) 600 34 99
+											+e.item-data-subtext Бесплатный звонок по России
+								+e.item
+									+e.item-overico
+										+e('img')(src=rootPath + "contacts-ico4.png" alt="").item-ico
+									+e.item-info
+										+e('p').item-label График работы:
+										+e.item-data
+											p с 10:00 до 20:00
+						+e.map.js-yaMap(id=('yaMap_' + (index + 1)) data-coords=item.coords)
+						+e.container
+							+e.items
+								+e.item
+									+e.item-overico
+										+e('img')(src=rootPath + "contacts-ico5.png" alt="").item-ico
+									+e.item-info
+										+e('p').item-label Пишите в Telegram:
+										+e.item-data
+											a(href="https://telegram.me/name_channel" target="_blank") @name_channel
+								+e.item
+									+e.item-overico
+										+e('img')(src=rootPath + "contacts-ico6.png" alt="").item-ico
+									+e.item-info
+										+e('p').item-label Пишите в WhatsApp:
+										+e.item-data
+											a(href="https://api.whatsapp.com/send?phone=80000000000" target="_blank") +7 (000) 000-00-00
+								+e.item
+									+e.item-overico
+										+e('img')(src=rootPath + "contacts-ico7.png" alt="").item-ico
+									+e.item-info
+										+e('p').item-label Пишите в Vkontakte:
+										+e.item-data
+											a(href="https://vk.com/bani_stroitelstvo" target="_blank") vk.com/bani_stroitelstvo
+								+e.item
+									+e.item-overico
+										+e('img')(src=rootPath + "contacts-ico8.png" alt="").item-ico
+									+e.item-info
+										+e('p').item-label YouTube:
+										+e.item-data
+											a(href="https://www.youtube.com/" target="_blank") Интересный контент
+	

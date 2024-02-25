@@ -1,7 +1,7 @@
 extends includes/template/base.pug
 
 block variables
-	- const title = 'Акции';
+	- const title = 'Избранное';
 	- const rootPath = 'static/images/';
 	- const breadcrumbsData = [ 'Главная', title];
 	- const mainClass = 'main--gray';
@@ -10,7 +10,7 @@ block main
 
 	+breadcrumbs(breadcrumbsData, true)
 
-	+section-promotions({ items: promotions })(class="--page")
+	+section-products({ hasDownloadMore: true })
 
-	+section-articles({ items: articles.min, hasLinkAll: true })(class="bg-white")
+	+section-products({ title: 'Дома, которые <strong>вам понравились</strong>', hasDownloadMore: true })
 

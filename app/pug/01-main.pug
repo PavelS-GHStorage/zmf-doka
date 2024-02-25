@@ -6,10 +6,10 @@ block variables
 
 block main
 
-	include includes/blocks/section-head.pug
+	+section-head()
 	include includes/blocks/section-reviews.pug
 	include includes/blocks/section-objects.pug
-	include includes/blocks/section-promotions.pug
+	+section-promotions({ items: promotions, hasSlider: true })
 	include includes/blocks/section-materials.pug
 	include includes/blocks/section-methodology.pug
 	include includes/blocks/section-social-youtube.pug
@@ -20,7 +20,7 @@ block main
 	include includes/blocks/section-gallery.pug
 	include includes/blocks/section-social-vk.pug
 	include includes/blocks/section-specialists.pug
-	include includes/blocks/section-contacts.pug
-	include includes/blocks/section-seo-slider.pug
-	include includes/blocks/section-articles.pug
+	+section-contacts()
+	include includes/blocks/section-seo.pug
+	+section-articles({ items: articles.min, hasLinkAll: true })
 

@@ -1,0 +1,36 @@
+mixin section-articles(data)
+	- const items = data && (typeof data.items !== 'undefined') ? data.items : [];
+	- const titleH2 = data && (typeof data.titleH2 !== 'undefined') ? data.titleH2 : false;
+	- const hasLinkAll = data && (typeof data.hasLinkAll !== 'undefined') ? data.hasLinkAll : false;
+	- const hasDownloadMore = data && (typeof data.hasDownloadMore !== 'undefined') ? data.hasDownloadMore : false;
+	
+	+b('section').section-articles&attributes(attributes)
+		+e.container
+			+e.head.common-top
+				if (titleH2)
+					+e('h2').title.common-title-h2
+						strong Полезные статьи, 
+						| пишем специально для Вас
+				else
+					+e('h3').title.common-title-h3
+						strong Полезные статьи, 
+						| пишем специально для Вас
+				if (hasLinkAll)
+					+e('a')(href="#").all-link Все статьи
+			+e.items
+				each item in items
+					+e.item
+						+e('a').item-card(href="#" class=(item.size) style="background-image: url('"+ rootPath + item.img +"');")
+							+e('div').item-card-content
+								+e('div').item-card-type #{item.type}
+								+e('div').item-card-title #{item.title}
+								+e('time').item-card-date #{item.date}
+			if (hasDownloadMore)
+				+e.bottom.common-bottom
+					+e('a')(href="#").more.btn--more Загрузить еще
+					+b.pagination
+						+e('input')(type="text" value="1").input
+						+e.count из 6
+						+e.buttons
+							+e('a')(href="#").button.--prev.--disabled
+					+e('a')(href="#").button.--next

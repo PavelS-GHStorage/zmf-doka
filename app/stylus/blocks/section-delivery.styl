@@ -1,27 +1,30 @@
 .section-delivery
-	padding-top 48px
+	padding-top 44px
 	padding-bottom 50px
 	background-color #fbfbfb
 	&__container
 		@extend .container
 	&__title
-		margin-bottom 32px
+		margin-bottom 24px
 	&__text
-		margin-bottom 32px
+		margin-bottom 56px
 	&__grid
 		display grid
-		grid-template-columns 500px minmax(990px, 1fr)
+		grid-template-columns 494px minmax(990px, 1fr)
 		justify-content space-between
-		grid-column-gap 48px
+		grid-column-gap 47px
 		width 100%
+	&__col
+		&--content
+			padding-top 3px
 	&__items
 		display flex
 		flex-direction column
-		gap 24px
+		gap 44px
 	&__item
 		display flex
 		justify-content space-between
-		gap 24px
+		gap 21px
 		width 100%
 	&__item-overico
 		width 50px
@@ -29,10 +32,10 @@
 	&__item-ico
 		max-width 100%
 	&__item-title
-		margin-bottom 10px
-		color #222222
+		margin-bottom 12px
+		color #222
 		font-size 18px
-		line-height 24px
+		line-height 22px
 		font-weight 600
 	&__item-text
 		color #767676
@@ -43,15 +46,15 @@
 		ul
 			li
 				position relative
-				padding-left 24px
+				padding-left 27px
 				&:before
 					content ''
 					display block
 					position absolute
 					top 10px
 					left 4px
-					width 3px 
-					height 3px
+					width 5px 
+					height 5px
 					background-color $accent
 					border-radius 3px
 				strong

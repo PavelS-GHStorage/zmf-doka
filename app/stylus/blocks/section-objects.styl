@@ -1,13 +1,13 @@
 .section-objects
-	padding-top 48px
+	padding-top 42px
 	padding-bottom 60px
 	background-color #fbfbfb
 	&__container
 		@extend .container
 	&__title
-		margin-bottom 32px
+		margin-bottom 28px
 	&__text
-		margin-bottom 32px
+		margin-bottom 50px
 	&__items
 		display grid
 		grid-template-columns repeat(2, 1fr)
@@ -22,6 +22,8 @@
 			grid-area 1 / 1 / 3 / 2
 			& ^[0]__item-card
 				padding-top 100%
+			& ^[0]__item-card-content
+				padding-bottom 48px
 			& ^[0]__item-card-title
 				font-size 36px
 				line-height 42px
@@ -30,6 +32,11 @@
 				justify-content flex-start
 				align-items flex-start
 				gap 16px
+			& ^[0]__item-card-price
+				margin-bottom 0
+				strong
+					font-size 36px
+					line-height 36px
 	&__item-card
 		display block
 		position relative
@@ -39,6 +46,18 @@
 		background-repeat no-repeat
 		background-position center
 		border-radius 7px
+		overflow hidden
+		z-index 1
+		&:before
+			@extend .psElem
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			opacity 0.5
+			background-image linear-gradient(56deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0))
+			z-index -1
 	&__item-card-content
 		display flex
 		flex-direction column
@@ -47,7 +66,7 @@
 		left 0
 		width 100%
 		height 100%
-		padding 36px
+		padding 42px 44px 40px 47px
 		z-index 1
 	&__item-card-top
 		display flex
@@ -61,6 +80,7 @@
 	&__item-card-count
 		padding 12px 19px
 		flex-shrink 0
+		margin-top 5px
 		margin-left 24px
 		color #222222
 		font-size 14px
@@ -78,17 +98,18 @@
 		color #fff
 		font-size 16px
 		line-height 16px
+		margin-bottom -4px
 		strong
 			margin-left 8px
 			margin-right 8px
 			font-size 30px
-			line-height 36px
+			line-height 30px
 			font-weight bold
 	&__item-card-button
 		display block
-		padding 23px 50px
+		padding 23px 53px 25px
 		color #fff
-		font-size 12px
+		font-size 13px
 		line-height 16px
 		font-weight 500
 		text-transform uppercase

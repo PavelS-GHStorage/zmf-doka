@@ -1,0 +1,75 @@
+mixin section-products(data)
+	- const title = data && (typeof data.title !== 'undefined') ? data.title : 'Бани, которые <strong>вам понравились</strong>';
+	- const subtext = data && (typeof data.subtext !== 'undefined') ? data.subtext : false;
+	- const hasDownloadMore = data && (typeof data.hasDownloadMore !== 'undefined') ? data.hasDownloadMore : false;
+
+	+b('section').section-products&attributes(attributes)
+		+e.container
+			+e('h2').title.common-title-h2 !{title}
+			if (subtext)
+				+e('p').text.common-subtext !{subtext}
+			+e.itmes
+				each item in products
+					+e.item
+						+e.card
+							+e.card-head
+								+e('a')(href="#" style="background-image: url('" + rootPath + "bath.jpg');").card-cover
+								+e('a')(href="#").card-count 55
+							+e.card-body
+								+e.card-row.--head
+									+e('p').card-title «A-Frame»
+									+e('ul').card-info
+										+e('li').card-info-item
+											strong Рассрочка 
+											| + помощь в оформлении
+								+e.card-row.--properties
+									+e.card-properties
+										+e.card-property
+											+e('p').card-property-title Площадь:
+											+e.card-prop-data 49 м²
+										+e.card-property
+											+e('p').card-property-title Срок стройки:
+											+e.card-prop-data 35 дней
+										+e.card-property
+											+e('p').card-property-title Размеры:
+											+e.card-prop-data 6х7 м
+										+e.card-property
+											+e('p').card-property-title Особенности:
+											+e.card-prop-data с верандой
+								+e.card-row.--characteristics
+									+e.card-characteristics
+										+e.card-characteristic
+											+e('p').card-characteristic-title Вместимость:
+											+e.card-characteristic-data 12 человек
+										+e.card-characteristic
+											+e('p').card-characteristic-title Цена:
+											+e.card-characteristic-data
+												+e.price.--old от 
+													span 415 000
+													|  ₽
+												+e.price от 
+													span 396 400
+													|  ₽
+										+e.card-characteristic
+											+e('p').card-characteristic-title В рассрочку:
+											+e.card-characteristic-data
+												+e.price.--credit от 
+													span 31 000
+													|  ₽/мес.
+								+e.card-row.--buttons
+									+e('a')(href="#").card-more-btn.btn.--secondary Подробнее
+									if (item.hasWatchVideo)
+										+e('a')(href="#").watch-video-btn
+											i
+											span
+												strong Видеообзор
+												| Вашей бани
+			if (hasDownloadMore)
+				+e.bottom.common-bottom
+					+e('a')(href="#").more.btn--more Загрузить еще
+					+b.pagination
+						+e('input')(type="text" value="1").input
+						+e.count из 6
+						+e.buttons
+							+e('a')(href="#").button.--prev.--disabled
+							+e('a')(href="#").button.--next

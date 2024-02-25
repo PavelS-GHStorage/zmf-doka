@@ -219,11 +219,11 @@ $(function () {
 					spaceBetween: 24,
 					slidesPerView: 2,
 					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
+						nextEl: '.section-promotions .swiper-button-next',
+						prevEl: '.section-promotions .swiper-button-prev',
 					},
 					pagination: {
-						el: '.swiper-pagination',
+						el: '.section-promotions .swiper-pagination',
 						type: 'bullets',
 						clickable: true,
 					},
@@ -233,14 +233,14 @@ $(function () {
 			if ($('.js-swiper-specialists').length) {
 				const swiperPromotions = new Swiper('.js-swiper-specialists', {
 					speed: 400,
-					spaceBetween: 24,
+					spaceBetween: 70,
 					slidesPerView: 2,
 					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
+						nextEl: '.section-specialists .swiper-button-next',
+						prevEl: '.section-specialists .swiper-button-prev',
 					},
 					pagination: {
-						el: '.swiper-pagination',
+						el: '.section-specialists .swiper-pagination',
 						type: 'bullets',
 						clickable: true,
 					},
@@ -253,8 +253,8 @@ $(function () {
 					spaceBetween: 24,
 					slidesPerView: 3,
 					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
+						nextEl: '.section-seo .swiper-button-next',
+						prevEl: '.section-seo .swiper-button-prev',
 					},
 				});
 			}
@@ -333,4 +333,3 @@ $(function () {
 		},
 	}.init();
 });
-

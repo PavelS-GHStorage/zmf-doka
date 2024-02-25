@@ -1,7 +1,8 @@
 .reviews
 	&__item
-		display flex
-		justify-content space-between
+		display grid
+		grid-template-columns 154px 1fr
+		grid-column-gap 24px
 		position relative
 		width 100%
 		padding-top 20px
@@ -20,10 +21,7 @@
 			width 100%
 			margin-bottom 18px
 	&__item-right
-		width calc(100% - 175px)
-		padding-top 5px
-		@media $tPortraitMax
-			padding-top 2px
+		padding-top 1px
 		@media $mLandscapeMax
 			width 100%
 			padding-top 0
@@ -35,7 +33,7 @@
 		width 135px
 		height 135px
 		border-radius 10px
-		margin-bottom 16px
+		margin-bottom 17px
 		user-select none
 		@media $mLandscapeMax
 			width 45px
@@ -48,7 +46,7 @@
 		font-size 18px
 		font-weight 600
 		line-height 20px
-		margin-bottom 5px
+		margin-bottom 8px
 		&:last-child
 			margin-bottom 0
 	&__item-href
@@ -83,12 +81,7 @@
 	&__item-rating
 		display flex
 		align-items flex-end
-		margin-bottom 27px
-		@media $mLandscapeMax
-			margin-bottom 21px
-		.rating
-			margin-left -2px
-			margin-right 10px
+		margin-bottom 21px
 	&__item-date
 		display inline-block
 		vertical-align baseline
@@ -100,7 +93,7 @@
 		color #767575
 		font-size 18px
 		line-height 24px
-		margin-bottom 20px
+		margin-bottom 23px
 		@media $tPortraitMax
 			font-size 14px
 			line-height 17px
@@ -116,7 +109,7 @@
 			&:hover
 				border-bottom-color transparent
 	&__item-orig
-		margin-top 16px
+		margin-top 23px
 		color #c8c8c8
 		font-size 14px
 		line-height 17px

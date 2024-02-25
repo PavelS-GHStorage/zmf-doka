@@ -1,0 +1,269 @@
+.breadcrumbs + .section-products
+	padding-top 7px
+
+.section-products
+	padding-top 52px
+	padding-bottom 60px
+	&__container
+		@extend .container
+	&__title
+		margin-bottom 25px
+		& + ^[0]__itmes
+			margin-top 44px
+	&__text
+		& + ^[0]__itmes
+			margin-top 35px
+	&__itmes
+		display grid
+		grid-template-columns repeat(3, 1fr)
+		gap 24px
+	&__card
+		width 100%
+		min-height 574px
+		background-color white
+		border-radius 11px
+		box-shadow 0 10px 10px rgba(215, 215, 215, 0.15)
+		transition box-shadow $duration
+		&:hover
+			box-shadow 0 10px 10px rgba(215, 215, 215, 0)
+	&__card-head
+		position relative
+	&__card-cover,
+	&__card-count
+		display block
+	&__card-cover
+		width 100%
+		padding-top 62.63%
+		background-repeat no-repeat
+		background-position center
+		background-size cover
+		border-top-left-radius 11px
+		border-top-right-radius 11px
+		user-select none
+	&__card-count
+		display flex
+		align-items center
+		column-gap 4px
+		position absolute
+		right 15px
+		bottom 10px
+		height 25px
+		padding 12px 10px 11px
+		color #787878
+		font-family Montserrat
+		font-size 12px
+		line-height 12px
+		font-weight 600
+		background-color white
+		border-radius 12px
+		&:after
+			@extend .psElem
+			flex-shrink 0
+			width 11px
+			height 9px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJBAMAAAAWSsseAAAAKlBMVEUAAADvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWflSCUpAAAADXRSTlMAE6aZDfXw49zBv44g0koN+wAAADdJREFUCNdj4L6ro3uZgcH2LhAoMNwFgQswai2ImsDACiSvMTAwAqkrDAwMsnfvCgAplt5CBgYAMC8eoCghwNsAAAAASUVORK5CYII=') no-repeat center
+	&__card-row
+		padding 15px 20px
+		border-bottom 1px solid whitesmoke
+		&:last-child
+			border-bottom none
+		&--head
+			display flex
+			justify-content space-between
+			gap 12px
+		&--characteristics
+			padding-top 16px
+			padding-bottom 16px
+		&--properties
+			padding-top 17px
+			padding-bottom 17px
+		&--buttons
+			display flex
+			column-gap 10px
+			width 100%
+			padding-top 20px
+			padding-bottom 20px
+	&__card-title
+		color #222
+		font-size 24px
+		line-height 27px
+		font-weight 700
+	&__card-info
+		display grid
+		grid-row-gap 4px
+		flex-shrink 0
+		max-width 144px
+	&__card-info-item
+		position relative
+		padding-left 21px
+		color #6e6e6e
+		font-size 11px
+		line-height 13px
+		&:before
+			@extend .psElem
+			position absolute
+			top 0
+			left 0
+			width 13px
+			height 13px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAzFBMVEXxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQD///9VjrpQAAAAQnRSTlMAH5Xd6MNhfLip1vA7HIxvzE8qNV4iwOS7t1suukzHFzByYnT5Y7za4AjcpDo5WA/s4ZJmFs0bhK+hzu8lJp7f6WdsrGgOAAAAAWJLR0RDZ9ANYgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+gCGQ0EIUHPPjMAAACHSURBVAjXLU0HEoIADIviQBQHbkVw4N57r/z/UbQHvWvaNGkLAImkkUpnEEWWNHMW8wXYQJElndnlikNUWYs9dTZgNWPisAWIr90R0qUryB48+ugLGQzBEWAEY05EMDGdAfMFl7q4wpob8W8ld3uBA4968nTmReuVwe3+4PMVfXp/vj/vr10IVbMPA8uJWFwAAAAASUVORK5CYII=') no-repeat center
+			z-index 1
+		strong
+			color #222
+			font-weight 600
+	&__card-properties
+		display grid
+		grid-template-columns calc(50% - 36px) auto
+		gap 9px 12px
+	&__card-property
+		display flex
+		column-gap 4px
+		color #6e6e6e
+		font-size 13px
+		line-height 15px
+		overflow hidden
+		&:nth-child(even)
+			justify-content flex-end
+			& ^[0]__card-prop-data
+				text-align right
+	&__card-property-title
+		flex-shrink 0
+	&__card-prop-data
+		color #222
+		font-weight 700
+		word-break break-all
+	&__card-characteristics
+		display grid
+		grid-row-gap 10px
+	&__card-characteristic
+		display flex
+		justify-content space-between
+		align-items flex-end
+	&__card-characteristic-title
+		display flex
+		align-items flex-start
+		column-gap 10px
+		color #6e6e6e
+		font-size 13px
+		line-height 17px
+		&:before
+			@extend .psElem
+			margin-top 6px
+			flex-shrink 0
+			width 5px
+			height 5px
+			border-radius 3px
+			background-color $accent
+	&__card-characteristic-data
+		display flex
+		justify-content flex-end
+		align-items flex-end
+		color #222
+		font-size 13px
+		line-height 15px
+		font-weight bold
+	&__price
+		display flex
+		align-items flex-end
+		column-gap 4px
+		color #222
+		font-size 13px
+		line-height 17px
+		font-weight 700
+		span
+			color $accent
+			font-size 24px
+			line-height 24px
+			white-space nowrap
+		&--old
+			color #acacac
+			text-decoration line-through
+			span
+				color #acacac
+				font-size 14px
+				line-height 17px
+		&--credit
+			span
+				color #b1b1b1
+				font-size 18px
+				line-height 20px
+		& + ^[0]__price
+			position relative
+			margin-left 10px
+			padding-left 10px
+			&:before
+				@extend .psElem
+				position absolute
+				left 0
+				bottom 2px
+				width 1px
+				height 15px
+				background-color #f3f3f3
+	&__card-more-btn
+		width 100%
+		padding-left 24px
+		padding-right 24px
+	&__watch-video-btn
+		display flex
+		align-items center
+		flex-shrink 0
+		user-select none
+		i
+			display flex
+			justify-content center
+			align-items center
+			position relative
+			width 48px
+			height 48px
+			background-color #e94134
+			border-radius 24px
+			box-shadow 0 5px 10px rgba(63, 0, 0, 0.25), inset 0 0 11.2px 0.8px rgba(255, 255, 255, 0.25)
+			z-index 1
+			&:before
+				@extend .psElem
+				position absolute
+				top 50%
+				left 50%
+				width 14px
+				height 14px
+				margin-left 1px
+				background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAARCAMAAAA11AaTAAAAYFBMVEUAAAD7/fs3gSz9/v03gSz9/v3n8OXb6dn///////+oyKM3gSz///83gSw3gSzy9/L////////////T49HO4Mv///+91bn///////83gSx+rXb///////99rXY3gSz////87T3DAAAAH3RSTlMA9EjtS/fIro9jUSgQDQXdz7CvqJGDcG1LNTAvLCsXFxV4rgAAAGFJREFUGNN9j0cOwCAMBA2kE9J74/+/DLIFRjlkbiN5V2uAWfUnMNo6ijp4klqHWoMLi3QbuXRODFfsVIPOqJKc+frvfX7HfVnVAHu7GNqDe8X0+L0YPPifUWHQo+VugHkB6HEP9yAKpWsAAAAASUVORK5CYII=') no-repeat center
+				background-size contain
+				transform translate(-50%, -50%)
+				z-index 1
+		span
+			display -webkit-box
+			-webkit-line-clamp 2
+			-webkit-box-orient vertical
+			max-width 146px
+			height 48px
+			margin-left -22px
+			padding 11px 0 11px 30px
+			color #6e6e6e
+			font-size 11px
+			line-height 13px
+			text-overflow ellipsis
+			overflow hidden
+			strong
+				display block
+				color #222
+	& + &
+		position relative
+		&:before
+			@extend .psElem
+			position absolute
+			top 0
+			left 50%
+			transform translateX(-50%)
+			width 100%
+			max-width 1164px
+			height 1px
+			background-color #f0f0f0
+			@media $desktopMax
+				max-width 994px
+			@media $tPortraitMax
+				max-width 736px
+			@media $mLandscapeMax
+				max-width 450px
+			@media $mPortraitMax
+				max-width calc(100% - 30px)

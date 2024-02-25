@@ -18,8 +18,8 @@
 		display flex
 		align-items center
 		width 100%
-		padding-top 16px
-		padding-bottom 29px
+		padding-top 19px
+		padding-bottom 20px
 		border-bottom 1px solid #f1f1f1
 		@media $mLandscapeMax
 			padding-top 0
@@ -50,7 +50,8 @@
 	&__logo-title
 		position relative
 		max-width 160px
-		color #323232
+		padding-top 8px
+		color #222
 		font-size 12px
 		line-height 14px
 		@media $tPortraitMax
@@ -60,22 +61,17 @@
 		align-items center
 		margin-left auto
 	&__right-item
-		margin-right 42px
-		@media $desktopMax
-			margin-right 32px
-		@media $tPortraitMax
-			margin-right 24px
 		&--rating
+			margin-right 46px
 			@media $mLandscapeMax
 				display none
 		&--social
+			margin-right 82px
 			@media $mLandscapeMax
 				display none
-		&:last-child
-			margin-right 0
 	&__rating
 		display block
-		width 170px
+		width 190px
 		color #222222
 		font-size 12px
 		line-height 14px
@@ -87,16 +83,22 @@
 			width 110px
 			height 15px
 			background url('../../static/images/rating.png') no-repeat center
+		strong
+			font-weight 700
 		span
 			color #2865d4
-			break-before 1px solid #2865d4
+			font-weight 600
+			border-bottom 1px solid #2865d4
+			white-space nowrap
+			transition border $duration
+			&:hover
+				border-bottom-color transparent
 	&__social
 		display flex
 		align-items center
 	&__social-text
 		position relative
-		margin-right 9px
-		margin-top 5px
+		margin-right 22px
 		padding-left 14px
 		font-size 12px
 		line-height 14px
@@ -104,7 +106,6 @@
 			display none
 		strong
 			display block
-			font-weight 600
 		&:before
 			@extend .psElem
 			position absolute
@@ -119,12 +120,9 @@
 	&__social-items
 		display flex
 		align-items center
-	&__social-item
-		margin-right 11px
+		column-gap 17px
 		@media $tPortraitMax
-			margin-right 15px
-		&:last-child
-			margin-right 0
+			column-gap 15px
 	&__social-href
 		display flex
 		justify-content center
@@ -167,12 +165,12 @@
 			margin-top 3px
 	&__phone
 		display block
-		margin-bottom 8px
+		margin-bottom 7px
 		text-align right
 		color inherit
-		font-size 21px
+		font-size 24px
 		font-weight 700
-		line-height 25px
+		line-height 24px
 		white-space nowrap
 		@media $mLandscapeMax
 			width 36px
