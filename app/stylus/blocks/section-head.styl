@@ -5,14 +5,13 @@
 	background-repeat no-repeat
 	background-position center
 	background-size cover
+	z-index 1
 	@media $tPortraitMax
 		padding-top 31px
 		padding-bottom 27px
-		background-position-x calc(45% + 14px)
 	@media $mLandscapeMax
 		padding-top 30px
 		padding-bottom 56px
-		background-position-x calc(45% - 62px)
 	&__container
 		@extend .container
 	&__breadcrumbs
@@ -64,6 +63,7 @@
 	&__info-items
 		display grid
 		grid-template-columns repeat(3, minmax(156px, auto))
+		grid-template-rows auto
 		gap 24px 42px
 	&__info-item
 		position relative
@@ -189,6 +189,7 @@
 	&__advantages
 		display grid
 		grid-template-columns repeat(3, minmax(194px, auto))
+		grid-template-rows auto
 		gap 24px 48px
 		width 100%
 		max-width 680px
@@ -208,6 +209,15 @@
 		max-height 100%
 	&__advantage-text
 		padding-top 4px
-		color #222
 		font-size 12px
 		line-height 14px
+	&__img
+		position absolute
+		right calc((100% - 1164px) / 2 - 144px)
+		bottom 0
+		width 580px
+		height 100%
+		background-repeat no-repeat
+		background-position center bottom
+		background-size auto
+		z-index -1

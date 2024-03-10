@@ -1,0 +1,26 @@
++b.popup.--promotions#promotions.mfp-hide
+	+e('a')(href="/").logo
+		+e('img')(src="static/images/logo.png" alt="").logo-img
+	+e.container
+		+e('h2').title
+			strong Заинтересовало акционное предложение?
+		+e('p').text Заполните простую форму ниже, специалист свяжется с вами в течение 15 минут и обсудит все ньюансы акции!
+		+e.content
+			+b('form').form-callback.--popup
+				+e.row
+					+e.field.--user
+						+e('label')(for="pp_name1").field-label Введите имя: 
+							span *
+						+e('input')(type="text" id="pp_name1" data-req="req" placeholder="Ваше имя").field-input.mfp-focus
+						+e('span').field-warning Введите имя
+				+e.row
+					+e.field.--phone
+						+e('label')(for="pp_phone1").field-label Введите номер телефона: 
+							span *
+						+e('input')(type="text" id="pp_phone1" data-req="req" placeholder="+7 (999) 999-99-99").field-input.js-phone
+						+e('span').field-warning Введите корректный номер
+				+e.row.--bottom
+					+e('button')(type="submit").submit-btn.btn.--large.--accent Записаться на экскурсию
+					+e('p').agreement Заполняя данную форму, я даю согласие на обработку моих персональных данных и принимаю условия 
+						a(href="#") политики
+

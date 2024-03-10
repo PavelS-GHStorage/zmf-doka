@@ -2,6 +2,7 @@
 	&__item
 		display grid
 		grid-template-columns 154px 1fr
+		grid-template-rows auto
 		grid-column-gap 24px
 		position relative
 		width 100%
@@ -25,6 +26,16 @@
 		@media $mLandscapeMax
 			width 100%
 			padding-top 0
+	&__item-right-top
+		position relative
+		margin-bottom 21px
+		& ^[0]__item-rating
+			margin-bottom 0
+		& ^[0]__item-original
+			position absolute
+			right 0
+			bottom 0
+			z-index 1
 	&__item-overphoto
 		display flex
 		flex-direction column
@@ -53,13 +64,13 @@
 		display inline-block
 		vertical-align top
 		max-width 100%
-		color #2865d4
+		color $blue
 		font-size 12px
 		line-height 12px
 		font-style italic
 		text-overflow ellipsis
 		white-space nowrap
-		border-bottom 1px solid #2865d4
+		border-bottom 1px solid $blue
 		transition border $duration
 		overflow hidden
 		&:hover
@@ -103,12 +114,12 @@
 		p + p
 			margin-top 18px
 		a
-			color #2865d4
-			border-bottom 1px solid #2865d4
+			color $blue
+			border-bottom 1px solid $blue
 			transition border $duration
 			&:hover
 				border-bottom-color transparent
-	&__item-orig
+	&__item-original
 		margin-top 23px
 		color #c8c8c8
 		font-size 14px
@@ -116,9 +127,32 @@
 		@media $tPortraitMax
 			margin-top 18px
 		a
-			color #2865d4
+			color $blue
 			border-bottom 1px solid transparent
 			transition border $duration
 			font-style italic
 			&:hover
-				border-bottom-color #2865d4
+				border-bottom-color $blue
+	&__item-gallery
+		display flex
+		flex-wrap wrap
+		gap 10px
+		width 100%
+	&__item-gallery-img
+		display block
+		width 146px
+		height 93px
+		background-repeat no-repeat
+		background-position center
+		background-size cover
+		border-radius 8px
+	&--card
+		& ^[0]__item
+			padding-top 0
+			padding-bottom 0
+		& ^[0]__item-text
+			margin-bottom 15px
+		& + .section-gallery--card
+			margin-top 40px
+			padding-top 40px
+			border-top 1px solid whitesmoke

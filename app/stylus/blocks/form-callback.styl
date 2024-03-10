@@ -6,7 +6,12 @@
 	&__row
 		display grid
 		grid-template-columns repeat(2, 1fr)
+		grid-template-rows auto
 		gap 24px
+	&__field
+		&.error
+			& ^[0]__field-input
+				border-color $red
 	&__field-label,
 	&__field-input
 		display block
@@ -16,6 +21,8 @@
 		font-size 12px
 		line-height 14px
 		padding-left 30px
+		span
+			color $red
 	&__field-input
 		width 100%
 		height 60px
@@ -26,7 +33,8 @@
 		font-weight 500
 		border-radius 30px
 		background-color #efefef
-		border none
+		border 1px solid transparent
+		transition border $duration
 		&:active
 			outline none
 	&__submit-btn
@@ -47,3 +55,94 @@
 				border-bottom-color transparent
 		&:first-child
 			margin-top 0
+	&--default,
+	&--popup
+		& ^[0]__field
+			&--user,
+			&--phone
+				position relative
+				&:after
+					@extend .psElem
+					right 30px
+					position absolute
+					background-repeat no-repeat
+					background-position center
+					transition background $duration
+					pointer-events none
+					z-index 1
+				& ^[0]__field-input
+					padding-right 50px
+			&--user
+				&:after
+					width 12px
+					height 14px
+					bottom 23px
+					background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAMAAAAsYw3eAAAAS1BMVEUAAAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qADQfelYAAAAGHRSTlMA8+XVbsTdtZWAR0MNCfrs0aaeeXUzKxM1axFhAAAAVElEQVQI12XLVw7AIAwDULOhQPfI/U9aaCqo1PcR2YqM4lom6cGypcJw0fQYUK1ctv8Hc80OLAWr9LuX5kj5NHIHIhVK1RvhqFGQ1GHsWYA+EETjb8LkCMhdvXbWAAAAAElFTkSuQmCC')
+			&--phone
+				&:after
+					width 15px
+					height 15px
+					bottom 22px
+					background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAVFBMVEUAAAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qABgr+mrAAAAG3RSTlMAKfPQLhz59+/n4NvWwr2XdzQkENKmhH1uIgtQ+vFsAAAAY0lEQVQI11WNVw6AMAzFAm3Ze4Pvf0+gCgX8E9mK9ERsUUbyYhOIP6GAX8DTBq9uNTb4emkjL6N+BzZI3DfUUN3Xdbv3IwdzDZbP7BADcw0h5CiZjjTqqShd6r2XB7eYbOrlBEJcCAHyb23AAAAAAElFTkSuQmCC')
+			&.error
+				&.form-callback__field--user
+					&:after
+						background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAMAAAAsYw3eAAAAQlBMVEUAAAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AADrQ2mHAAAAFXRSTlMA8+XVbgvE3bWVgHdHQ+zRpp4zKxNHlIkPAAAAUUlEQVQI12XMSRKAIAxE0ZAwK859/6uaAoUFb/cr1SH1HBsnalyA8i0sqrXG2WKZL7RDxf9DDmK/PfvLuduzjgqUCFShiE6IMRAGozFQNl16AW10B78uI1kvAAAAAElFTkSuQmCC')
+				&.form-callback__field--phone
+					&:after
+						background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAARVBMVEUAAAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD+SSDVAAAAFnRSTlMAKfP43tF5LiMc7+fWwr2XNBCmhG4LyryhIwAAAGJJREFUCNdVjlkOgCAMRKvsi4jb3P+oAsGC76d5k0mmREbKhQZGAOsUSOAXoLGzx6rKsOuiiQZHbzM3INwcbECs12nb/AmAKoPym7UrgLPUOAjo+D6Sugt+QzTPvOIu5VWmF6O0BnuaPAznAAAAAElFTkSuQmCC')
+				& ^[0]__field-warning
+					opacity 1
+					visibility visible
+		& ^[0]__field-label
+			color $default
+			font-size 14px
+			line-height 17px
+			font-weight 500
+		& ^[0]__field-input
+			background-color #fff
+			border 1px solid #d8d8d8
+			transition border $duration
+			&:focus,
+			&.not-empty
+				border-color $default
+		& ^[0]__field-warning
+			position absolute
+			top 2px
+			right 0
+			padding-right 30px
+			color $red
+			font-size 12px
+			line-height 14px
+			text-align right
+			pointer-events none
+			opacity 0
+			visibility hidden
+			transition opacity $duration, visibility $duration
+			z-index 1
+		& ^[0]__agreement
+			padding-left 0
+			text-align center
+	&--default
+		row-gap 8px
+		& ^[0]__row
+			align-items flex-end
+			grid-template-columns repeat(3, 1fr)
+		& ^[0]__agreement
+			margin-top 0
+	&--popup
+		row-gap 29px
+		text-align left
+		& ^[0]__row
+			display block
+		& ^[0]__submit-btn
+			font-size 14px
+			background-color #ffa800
+		& ^[0]__agreement
+			margin-top 13px
+			color #767676
+			font-size 12px
+			line-height 14px
+			a
+				color #767676
+				font-weight 600

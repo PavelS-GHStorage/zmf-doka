@@ -1,16 +1,26 @@
 .section-projects
-	padding-top 48px
-	padding-bottom 60px
+	padding-top 41px
+	padding-bottom 61px
+	background-color #fbfbfb
 	&__container
 		@extend .container
 	&__title
-		margin-bottom 24px
+		margin-bottom 27px
 	&__text
-		margin-bottom 48px
+		margin-bottom 54px
 	&__items
 		display grid
-		grid-template-columns repeat(2, 1fr)
-		gap 24px
+		grid-row-gap 59px
+	&__row
+		display grid
+		grid-template-columns 1fr 1fr
+		grid-template-rows auto
+		grid-column-gap 118px
+		padding-bottom 59px
+		border-bottom 1px solid #e8e8e8
+		&:last-child
+			padding-bottom 0
+			border-bottom none
 	&__card
 		display grid
 		gap 24px
@@ -26,13 +36,15 @@
 	&__card-row
 		display flex
 		justify-content space-between
-		margin-bottom 24px
+		align-items flex-start
+		margin-bottom 20px
 	&__card-title
 		color #222
 		font-size 28px
 		font-weight 600
 		line-height 32px
 	&__card-price
+		margin-top 5px
 		color #222
 		font-size 14px
 		line-height 24px
@@ -42,7 +54,7 @@
 			font-size 24px
 			font-weight 700
 	&__card-text
-		margin-bottom 24px
+		margin-bottom 26px
 		color #767676
 		font-size 16px
 		line-height 19px
@@ -57,6 +69,7 @@
 	&__card-more-btn
 		padding-left 55px
 		padding-right 55px
+		letter-spacing .04em
 	&__card-layouts-btn
 		display block
 		color #b3b3b3

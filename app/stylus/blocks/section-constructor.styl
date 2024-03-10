@@ -1,0 +1,257 @@
+.section-constructor
+	padding-top 48px
+	padding-bottom 60px
+	background-color #fbfbfb
+	&__container
+		@extend .container
+	&__title
+		margin-bottom 24px
+	&__text
+		margin-bottom 32px
+	&__indicator
+		display none
+		grid-row-gap 16px
+		margin-bottom 45px
+		padding 27px 36px
+		background-color white
+		border-radius 28px
+	&__indicator-items
+		display flex
+		column-gap 25px
+	&__indicator-item
+		width 100%
+		height 6px
+		background-color #e8e8e8
+		border-radius 3px
+		transition background $duration
+		&--active
+			background-color $accent
+	&__indicator-numbers
+		color $default
+		font-size 14px
+		line-height 17px
+		font-weight 400
+	&__item
+		position relative
+		margin-bottom 16px
+	&__info
+		display none
+		position absolute
+		top 0
+		right 0
+		z-index 2
+	&__info-total
+		margin-bottom 7px
+		color $default
+		font-size 24px
+		line-height 27px
+		font-weight 600
+	&__info-credit
+		font-size 14px
+		line-height 17px
+		color #777
+		font-weight 400
+		span
+			color $accent
+			font-weight 600
+	&__info-credit-price
+		span
+			margin-left 5px
+	&__steps
+		.swiper
+			padding-bottom 24px
+	&__step-top
+		min-height 68px
+		padding-right 300px
+		margin-bottom 30px
+	&__step-title
+		margin-bottom 10px
+		color $default
+		font-size 24px
+		line-height 27px
+		font-weight 600
+		&:last-child
+			margin-bottom 0
+	&__step-info
+		display inline-flex
+		align-items center
+		column-gap 8px
+		padding 6px 12px 6px 9px
+		color $default
+		font-size 12px
+		line-height 14px
+		font-weight 500
+		background-color white
+		border 1px solid $accent
+		border-radius 5px
+		&:before
+			@extend .psElem
+			flex-shrink 0
+			width 17px
+			height 17px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAMAAAAMs7fIAAAAYFBMVEUAAADxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQD////4xnr+8+P3vWX2tVPylgv+9+34zIj4y4b1sEcNch0eAAAAFXRSTlMA53Pu5Lvqbl5XDAr2vYBrUsK+ERDHLYgaAAAAfklEQVQY022P2RKDIAxFw6YFtXYLtXX7/780MbiO5yFMDpdJACZoZ0vr6gISXqGgHiLuuKFZ3HAPpT7mYFQBGo/k8Nya35eKg2wV/9hTtSC3s+AIlpKJDY4iKPPio41NElilWW03rLPe533OO/vLf1EqW554SIS8MmhcHbiZALgHEgKfmCPnAAAAAElFTkSuQmCC') no-repeat center
+	&__step-content
+		width 100%
+	&__options
+		display grid
+		grid-template-columns repeat(4, 1fr)
+		grid-template-rows auto
+		gap 24px
+	&__option
+		position relative
+		user-select none
+	&__option-input
+		position absolute
+		top 0
+		left 0
+		opacity 0
+		pointer-events none
+		&:checked ~ ^[0]__option-card
+			border-color $accent
+			&:after
+				opacity 1
+				visibility visible
+			& ^[0]__option-price
+				span
+					color $accent
+	&__option-card
+		display block
+		position relative
+		width 100%
+		height 416px
+		padding-bottom 36px
+		border 1px solid #e8e8e8
+		border-radius 6px
+		cursor pointer
+		transition border $duration
+		*
+			pointer-events none
+		&:after
+			@extend .psElem
+			position absolute
+			left 50%
+			bottom -21px
+			width 42px
+			height 42px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAMAAAAVBLyFAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA9g7iJvkjIOXciz0z8O7WXhgFsFCZUgAAAFpJREFUGNNljkkOACEIBHFlXGbt//91jAZJtE9QFARawrksxDqEjeDciPEbYaL3+YQcjcRWXEhWnEHIAM6Kw33oOxNnJAbgLgkITBLfGNSR3XlHPflQU3PV5gfdcAPhHbtgQAAAAABJRU5ErkJggg==') no-repeat center, $accent
+			border-radius 21px
+			transform translateX(-50%)
+			pointer-events none
+			opacity 0
+			visibility hidden
+			transition opacity $duration, visibility $duration
+			z-index 1
+		&:hover
+			border-color $accent
+			& ^[0]__option-price
+				span
+					color $accent
+	&__option-cover
+		width 100%
+		height 180px
+		margin-bottom 12px
+		background-repeat no-repeat
+		background-position center
+		background-size contain
+		border-top-left-radius 6px
+		border-top-right-radius 6px
+	&__option-img
+		max-width 100%
+		max-height 100%
+	&__option-title
+		margin-bottom 12px
+		text-align center
+		color $default
+		font-size 17px
+		line-height 19px
+		font-weight 600
+	&__option-properties
+		display grid
+		row-gap 8px
+		margin-bottom 12px
+		padding 12px 16px 20px
+		border-top 1px solid #F7F7F7
+		border-bottom 1px solid #F7F7F7
+	&__option-property
+		display grid
+		grid-template-columns 1fr 1fr
+		grid-template-rows auto
+	&__option-property-title,
+	&__option-property-data
+		font-size 14px
+		line-height 17px
+		font-weight 400
+	&__option-property-title
+		color #6e6e6e
+	&__option-property-data
+		color $default
+		font-weight 500
+	&__option-price
+		text-align center
+		color $default
+		font-size 17px
+		font-weight 500
+		line-height 25px
+		span
+			color #b1b1b1
+			font-size 25px
+			font-weight 600
+			transition color $duration
+	&__table
+		display grid
+		grid-row-gap 24px
+		margin-bottom 44px
+		padding-top 40px
+		padding-bottom 40px
+		border-top 1px solid #f1f1f1
+		border-bottom 1px solid #f1f1f1
+		&:last-child
+			margin-bottom 0
+	&__table-row
+		display grid
+		grid-template-columns 1fr 150px
+		grid-template-rows auto
+		grid-column-gap 24px
+	&__table-cell
+		color $default
+		font-size 18px
+		line-height 22px
+		font-weight 400
+		&--price
+			text-align right
+			font-weight 600
+	&__controls
+		display flex
+		justify-content flex-end
+		column-gap 30px
+	&__controls-button
+		display flex
+		align-items center
+		column-gap 15px 
+		padding 27px 65px
+		color white
+		font-size 14px
+		line-height 16px
+		font-weight 600
+		text-transform uppercase
+		border-radius 36px
+		transition opacity $duration
+		&:disabled
+			pointer-events none
+			opacity .7
+		&--prev
+			background-color #c9c9c9
+			&:before
+				@extend .psElem
+				flex-shrink 0
+				width 17px
+				height 15px
+				background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAS1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////+DmQsHAAAAGHRSTlMAvndQkoRxVPfHt5eWimr86cajn3hMKRT1+wcBAAAAVUlEQVQY02XLSw6AIBAE0VEQFQT/Wvc/qQuDyYy16ryk5c0vTlQegoIEWcEEnYJswTMXexm22HxFwSY9DKG0tSOIOEiiO2E01MP6p/HW5KATQ/tV5wPVywVw9TKZIQAAAABJRU5ErkJggg==') no-repeat center
+		&--next
+			background-color $accent
+			&:after
+				@extend .psElem
+				flex-shrink 0
+				width 17px
+				height 15px
+				background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAMAAADeWG8gAAAAS1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////+DmQsHAAAAGHRSTlMAvndMEOPfXBTny7ClnTjRzca1eEYyIwh3uFdeAAAAVUlEQVQY023MWQ6AIAxF0aIMIuA8vP2v1GhMTSv38+S1xJW4kWoGWkW2/xtNFavt0mPZfCWD26BbKKwNFzLgDvHqHOE7IQPgrZAdcHqjhSJfcaG8cgENJgWGDWNMRgAAAABJRU5ErkJggg==') no-repeat center

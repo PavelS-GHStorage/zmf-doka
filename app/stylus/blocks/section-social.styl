@@ -1,27 +1,12 @@
 .section-social
 	padding-top 52px
 	padding-bottom 48px
-	&--youtube
-		& ^[0]__grid
-			grid-template-columns 314px minmax(auto, 640px)
-		& ^[0]__gallery-items
-			grid-template-columns repeat(2, 1fr)
-			gap 24px
-	&--vk
-		& ^[0]__grid
-			grid-template-columns 340px minmax(auto, 640px)
-		& ^[0]__gallery-items
-			grid-template-columns repeat(3, 1fr)
-			gap 12px
 	&__container
 		@extend .container
 	&__grid
 		display grid
 		justify-content space-between
 		gap 24px
-	//&__col
-	//	&--head
-	//	&--body
 	&__title
 		margin-bottom 32px
 		color #262626
@@ -143,3 +128,27 @@
 			height 3px
 			border-radius 3px
 			background-color #777777
+	&--youtube
+		& ^[0]__grid
+			grid-template-columns 314px minmax(auto, 640px)
+			grid-template-rows auto
+		& ^[0]__gallery-items
+			grid-template-columns repeat(2, 1fr)
+			grid-template-rows auto
+			gap 24px
+	&--vk
+		& ^[0]__grid
+			grid-template-columns 340px minmax(auto, 640px)
+			grid-template-rows auto
+		& ^[0]__gallery-items
+			grid-template-columns repeat(3, 1fr)
+			grid-template-rows auto
+			gap 12px
+	&--reverse
+		& ^[0]__grid
+			grid-auto-flow dense
+			direction rtl
+		& ^[0]__col--head
+			text-align left
+		& ^[0]__btn
+			margin-right auto

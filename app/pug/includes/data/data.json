@@ -349,60 +349,443 @@
 	
 	"projects": [
 		{
-			"img": "projects/project.jpg",
-			"title": "Серия «Классика»",
-			"text": "Бани этой серии отличаются простотой и и приятным внешним видом, что позволяет им гармонично вписываться в любой ландшафт и интерьер. ",
-			"price": "306 400",
-			"layouts": "12 планировок"
+			"items": [
+				{
+					"img": "projects/project.jpg",
+					"title": "Серия «Классика»",
+					"text": "Бани этой серии отличаются простотой и и приятным внешним видом, что позволяет им гармонично вписываться в любой ландшафт и интерьер. ",
+					"price": "306 400",
+					"layouts": "12 планировок"
+				},
+				{
+					"img": "projects/project2.jpg",
+					"title": "Серия «Тайга»",
+					"text": "Отличительной особенностью бань “Тайга” является использование натуральных оттенков древесины, которые придают им неповторимый шарм и изысканность.",
+					"price": "406 400",
+					"layouts": "8 планировок"
+				}
+			]
 		},
 		{
-			"img": "projects/project2.jpg",
-			"title": "Серия «Тайга»",
-			"text": "Отличительной особенностью бань “Тайга” является использование натуральных оттенков древесины, которые придают им неповторимый шарм и изысканность.",
-			"price": "406 400",
-			"layouts": "8 планировок"
+			"items": [
+				{
+					"img": "projects/project3.jpg",
+					"title": "Серия «Урал»",
+					"text": "Уникальное сочетание традиций и современности. Баня выполнена из высококачественных материалов, что обеспечивает долговечность и надежность конструкции.",
+					"price": "506 400",
+					"layouts": "6 планировок"
+				},
+				{
+					"img": "projects/project4.jpg",
+					"title": "Серия «Таганай»",
+					"text": "Серия бань “Таганай” - это современные и функциональные бани, которые сочетают в себе традиции русского банного искусства и передовые технологии. ",
+					"price": "606 400",
+					"layouts": "7 планировок"
+				}
+			]
 		},
 		{
-			"img": "projects/project3.jpg",
-			"title": "Серия «Урал»",
-			"text": "Уникальное сочетание традиций и современности. Баня выполнена из высококачественных материалов, что обеспечивает долговечность и надежность конструкции.",
-			"price": "506 400",
-			"layouts": "6 планировок"
+			"items": [
+				{
+					"img": "projects/project5.jpg",
+					"title": "Серия «Аркаим»",
+					"text": "Бани “Аркаим” выполнены из натурального дерева, которое обеспечивает отличную теплоизоляцию и создает неповторимую атмосферу уюта.",
+					"price": "806 400",
+					"layouts": "6 планировок"
+				},
+				{
+					"img": "projects/project6.jpg",
+					"title": "Серия «Таганай 2.0.»",
+					"text": "Серия бань “Таганай 2.0” - это современное и стильное решение для тех, кто хочет создать уютную атмосферу в своем доме или на даче.",
+					"price": "906 400",
+					"layouts": "7 планировок"
+				}
+			]
 		},
 		{
-			"img": "projects/project4.jpg",
-			"title": "Серия «Таганай»",
-			"text": "Серия бань “Таганай” - это современные и функциональные бани, которые сочетают в себе традиции русского банного искусства и передовые технологии. ",
-			"price": "606 400",
-			"layouts": "7 планировок"
-		},
-		{
-			"img": "projects/project5.jpg",
-			"title": "Серия «Аркаим»",
-			"text": "Бани “Аркаим” выполнены из натурального дерева, которое обеспечивает отличную теплоизоляцию и создает неповторимую атмосферу уюта.",
-			"price": "806 400",
-			"layouts": "6 планировок"
-		},
-		{
-			"img": "projects/project6.jpg",
-			"title": "Серия «Таганай 2.0.»",
-			"text": "Серия бань “Таганай 2.0” - это современное и стильное решение для тех, кто хочет создать уютную атмосферу в своем доме или на даче.",
-			"price": "906 400",
-			"layouts": "7 планировок"
-		},
-		{
-			"img": "projects/project7.jpg",
-			"title": "Серия «Тайга 2.0»",
-			"text": "Бани “Тайга 2.0” выполнены из натурального дерева, которое обеспечивает отличную теплоизоляцию и создает неповторимую атмосферу уюта.",
-			"price": "1 106 400",
-			"layouts": "6 планировок"
-		},
-		{
-			"img": "projects/project8.jpg",
-			"title": "Серия «A-Frame»",
-			"text": "Серия бань “A-Frame” - это современное и стильное решение для тех, кто хочет создать уютную атмосферу в своем доме или на даче.",
-			"price": "1 906 400 ",
-			"layouts": "7 планировок"
+			"items": [
+				{
+					"img": "projects/project7.jpg",
+					"title": "Серия «Тайга 2.0»",
+					"text": "Бани “Тайга 2.0” выполнены из натурального дерева, которое обеспечивает отличную теплоизоляцию и создает неповторимую атмосферу уюта.",
+					"price": "1 106 400",
+					"layouts": "6 планировок"
+				},
+				{
+					"img": "projects/project8.jpg",
+					"title": "Серия «A-Frame»",
+					"text": "Серия бань “A-Frame” - это современное и стильное решение для тех, кто хочет создать уютную атмосферу в своем доме или на даче.",
+					"price": "1 906 400 ",
+					"layouts": "7 планировок"
+				}
+			]
 		}
-	]
+	],
+
+	"card": {
+		"slider": {
+			"big": [
+				"card/big-img.jpg",
+				"card/big-img.jpg",
+				"card/big-img.jpg",
+				"card/big-img.jpg"
+			],
+			"thumbs": [
+				"card/thumbs-img.jpg",
+				"card/thumbs-img.jpg",
+				"card/thumbs-img.jpg",
+				"card/thumbs-img.jpg"
+			]
+		},
+		"components": [
+			[
+				{
+					"title": "Панорманые окна с тройным стеклопакетом",
+					"ico": "components/component-ico.png",
+					"text": "Использование окон с тройным стеклопакетом позволяет эффективно сохранять тепло в помещении даже в сильные морозы. Тройной стеклопакет позволяет создать в доме панорамное остекление, окна и входные двери из ПВХ — двухкамерного стеклопакета и трёхкамерного профиля.",
+					"gallery": [
+						"components/component-img.jpg",
+						"components/component-img2.jpg",
+						"components/component-img3.jpg",
+						"components/component-img4.jpg"
+					]
+				},
+				{
+					"title": "Панорманые окна с тройным стеклопакетом",
+					"ico": "components/component-ico.png",
+					"text": "Использование окон с тройным стеклопакетом позволяет эффективно сохранять тепло в помещении даже в сильные морозы. Тройной стеклопакет позволяет создать в доме панорамное остекление, окна и входные двери из ПВХ — двухкамерного стеклопакета и трёхкамерного профиля.",
+					"gallery": [
+						"components/component-img.jpg",
+						"components/component-img2.jpg",
+						"components/component-img3.jpg",
+						"components/component-img4.jpg"
+					]
+				}
+			],
+			[
+				{
+					"title": "Панорманые окна с тройным стеклопакетом",
+					"ico": "components/component-ico.png",
+					"text": "Использование окон с тройным стеклопакетом позволяет эффективно сохранять тепло в помещении даже в сильные морозы. Тройной стеклопакет позволяет создать в доме панорамное остекление, окна и входные двери из ПВХ — двухкамерного стеклопакета и трёхкамерного профиля.",
+					"gallery": [
+						"components/component-img.jpg",
+						"components/component-img2.jpg",
+						"components/component-img3.jpg",
+						"components/component-img4.jpg"
+					]
+				},
+				{
+					"title": "Панорманые окна с тройным стеклопакетом",
+					"ico": "components/component-ico.png",
+					"text": "Использование окон с тройным стеклопакетом позволяет эффективно сохранять тепло в помещении даже в сильные морозы. Тройной стеклопакет позволяет создать в доме панорамное остекление, окна и входные двери из ПВХ — двухкамерного стеклопакета и трёхкамерного профиля.",
+					"gallery": [
+						"components/component-img.jpg",
+						"components/component-img2.jpg",
+						"components/component-img3.jpg",
+						"components/component-img4.jpg"
+					]
+				}
+			],
+			[
+				{
+					"title": "Панорманые окна с тройным стеклопакетом",
+					"ico": "components/component-ico.png",
+					"text": "Использование окон с тройным стеклопакетом позволяет эффективно сохранять тепло в помещении даже в сильные морозы. Тройной стеклопакет позволяет создать в доме панорамное остекление, окна и входные двери из ПВХ — двухкамерного стеклопакета и трёхкамерного профиля.",
+					"gallery": [
+						"components/component-img.jpg",
+						"components/component-img2.jpg",
+						"components/component-img3.jpg",
+						"components/component-img4.jpg"
+					]
+				},
+				{
+					"title": "Панорманые окна с тройным стеклопакетом",
+					"ico": "components/component-ico.png",
+					"text": "Использование окон с тройным стеклопакетом позволяет эффективно сохранять тепло в помещении даже в сильные морозы. Тройной стеклопакет позволяет создать в доме панорамное остекление, окна и входные двери из ПВХ — двухкамерного стеклопакета и трёхкамерного профиля.",
+					"gallery": [
+						"components/component-img.jpg",
+						"components/component-img2.jpg",
+						"components/component-img3.jpg",
+						"components/component-img4.jpg"
+					]
+				}
+			],
+			[
+				{
+					"title": "Панорманые окна с тройным стеклопакетом",
+					"ico": "components/component-ico.png",
+					"text": "Использование окон с тройным стеклопакетом позволяет эффективно сохранять тепло в помещении даже в сильные морозы. Тройной стеклопакет позволяет создать в доме панорамное остекление, окна и входные двери из ПВХ — двухкамерного стеклопакета и трёхкамерного профиля.",
+					"gallery": [
+						"components/component-img.jpg",
+						"components/component-img2.jpg",
+						"components/component-img3.jpg",
+						"components/component-img4.jpg"
+					]
+				},
+				{
+					"title": "Панорманые окна с тройным стеклопакетом",
+					"ico": "components/component-ico.png",
+					"text": "Использование окон с тройным стеклопакетом позволяет эффективно сохранять тепло в помещении даже в сильные морозы. Тройной стеклопакет позволяет создать в доме панорамное остекление, окна и входные двери из ПВХ — двухкамерного стеклопакета и трёхкамерного профиля.",
+					"gallery": [
+						"components/component-img.jpg",
+						"components/component-img2.jpg",
+						"components/component-img3.jpg",
+						"components/component-img4.jpg"
+					]
+				}
+			]
+		],
+		"products": [
+			{ "hasWatchVideo": true },
+			{ "hasWatchVideo": true },
+			{ "hasWatchVideo": true }
+		],
+		"layout": [
+			{ "img": "card/layout-1.jpg" },
+			{ "img": "card/layout-2.jpg" }
+		],
+		"gallery": [
+			{ "img": "card/1.jpg" },
+			{ "img": "card/2.jpg" },
+			{ "img": "card/3.jpg" },
+			{ "img": "card/4.jpg", "type": "video", "description": "Обзор бани A-Frame: впечатления от использования" },
+			{ "img": "card/5.jpg", "type": "video", "description": "Баня A-Frame: плюсы и минусы комплектации" }
+		],
+		"promotions": [
+			{
+				"title": "При покупке бани <strong>банная печь в подарок!</strong>",
+				"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+				"img": "promotion.png"
+			},
+			{
+				"title": "Стеклянная дверь <strong>в подарок!</strong>",
+				"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+				"img": "promotion2.png",
+				"dark": true
+			},
+			{
+				"title": "Стеклянная дверь <strong>в подарок!</strong>",
+				"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+				"img": "promotion2.png",
+				"dark": true
+			},
+			{
+				"title": "При покупке бани <strong>банная печь в подарок!</strong>",
+				"text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis.",
+				"img": "promotion.png"
+			}
+		],
+		"reviews": [
+			{ "img": "card/reviews/1.jpg" },
+			{ "img": "card/reviews/2.jpg" },
+			{ "img": "card/reviews/3.jpg" },
+			{ "img": "card/reviews/4.jpg" }
+		],
+		"reviewsGallery": [
+			{ "img": "card/5.jpg", "type": "video", "description": "Отзыв Алексея Михайловича о бане от компании Дока" },
+			{ "img": "card/5.jpg", "type": "video", "description": "Отзыв Алексея Михайловича о бане от компании Дока" },
+			{ "img": "card/5.jpg", "type": "video", "description": "Отзыв Алексея Михайловича о бане от компании Дока" }
+		]
+	},
+
+	"constructor": {
+		"first": [
+			{
+				"id": "step_size_1",
+				"img": "constructor/1.jpg",
+				"title": "До 4 человек",
+				"titleFull": "Чан на 4 человека – 1 400 литров (Чёрная сталь - 2мм)",
+				"properties": [
+					{"title": "Материал", "data": "Чёрная сталь"},
+					{"title": "Толщина", "data": "2 мм"},
+					{"title": "Диаметр", "data": "1800 мм"}
+				],
+				"price": "40 000"
+			},
+			{
+				"id": "step_size_2",
+				"img": "constructor/2.jpg",
+				"title": "До 6 человек",
+				"titleFull": "Чан на 6 человек – 1 400 литров (Чёрная сталь - 2мм)",
+				"properties": [
+					{"title": "Материал", "data": "Чёрная сталь"},
+					{"title": "Толщина", "data": "2 мм"},
+					{"title": "Диаметр", "data": "2000 мм"}
+				],
+				"price": "48 000"
+			},
+			{
+				"id": "step_size_3",
+				"img": "constructor/3.jpg",
+				"title": "До 10 человек",
+				"titleFull": "Чан на 10 человек – 1 400 литров (Чёрная сталь - 2мм)",
+				"properties": [
+					{"title": "Материал", "data": "Чёрная сталь"},
+					{"title": "Толщина", "data": "2 мм"},
+					{"title": "Диаметр", "data": "2350 мм"}
+				],
+				"price": "71 000"
+			},
+			{
+				"id": "step_size_4",
+				"img": "constructor/4.jpg",
+				"title": "До 10 человек",
+				"titleFull": "Чан на 10 человек – 1 400 литров (Чёрная сталь - 3мм)",
+				"properties": [
+					{"title": "Материал", "data": "Чёрная сталь"},
+					{"title": "Толщина", "data": "3 мм"},
+					{"title": "Диаметр", "data": "2350 мм"}
+				],
+				"price": "87 000"
+			},
+			{
+				"id": "step_size_5",
+				"img": "constructor/5.jpg",
+				"title": "До 4 человек",
+				"titleFull": "Чан на 4 человека – 1 400 литров (Нержавеющая сталь AISI304 - 2мм)",
+				"properties": [
+					{"title": "Материал", "data": "Нерж. сталь"},
+					{"title": "Толщина", "data": "2 мм (AISI 304)"},
+					{"title": "Диаметр", "data": "1800 мм"}
+				],
+				"price": "40 000"
+			},               
+			{
+				"id": "step_size_6",
+				"img": "constructor/6.jpg",
+				"title": "До 6 человек",
+				"titleFull": "Чан на 6 человек – 1 400 литров (Нержавеющая сталь AISI304 - 2мм)",
+				"properties": [
+					{"title": "Материал", "data": "Нерж. сталь"},
+					{"title": "Толщина", "data": "2 мм"},
+					{"title": "Диаметр", "data": "2000 мм"}
+				],
+				"price": "48 000"
+			},
+			{
+				"id": "step_size_7",
+				"img": "constructor/7.jpg",
+				"title": "До 10 человек",
+				"titleFull": "Чан на 10 человек – 1 400 литров (Нержавеющая сталь AISI304 - 2мм)",
+				"properties": [
+					{"title": "Материал", "data": "Нерж. сталь"},
+					{"title": "Толщина", "data": "2 мм"},
+					{"title": "Диаметр", "data": "2350 мм"}
+				],
+				"price": "71 000"
+			},
+			{
+				"id": "step_size_8",
+				"img": "constructor/8.jpg",
+				"title": "До 10 человек",
+				"titleFull": "Чан на 10 человек – 1 400 литров (Нержавеющая сталь AISI304 - 3мм)",
+				"properties": [
+					{"title": "Материал", "data": "Нерж. сталь"},
+					{"title": "Толщина", "data": "3 мм"},
+					{"title": "Диаметр", "data": "2350 мм"}
+				],
+				"price": "87 000"
+			}
+		],
+		"second": [
+			{
+				"id": "step_heat_1",
+				"img": "constructor/9.jpg",
+				"title": "Печь стационарная",
+				"titleFull": "Стационарная печь (Чёрная сталь - 3мм)",
+				"properties": [
+					{"title": "Материал", "data": "Чёрная сталь"},
+					{"title": "Толщина", "data": "35 Вт"},
+					{"title": "Диаметр", "data": "500 мм"}
+				],
+				"price": "37 000"
+			},
+			{
+				"id": "step_heat_2",
+				"img": "constructor/9.jpg",
+				"title": "Печь стационарная",
+				"titleFull": "Стационарная печь (Нержавеющая сталь AISI304 - 3мм)",
+				"properties": [
+					{"title": "Материал", "data": "Нерж. сталь"},
+					{"title": "Толщина", "data": "35 Вт"},
+					{"title": "Диаметр", "data": "500 мм"}
+				],
+				"price": "47 000"
+			},
+			{
+				"id": "step_heat_3",
+				"img": "constructor/9.jpg",
+				"title": "Печь стационарная",
+				"titleFull": "Стационарная печь (Чёрная сталь - 3мм)",
+				"properties": [
+					{"title": "Материал", "data": "Чёрная сталь"},
+					{"title": "Толщина", "data": "35 Вт"},
+					{"title": "Диаметр", "data": "500 мм"}
+				],
+				"price": "47 000"
+			},
+			{
+				"id": "step_heat_4",
+				"img": "constructor/9.jpg",
+				"title": "Печь стационарная",
+				"titleFull": "Стационарная печь (Чёрная сталь - 3мм)",
+				"properties": [
+					{"title": "Материал", "data": "Чёрная сталь"},
+					{"title": "Толщина", "data": "35 Вт"},
+					{"title": "Диаметр", "data": "500 мм"}
+				],
+				"price": "47 000"
+			}
+		],
+		"third": [
+			{
+				"id": "step_options_1",
+				"img": "constructor/10.jpg",
+				"title": "Отделка деревом",
+				"titleFull": "Отделка деревом",
+				"properties": [
+					{"title": "Материал", "data": "Липа"},
+					{"title": "Толщина", "data": "Антигниль"},
+					{"title": "Диаметр", "data": "5000 мм"}
+				],
+				"price": "37 000"
+			},
+			{
+				"id": "step_options_2",
+				"img": "constructor/11.jpg",
+				"title": "Лестница из лиственницы",
+				"titleFull": "Лестница из лиственницы",
+				"properties": [
+					{"title": "Материал", "data": "Лиственница"},
+					{"title": "Толщина", "data": "75 см"},
+					{"title": "Диаметр", "data": "50 см"}
+				],
+				"price": "47 000"
+			},
+			{
+				"id": "step_options_3",
+				"img": "constructor/12.jpg",
+				"title": "Металлическая лестница",
+				"titleFull": "Металлическая лестница",
+				"properties": [
+					{"title": "Материал", "data": "Нерж. сталь"},
+					{"title": "Толщина", "data": "75 см"},
+					{"title": "Диаметр", "data": "50 см"}
+				],
+				"price": "67 000"
+			},
+			{
+				"id": "step_options_4",
+				"img": "constructor/13.jpg",
+				"title": "Встраиваемый столик",
+				"titleFull": "Встраиваемый столик",
+				"properties": [
+					{"title": "Материал", "data": "Липа"},
+					{"title": "Толщина", "data": "Антигниль"},
+					{"title": "Диаметр", "data": "5000 мм"}
+				],
+				"price": "17 000"
+			}
+		]
+	}
 }

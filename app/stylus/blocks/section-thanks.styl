@@ -1,0 +1,45 @@
+.section-thanks
+	padding-top 9px
+	padding-bottom 70px
+	&__container
+		@extend .container
+	&__title
+		margin-bottom 7px
+		color $default
+		font-size 60px
+		line-height 85px
+		font-weight 700
+		text-transform uppercase
+	&__text
+		margin-bottom 21px
+		color #818181
+		font-size 18px
+		line-height 22px
+		font-weight 400
+	// &__info
+	&__info-text
+		margin-bottom 10px
+		color #818181
+		font-size 18px
+		line-height 22px
+		font-weight 400
+	&__info-phone
+		display inline-flex
+		align-items center
+		column-gap 12px
+		margin-bottom 3px
+		color $default
+		font-size 24px
+		line-height 27px
+		font-weight 600
+		&:before
+			@extend .psElem
+			flex-shrink 0
+			width 11px
+			height 17px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAARCAMAAAA8P6bpAAAAZlBMVEUAAAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD14+nfAAAAIXRSTlMA8OfKgTCE1PJy9bite3dXTfnq3Nu/o5iQemxqNiQgFAoAOuxkAAAAZElEQVQI15XLORKDMBQE0f6yjCR277th7n9JKFBCyAumOhnozlo8ode18LNaNacLq0bolftfIp/7aKjY1dtvyj0Y0R1WIWLmnKvCPIbeQPuDsUQBuH0hiV7Bt5/U3FVBF7V4MAGK/QavdS5BGQAAAABJRU5ErkJggg==') no-repeat center
+	&__info-subtext
+		color #78766f
+		font-size 10px
+		line-height 12px
+		font-style italic

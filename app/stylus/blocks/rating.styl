@@ -6,6 +6,7 @@
 	height 19px
 	user-select none
 	overflow hidden
+	z-index 1
 	&:before
 		@extend .psElem
 		position absolute
@@ -23,6 +24,7 @@
 		background-color #ffcd06
 		transition width $duration
 		z-index -1
-	&--history
+	&--history,
+	&--card
 		margin-left -2px
 		margin-right 16px

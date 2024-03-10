@@ -5,17 +5,19 @@
 		+e('p').text.common-subtext Выберите один из 100+ готовых решений или закажите индивидуальный проект. Все размеры представленные на сайте в наличии и 
 			strong устанавливаются за 1 день
 		+e.items
-			each item in projects
-				+e.item
-					+e.card
-						+e('a')(href="#" style="background-image: url('" + rootPath + item.img + "');").card-cover
-						+e.card-content
-							+e.card-row
-								+e('a')(href="#").card-title #{item.title}
-								+e('p').card-price от 
-									span #{item.price}
-									|  ₽
-							+e.card-text #{item.text}
-							+e.card-buttons
-								+e('a')(href="#").card-more-btn.btn.--secondary Подробнее о проекте
-								+e('a')(href="#").card-layouts-btn #{item.layouts}
+			each row in projects
+				+e.row
+					each item in row.items
+						+e.item
+							+e.card
+								+e('a')(href="#" style="background-image: url('" + rootPath + item.img + "');").card-cover
+								+e.card-content
+									+e.card-row
+										+e('a')(href="#").card-title #{item.title}
+										+e('p').card-price от 
+											span #{item.price}
+											|  ₽
+									+e.card-text #{item.text}
+									+e.card-buttons
+										+e('a')(href="#").card-more-btn.btn.--secondary.--large Подробнее о проекте
+										+e('a')(href="#").card-layouts-btn #{item.layouts}

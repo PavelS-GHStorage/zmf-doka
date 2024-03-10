@@ -1,0 +1,18 @@
+mixin section-components()
+	+b('section').section-components&attributes(attributes)
+		+e.items
+			each row in card.components
+				+e.item-row
+					each item in row
+						+e.item
+							+e.item-head
+								+e.item-overico
+									+e('img')(src=rootPath+item.ico alt="").item-ico
+								+e('p').item-title #{item.title}
+								+e('button')(type="button").item-toggle.js-component-toggle
+							+e.item-body
+								+e.item-text #{item.text}
+								+e.item-gallery.js-gallery
+									each img in item.gallery
+										+e.item-gallery-element
+											+e('a')(href=rootPath+img style="background-image: url('" + rootPath + img + "');").item-gallery-img

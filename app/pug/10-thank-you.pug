@@ -1,0 +1,67 @@
+extends includes/template/base.pug
+
+block variables
+	- const title = 'Благодарим за заявку';
+	- const rootPath = 'static/images/';
+	- const breadcrumbsData = [ 'Главная', title];
+	- const mainClass = 'main--gray';
+
+block main
+
+	+breadcrumbs(breadcrumbsData, true)
+
+	+b('section').section-thanks
+		+e.container
+			+e('h1').title Спасибо </br> за Вашу заявку
+			+e('p').text Мы свяжемся с Вами в течение 15 минут!
+			+e.info
+				+e('p').info-text Если у Вас срочный вопрос и ждать нельзя, скорее звоните нам:
+				+e('a')(href="tel:88006003499").info-phone 8 800 600 34 99
+				+e('p').info-subtext Бесплатный звонок по всей России
+
+	+b('section').section-waiting
+		+e.container
+			+e('h3').title.common-title-h3
+				strong А пока Вы ожидаете звонка...
+			+e.rows
+				+e.row
+					+b('section').section-social.--youtube
+						+e.grid
+							+e.col.--head
+								+e('h3').title Ещё больше полезной информации 
+									strong в нашем Youtube канале
+								+e('a')(href="#").btn.--youtube Youtube - подпишитесь
+								+e('p').text Канал СК "Дока" - расскажем все о каркасном строительстве. О том как выбрать качественную баню / функциональный дом или построить всё самому.
+							+e.col.--body
+								+e.gallery-items
+									+e.gallery-item
+										+e.gallery-card
+											+e('a')(href="#" style="background-image: url('" + rootPath + "/social/video-ytb.jpg');").gallery-card-video
+												span
+											+e('a')(href="#").gallery-card-title Какую баню выбрать: каркасную или из бруса/бревна?
+											+e('ul').gallery-card-props
+												+e('li').gallery-card-prop 8,8 тыс. просмотров
+												+e('li').gallery-card-prop 2 года назад
+									+e.gallery-item
+										+e.gallery-card
+											+e('a')(href="#" style="background-image: url('" + rootPath + "/social/video-ytb2.jpg');").gallery-card-video
+												span
+											+e('a')(href="#").gallery-card-title Бюджетная и функциональная баня классической серии 4х5 метра!
+											+e('ul').gallery-card-props
+												+e('li').gallery-card-prop 4,9 тыс. просмотров
+												+e('li').gallery-card-prop 11 месяцев назад
+				+e.row
+					+b('section').section-social.--vk.--reverse
+						+e.grid
+							+e.col.--head
+								+e('h3').title Ещё больше фото и полезных обзоров 
+									strong в нашей группе ВКонтакте
+								+e('a')(href="#").btn.--vk Вконтакте - присоединяйтесь
+								+e('p').text Группа СК "ДОКА" в ВКОНТАКТЕ - расскажем все о каркасном строительстве. О том как выбрать качественную баню / функциональный дом или построить всё самому.
+							+e.col.--body
+								+e.gallery-items
+									- for(let i = 1; i < 7; i++)
+										+e.gallery-item
+											+e('a')(href="#" style="background-image: url('" + rootPath + "/social/photo-" + i + ".jpg');").gallery-photo
+
+	+section-articles({items: articles.min, hasLinkAll: true})(class="bg-white")

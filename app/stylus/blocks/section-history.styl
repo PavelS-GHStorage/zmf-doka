@@ -40,7 +40,7 @@
 		.swiper-button-prev,
 		.swiper-button-next
 			margin 0
-			transform: translateY(calc(-50% + 4px))
+			transform translateY(calc(-50% + 4px))
 	&__card-gallery-overimg
 		display flex
 		justify-content center
@@ -78,6 +78,7 @@
 	&__card-items
 		display grid
 		grid-template-columns repeat(3, 1fr)
+		grid-template-rows auto
 		gap 24px 48px
 	&__card-item-title
 		margin-bottom 5px
@@ -91,12 +92,13 @@
 		font-weight 700
 		span
 			margin-left 8px
-			color #222222
+			color $default
 			font-size 18px
 			line-height 24px
 	&__card-props
 		display grid
 		grid-template-columns repeat(2, minmax(0, 1fr))
+		grid-template-rows auto
 		gap 10px 62px
 	&__card-prop
 		display flex
@@ -109,7 +111,6 @@
 		color #8c8c8c
 		padding-right 4px
 	&__card-prop-data
-		color #222222
 		font-weight 600
 		word-break break-word
 	&__card-video

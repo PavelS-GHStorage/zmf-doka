@@ -1,0 +1,237 @@
+extends includes/template/base.pug
+
+block variables
+	- const title = 'Бани - Баня серии «A-Frame» 6х7';
+	- const rootPath = 'static/images/';
+	- const breadcrumbsData = [ 'Главная', 'Бани', 'Серия «A-Frame»', 'Баня серии «A-Frame» 6х7' ];
+	- const mainClass = 'main--gray';
+
+block main
+	
+	+breadcrumbs(breadcrumbsData, true)
+	
+	+b('section').section-card
+		.container
+			+e.main
+				+e.head
+					+e.head-row
+						+e('h1').title Каркасная баня «A-frame»
+						+e('ul').info
+							+e('li').info-item
+								strong Рассрочка 
+								| + помощь в оформлении
+					+e.head-row
+						+e.gallery
+							+e('a')(href="#").favorite 55
+							+e.gallery-big
+								.swiper-container
+									.swiper.js-swiper-card-gallery-big
+										.swiper-wrapper
+											each img in card.slider.big
+												.swiper-slide
+													+e.gallery-overimg
+														+e('img')(src=(rootPath + img) alt="").gallery-img
+									.swiper-button-prev
+									.swiper-button-next
+							+e.gallery-thumbs
+								.swiper.js-swiper-card-gallery-thumbs
+									.swiper-wrapper
+										each img in card.slider.thumbs
+											.swiper-slide
+												+e.gallery-overimg
+													+e('img')(src=(rootPath + img) alt="").gallery-img
+				+e.content
+					+e('p').content-title Характеристики  проекта
+					+e.content-rows
+						+e.content-row
+							+e.properties
+								+e.property
+									+e('p').property-title Площадь:
+									+e('p').property-data 49 м²
+								+e.property
+									+e('p').property-title Технология:
+									+e('p').property-data Каркасная
+								+e.property
+									+e('p').property-title Размеры:
+									+e('p').property-data 6х7 м
+								+e.property
+									+e('p').property-title Материалы:
+									+e('p').property-data Брус клееный сухой
+								+e.property
+									+e('p').property-title Срок стройки:
+									+e('p').property-data 35 дней
+								+e.property
+									+e('p').property-title Высота потолков:
+									+e('p').property-data 2 м
+								+e.property
+									+e('p').property-title Этажей:
+									+e('p').property-data 2
+								+e.property
+									+e('p').property-title Вместимость:
+									+e('p').property-data до 7 человек
+						+e.content-row
+							+e.text Баня A-frame представляет собой уникальное архитектурное решение, выполненное в виде двускатной треугольной конструкции. Внутренние помещения отличаются комфортностью и стильным внешним видом. Идеальный выбор для семейного или дружеского отдыха.
+						+e.content-row
+							+e.advantages
+								+e.advantage
+									+e.advantage-overico
+										+e('img').advantage-ico(src="static/images/advantage-ico3.png" alt="")
+									+e('p').advantage-text
+										strong Гарантия 5 лет<br>
+										| на все строительные работы по договору
+								+e.advantage
+									+e.advantage-overico
+										+e('img').advantage-ico(src="static/images/advantage-ico4.png" alt="")
+									+e('p').advantage-text
+										strong Всесезонная доставка<br>
+										| независимо от погодных условий и сезона
+						+e.content-row
+							+e.prices
+								+e.price
+									+e('p').price-label Стоимость:
+									+e('p').price-item от 
+										strong 950 000
+										|  ₽
+								+e.price.--credit
+									+e('p').price-label Рассрочка:
+									+e('p').price-item от 
+										strong 31 000
+										|  ₽/мес.
+							+e.buttons
+								+e('a')(href="#").order-btn.btn.--accent Хочу такую баню
+								+e('a')(href="#").watch-video-btn
+									i
+									span
+										strong Посмотрите обзор
+										| Вашей бани
+			+e.tabs
+				+e.tabs-controls
+					+e.tabs-control
+						+e('button')(type="button" data-tab-btn="0").tabs-controls-button.btn.active.js-tabs-card Что входит в стоимость
+					+e.tabs-control
+						+e('button')(type="button" data-tab-btn="1").tabs-controls-button.btn.js-tabs-card Планировка
+					+e.tabs-control
+						+e('button')(type="button" data-tab-btn="2").tabs-controls-button.btn.js-tabs-card Комплектации
+					+e.tabs-control
+						+e('button')(type="button" data-tab-btn="3").tabs-controls-button.btn.js-tabs-card Доп. услуги
+					+e.tabs-control
+						+e('button')(type="button" data-tab-btn="4").tabs-controls-button.btn.js-tabs-card Фото-видео
+					+e.tabs-control
+						+e('button')(type="button" data-tab-btn="5").tabs-controls-button.btn.js-tabs-card Акции
+					+e.tabs-control
+						+e('button')(type="button" data-tab-btn="6").tabs-controls-button.btn.js-tabs-card Отзывы
+				
+				+e.tabs-items
+					+e.tabs-item.active(data-tab-item="0")
+						+e.tabs-item-container
+							+e('h3').tabs-item-title Стандарная комплектация бани 
+								strong «A-frame»
+							+e.tabs-item-content
+								+section-components()
+
+					+e.tabs-item(data-tab-item="1")
+						+e.tabs-item-container
+							+e('h3').tabs-item-title Планировка бани «A-frame» 6х7
+							+e.tabs-item-content
+								+b('section').section-gallery.--card
+									+e.items
+										each item in card.layout
+											+e.item
+												+e('a')(href=(rootPath + item.img) style="background-image: url('"+ rootPath + item.img +"');").item-card
+
+					+e.tabs-item(data-tab-item="2")
+						+e.tabs-item-container
+							+e('h3').tabs-item-title Комплектации бани «A-frame»
+							+e.tabs-item-content
+								+section-products-tile(card.products)(class="--card")
+
+					+e.tabs-item(data-tab-item="3")
+						+e.tabs-item-container
+							+e('h3').tabs-item-title Дополнительные услуги проекта (отдельная оплата)
+							+e.tabs-item-content
+								+section-components()
+
+					+e.tabs-item(data-tab-item="4")
+						+e.tabs-item-container
+							+e('h3').tabs-item-title Фотографии и видео бани 
+								strong «A-frame»
+							+e.tabs-item-content
+								+b('section').section-gallery.--card
+									+e.items
+										each item in card.gallery
+											+e.item
+												+e('a').item-card(href=(rootPath + item.img) style="background-image: url('"+ rootPath + item.img +"');" class=(item.type === "video" ? '--video' : ''))
+													if (item.type === "video")
+														+e('span').item-card-play
+												if (item.description)
+													+e('p').item-description #{item.description}
+
+					+e.tabs-item(data-tab-item="5")
+						+e.tabs-item-container
+							+e('h3').tabs-item-title На комплектацию распространяются следующие акции и скидки
+							+e.tabs-item-content
+								+b('section').section-promotions.--card
+									+e.items
+										each item in card.promotions
+											+e.item
+												+e.item-card(class=(item.dark ? '--dark' : ''))
+													+e.item-card-content
+														+e.item-card-title !{item.title}
+														+e.item-card-text #{item.text}
+														+e('a')(href="#").item-card-button.btn Перейти к акции
+													+e.item-card-overimg
+														+e('img')(src=(rootPath + item.img) alt="").item-card-img
+
+					+e.tabs-item(data-tab-item="6")
+						+e.tabs-item-container
+							+e('h3').tabs-item-title Познакомьтесь с отзывами о бани данной серии
+							+e.tabs-item-content
+								+b('section').reviews.--card
+									+e.item
+										+e.item-left
+											+e.item-overphoto
+												+e('img')(src=rootPath+"review-photo.jpg" alt="").item-photo
+											+e.item-left-bottom
+												+e('p').item-author Елена П.
+												+e('a')(href="#" target="_blank").item-href https://vk.com/client_id
+										+e.item-right
+											+e.item-right-top
+												+e.item-title «Все сделано качественно, функционально и красиво»
+												+e.item-rating
+													+b.rating.--card
+														+e.ind(style="width: 100%;")
+													+e('time').item-date 23 августа 2023 года
+												+e.item-original Оригинал отзыва: 
+													a(href="https://yandex.ru/profile/205129461060" target="_blank") https://yandex.ru/profile/205129461060
+											+e.item-text Хотела поблагодарить компанию Дока за нашу баню, мы в полном восторге, пользуемся ею около двух месяцев, все сделано качественно, функционально и красиво, печь отличная, внутренняя каменка дает мягкий необжигающий жар. Вообщем, теперь в выходные мы наслаждаемся баней. Отдельное спасибо менеджеру Максиму за то, что учел все наши пожелания!!! Процветания вашей компании и довольных клиентов!
+											+e.item-gallery
+												each item in card.reviews
+													+e.item-gallery-element
+														+e('a')(href=(rootPath + item.img) style="background-image: url('" + rootPath + item.img + "');").item-gallery-img
+
+								+b('section').section-gallery.--card
+									+e.items
+										each item in card.reviewsGallery
+											+e.item
+												+e('a').item-card(href=(rootPath + item.img) style="background-image: url('"+ rootPath + item.img +"');" class=(item.type === "video" ? '--video' : ''))
+													if (item.type === "video")
+														+e('span').item-card-play
+												if (item.description)
+													+e('p').item-description #{item.description}
+
+	include includes/blocks/section-reviews.pug
+	+section-promotions({items: promotions, hasSlider: true})
+	include includes/blocks/section-materials.pug
+	include includes/blocks/section-methodology.pug
+	include includes/blocks/section-social-youtube.pug
+	include includes/blocks/section-delivery.pug
+	include includes/blocks/section-history.pug
+	include includes/blocks/section-excursion.pug
+	include includes/blocks/section-faq.pug
+	include includes/blocks/section-gallery.pug
+	include includes/blocks/section-social-vk.pug
+	include includes/blocks/section-specialists.pug
+	+section-contacts()
+	include includes/blocks/section-seo.pug
+	+section-articles({items: articles.min, hasLinkAll: true})
+

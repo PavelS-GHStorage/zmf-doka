@@ -1,0 +1,74 @@
+.popup
+	display flex
+	flex-direction column
+	position relative
+	width 100vw
+	height 100vh
+	padding 60px 15px
+	background-color #fbfbfb
+	overflow hidden scroll
+	z-index 1
+	&__logo
+		position fixed
+		left 30px
+		top 30px
+		width 137px
+		height 49px
+		user-select none
+		transition opacity $duration
+		z-index 1
+		@media $mLandscapeMax
+			display none
+		&:hover
+			opacity .8
+	&__container
+		display flex
+		flex-direction column
+		align-items center
+		width 100%
+		max-width 448px
+		margin auto
+	&__title,
+	&__text
+		text-align center
+	&__title
+		color $default
+		font-size 30px
+		line-height 35px
+		margin-bottom 14px
+		@media $mLandscapeMax
+			font-size 22px
+			line-height 25px
+		strong
+			font-weight 600
+	&__text
+		color #767676
+		font-size 16px
+		line-height 20px
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 17px
+	&__content
+		margin-top 35px
+
+	.mfp-close
+		position fixed
+		right 30px
+		top 30px
+		width 32px
+		height 32px
+		background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAS1BMVEUAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiKfWZvrAAAAGHRSTlMAlpR0EQ7k3YF7dadzVDYsF+zJwbpgQgfPjboBAAAAq0lEQVQ4y6WSyQ7DIAxEx2nCkmbr7v//0pZKyBLjcqkvHN6zAY2BOYYMr145XB9A0k+Jw0cp5ImL+sYkX3BGUDOovwhZzWCuGzA4xlT5CXAM4zPgGaP1ozGIk0H3k0H9taQazft4BvWTQZwM4mTExcX2P5Uu7+0HG8xjY3C+lC3lTwblJ2a4nGdMf+4HjHvpN5xnrDDuGjfc+/uRsJZj+Zn+AeyD7HBrk3TgDUhAJVgJzRoFAAAAAElFTkSuQmCC') no-repeat center
+		cursor pointer
+		font-size 0
+		color transparent
+		opacity 1
+		transition opacity $duration
+		cursor pointer
+		z-index 1
+		&:hover
+			opacity .8
+		&:active
+			top 30px
+		@media $desktopMax
+			right 15px
+

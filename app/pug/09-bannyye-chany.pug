@@ -1,0 +1,179 @@
+extends includes/template/base.pug
+
+block variables
+	- const title = 'Банные чаны';
+	- const rootPath = 'static/images/';
+	- const breadcrumbsData = ['Главная', title];
+
+block main
+
+	+section-head({
+		breadcrumbs: breadcrumbsData, 
+		img: "static/images/announces/announce-img2.png"
+	})
+	include includes/blocks/section-reviews.pug
+
+	+b('section').section-constructor
+		+e.container
+			+e('h2').title.common-title-h2
+				strong Соберите свой уникальный банный чан
+			+e('p').text.common-subtext Предлагаем широкую кастомизацию наших банных чанов, позволяя Вам выбрать размер, форму и дизайн, который идеально подойдет для Вашего участка и потребностей
+			//
+				"data-credit-months" - количество месяцев для рассрочки, по умолчанию "6"
+				"data-credit-percent" - процент перелаты по рассрочке от обещей суммы, по умолчанию "10"
+				"(общая сумма + ((общая сумма * проценты по рассрочки)/100)) / количество месяцев для рассрочки"
+				"10 000р + ((10 000р * 10%) / 100) / 6 мес" = 1 833 р/мес
+			+e.content(
+				data-credit-months="6"
+				data-credit-percent="10"
+			).js-constructor
+				+e.indicator
+					+e.indicator-items
+					+e.indicator-numbers Шаг 
+						+e('span').indicator-number.--active
+						|  из 
+						+e('span').indicator-number.--all
+				+e.item
+					+e.info
+						+e.info-total Итого: 
+							+e('span').info-total-price 0
+							|  ₽
+						+e.info-credit Рассрочка: 
+							+e('span').info-credit-price 0
+							span  ₽/мес.
+					+e.steps
+						.swiper
+							.swiper-wrapper
+								.swiper-slide(data-step="size")
+									+e.step
+										+e.step-top
+											+e('h3').step-title Выберите подходящий размер Вашего чана
+											+e('p').step-info Выберите один вариант
+										+e.step-content
+											+e.options
+												each item in constructor.first
+													+e.option
+														+e('input')(
+															type="radio"
+															id=item.id
+															name="size"
+															data-price=item.price
+															data-title=item.titleFull
+														).option-input
+														+e('label')(for=item.id).option-card
+															+e('div').option-cover(style="background-image: url('" + rootPath + item.img + "');")
+															+e('div').option-content
+																+e('p').option-title #{item.title}
+																+e('div').option-properties
+																	each property in item.properties
+																		+e('div').option-property
+																			+e('p').option-property-title #{property.title}
+																			+e('p').option-property-data #{property.data}
+																+e('p').option-price
+																	span #{item.price}
+																	|  ₽
+								.swiper-slide(data-step="heat")
+									+e.step
+										+e.step-top
+											+e('h3').step-title Выберите подходящий способ нагрева
+											+e('p').step-info Выберите один вариант
+										+e.step-content
+											+e.options
+												each item in constructor.second
+													+e.option
+														+e('input')(
+															type="radio"
+															id=item.id
+															name="heat"
+															data-price=item.price
+															data-title=item.titleFull
+														).option-input
+														+e('label')(for=item.id).option-card
+															+e('div').option-cover(style="background-image: url('" + rootPath + item.img + "');")
+															+e('div').option-content
+																+e('p').option-title #{item.title}
+																+e('div').option-properties
+																	each property in item.properties
+																		+e('div').option-property
+																			+e('p').option-property-title #{property.title}
+																			+e('p').option-property-data #{property.data}
+																+e('p').option-price
+																	span #{item.price}
+																	|  ₽
+								.swiper-slide(data-step="options")
+									+e.step
+										+e.step-top
+											+e('h3').step-title Выберите дополнительные опции
+											+e('p').step-info выберите один или несколько вариантов
+										+e.step-content
+											+e.options
+												each item in constructor.third
+													+e.option
+														+e('input')(
+															type="checkbox"
+															id=item.id
+															name="options"
+															data-price=item.price
+															data-title=item.titleFull
+														).option-input
+														+e('label')(for=item.id).option-card
+															+e('div').option-cover(style="background-image: url('" + rootPath + item.img + "');")
+															+e('div').option-content
+																+e('p').option-title #{item.title}
+																+e('div').option-properties
+																	each property in item.properties
+																		+e('div').option-property
+																			+e('p').option-property-title #{property.title}
+																			+e('p').option-property-data #{property.data}
+																+e('p').option-price
+																	span #{item.price}
+																	|  ₽
+								.swiper-slide
+									+e.step
+										+e.step-top
+											+e('h3').step-title Проверьте, всё ли верно?
+										+e.step-content
+											+e.table
+											+e.callback
+												+b('form').form-callback.--default
+													+e('input')(type="hidden" data-id="selected-options-data").field-input
+													+e.row
+														+e.field.--user
+															+e('label').field-label Введите имя:
+																span *
+															+e('input')(type="text" data-req="required").field-input
+														+e.field.--phone
+															+e('label').field-label Введите номер телефона:
+																span *
+															+e('input')(type="text" placeholder="+7 ___ ___ __ __" data-req="required").field-input.js-phone
+														+e.field
+															+e('button')(type="submit").submit-btn.btn.--accent.--large Запишитесь на экскурсию
+													+e.row
+														+e.field
+														+e.field
+														+e.field
+															+e('p').agreement Заполняя данную форму, я даю согласие на обработку моих персональных данных и принимаю условия 
+																a(href="#" target="_blank") 
+																	strong политики
+				+e.controls
+					+e.controls-item
+						+e('button')(type="button" data-direction="prev" disabled).controls-button.--prev Назад
+					+e.controls-item
+						+e('button')(type="button" data-direction="next" disabled).controls-button.--next Далее
+
+	include includes/blocks/section-projects.pug
+	+section-promotions({items: promotions, hasSlider: true})
+	include includes/blocks/section-materials.pug
+	include includes/blocks/section-methodology.pug
+	include includes/blocks/section-social-youtube.pug
+	include includes/blocks/section-delivery.pug
+	include includes/blocks/section-history.pug
+	include includes/blocks/section-excursion.pug
+	include includes/blocks/section-faq.pug
+	include includes/blocks/section-gallery.pug
+	include includes/blocks/section-social-vk.pug
+	include includes/blocks/section-specialists.pug
+	+section-contacts()
+	include includes/blocks/section-seo.pug
+	+section-articles({items: articles.min, hasLinkAll: true})
+

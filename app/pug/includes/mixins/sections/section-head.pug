@@ -1,7 +1,8 @@
 mixin section-head(data)
 	- const breadcrumbs = data && (typeof data.breadcrumbs !== 'undefined') ? data.breadcrumbs : false;
+	- const img = data && (typeof data.img !== 'undefined') ? data.img : "static/images/announces/announce-img.png";
 	
-	+b('section').section-head(style="background-image: url('static/images/bg.png')")
+	+b('section').section-head(style="background-image: url('static/images/announces/announces-bg.png');")
 		+e.container
 			if (breadcrumbs)
 				+e.breadcrumbs
@@ -48,3 +49,4 @@ mixin section-head(data)
 					+e('p').advantage-text
 						strong Гарантия 5 лет<br>
 						| на все строительные работы по договору
+			+e.img(style="background-image: url('" + img + "');")

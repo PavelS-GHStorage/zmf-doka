@@ -48,18 +48,314 @@ $(function () {
 
 		init: function init() {
 			const _th = this;
+			var formFields = $(".form__field-input, .form__field-textarea, .form-callback__field-input");
+			var formFieldPhone = $(".js-phone");
 
+
+			if (formFieldPhone.length) {
+				formFieldPhone.mask("+7(999) 999-9999");
+			}
+
+			if (formFields.length) {
+        formFields.each(function () {
+          const _t = $(this);
+          const _tParent = _t.parents('[class*="__field"]');
+
+					if (_t.val().trim() === "") {
+						_tParent.removeClass("not-empty");
+						
+						return;
+					}
+
+					_tParent
+						.removeClass("error")
+						.addClass("not-empty");
+        });
+
+        formFields.on("blur keyup", function () {
+          const _t = $(this);
+          const _tParent = _t.parents('[class*="__field"]');
+          
+					setTimeout(function () {
+            if (_t.val().trim() === "") {
+							_tParent.removeClass("not-empty");
+							
+							return;
+						}
+
+						_tParent
+							.removeClass("error")
+							.addClass("not-empty");
+          }, 50);
+        });
+      }
+
+			
 			$("form").on("submit", function () {
 				if (!_th.checkForm($(this))) {
 					return false;
 				}
 			});
 
-			if ($(".js-phone").length) {
-				$(".js-phone").mask("+7(999) 999-9999");
-			}
-
 			return this;
+		},
+	}.init();
+
+	window.doka.constructor = {
+		init: function init() {
+			if ($('.js-constructor').length) {
+				const selectedOptionsData = {};
+
+				const constructor = $('.js-constructor');
+				const creditMonths = constructor.data('credit-months');
+				const creditPercent = constructor.data('credit-percent');
+				
+				const indicator = constructor.find('.section-constructor__indicator');
+				const indicatorItems = constructor.find('.section-constructor__indicator-items');
+				const indicatorNumberActive = constructor.find('.section-constructor__indicator-number--active');
+				const indicatorNumberAll = constructor.find('.section-constructor__indicator-number--all');
+				
+				const info = constructor.find('.section-constructor__info');
+				const infoTotalPrice = constructor.find('.section-constructor__info-total-price');
+				const infoCreditPrice = constructor.find('.section-constructor__info-credit-price');
+
+				const slider = constructor.find('.section-constructor__steps .swiper');
+				const sliderButtons = constructor.find('.section-constructor__controls');
+				const sliderButton = constructor.find('.section-constructor__controls-button');
+				const sliderButtonPrev = constructor.find('.section-constructor__controls-button[data-direction="prev"]');
+				const sliderButtonNext = constructor.find('.section-constructor__controls-button[data-direction="next"]');
+
+				const table = constructor.find('.section-constructor__table');
+
+				const stepOption = constructor.find('.section-constructor__option-input');
+				const inputForSendFormData = constructor.find('.form-callback__field-input[data-id="selected-options-data"]');
+
+				function generateSelectedOptionsData(swiper) {
+					swiper.slides.forEach(function(slide) {
+						const step = $(slide).data('step');
+
+						if (step) {
+							selectedOptionsData[step] = [];
+						}
+					})
+				}
+
+				function generateIndicatorItemsHtml(swiper) {
+					const numbersSlides = swiper.slides.length;
+							
+					indicatorNumberActive.text(swiper.activeIndex + 1);
+					indicatorNumberAll.text(numbersSlides);
+
+					for(let i = 0; i <= numbersSlides - 1; i++) {
+						const activeClass = i === 0 ? 'section-constructor__indicator-item--active' : '';
+						const indicatorItemHtml = `<div class="section-constructor__indicator-item ${activeClass}" data-indicator="${i}"></div>`
+
+						indicatorItems.append(indicatorItemHtml)
+					}
+
+					indicator.fadeIn(300).css('display', 'grid');
+				}
+
+				function changeIndicatorItemActive(swiper) {
+					const activeIndex = swiper.activeIndex;
+
+					if (indicatorItems.find('.section-constructor__indicator-item').length)
+					indicatorItems.find('.section-constructor__indicator-item').removeClass('section-constructor__indicator-item--active')
+
+					if (indicatorItems.find(`.section-constructor__indicator-item[data-indicator="${activeIndex}"]`).length) {
+						indicatorItems.find(`.section-constructor__indicator-item[data-indicator="${activeIndex}"]`).addClass('section-constructor__indicator-item--active')
+					}
+					
+					indicatorNumberActive.text(activeIndex + 1);
+				}
+
+				function generateTableHtml(swiper) {
+					if (swiper.activeIndex === swiper.slides.length - 1) {
+						Object.keys(selectedOptionsData).forEach(function(key) {
+							selectedOptionsData[key].forEach(function(option) {
+								const tableRow = `<div class="section-constructor__table-row">
+									<div class="section-constructor__table-cell section-constructor__table-cell--title">${option.title}</div>
+									<div class="section-constructor__table-cell section-constructor__table-cell--price">${option.price}</div>
+								</div>`;
+
+								table.append(tableRow);
+							})
+						})
+					}
+				}
+
+				function setValueInInputForSendFormData(swiper) {
+					if (swiper.activeIndex === swiper.slides.length - 1) {
+						inputForSendFormData.val(JSON.stringify(selectedOptionsData));
+					}
+				}
+
+				function changeAttributeDisabledSliderButtonPrev(swiper) {
+					if (swiper.activeIndex > 0) {
+						sliderButtonPrev.attr('disabled', false);
+						
+						return;
+					}
+
+					sliderButtonPrev.attr('disabled', true);
+				}
+
+				function changeAttributeDisabledSliderButtonNext() {
+					const activeSlide = slider.find('.swiper-slide-active');
+					const activeSlideStep = activeSlide.data('step');
+					
+					if (activeSlideStep && !selectedOptionsData[activeSlideStep].length) {
+						sliderButtonNext.attr('disabled', true);
+
+						return;
+					}
+
+					sliderButtonNext.attr('disabled', false);
+				}
+
+				function hideSliderButtons(swiper) {
+					if (swiper.activeIndex === 3) {
+						sliderButtons.fadeOut(0);
+					}
+				}
+
+				function costCalculation() {
+					let totalPrice = 0;
+
+					Object.keys(selectedOptionsData).forEach(function(key) {
+						selectedOptionsData[key].forEach(function(option) {
+							if (option.price) {
+								totalPrice += Number(option.price.replace(/\s/g,''));
+							}
+						})
+					})
+
+					if (!totalPrice) {
+						info.fadeOut(300);
+
+						return;
+					}
+
+					const calcCreditPercent = creditPercent ? (totalPrice * Number(creditPercent)) / 100 : 0;
+					const calcCreditMonths = creditMonths ? Number(creditMonths) : 6;
+
+					let creditPrice = parseInt(((totalPrice + calcCreditPercent) / calcCreditMonths));
+
+					if (totalPrice > 999) {
+						totalPrice = totalPrice.toLocaleString();
+					}
+
+					if (creditPrice > 999) {
+						creditPrice = creditPrice.toLocaleString();
+					}
+
+					infoTotalPrice.text(totalPrice);
+					infoCreditPrice.text(creditPrice);
+
+					if (!info.is(":visible")) {
+						info.fadeIn(300);
+					}
+				}
+
+				const swiperConstructor = new Swiper(slider[0], {
+					speed: 400,
+					navigation: false,
+					autoHeight: true,
+					allowTouchMove: false,
+					noSwiping: true,
+					effect: "fade",
+					fadeEffect: {
+						crossFade: true
+					},
+					on: {
+						init: function () {
+							generateSelectedOptionsData(this)
+							generateIndicatorItemsHtml(this)
+						},
+						slideChangeTransitionStart: function () {
+							changeIndicatorItemActive(this)
+							generateTableHtml(this)
+							setValueInInputForSendFormData(this)
+							changeAttributeDisabledSliderButtonPrev(this)
+							changeAttributeDisabledSliderButtonNext()
+							hideSliderButtons(this)
+						},
+					}
+				});
+
+				sliderButton.on('click', function(e) {
+					e.preventDefault()
+
+					const direction = $(this).data('direction');
+
+					if (direction === 'prev') {
+						if (swiperConstructor.activeIndex > 0) {
+							swiperConstructor.slidePrev();
+						}
+						
+						return
+					}
+
+					if (swiperConstructor.activeIndex + 1 < swiperConstructor.slides.length) {
+						swiperConstructor.slideNext();
+					}
+				});
+
+				stepOption.on('change', function() {
+					const _t = $(this);
+					const _tType = _t.attr('type');
+					const _tId = _t.attr('id');
+					const _tName = _t.attr('name');
+					const _tTitle = _t.data('title');
+					const _tPrice = _t.data('price');
+
+					if (_tType === 'radio') {
+						selectedOptionsData[_tName] = [];
+						selectedOptionsData[_tName].push({
+							id: _tId,
+							title: _tTitle,
+							price: _tPrice,
+						});
+
+						costCalculation();
+						changeAttributeDisabledSliderButtonNext()
+
+						return;
+					}
+
+					if (_t.is(':checked')) {
+						const hasInArray = selectedOptionsData[_tName].find(function(item) {
+							if (item.id === _tId) {
+								return item;
+							}
+						});
+	
+						if (!hasInArray) {
+							selectedOptionsData[_tName].push({
+								id: _tId,
+								title: _tTitle,
+								price: _tPrice,
+							})
+
+							costCalculation();
+							changeAttributeDisabledSliderButtonNext()
+						}
+
+						return;
+					}
+
+					selectedOptionsData[_tName] = selectedOptionsData[_tName].filter(function(item) {
+						if (item.id !== _tId) {
+							return item;
+						}
+
+						return null;
+					});
+
+					costCalculation();
+					changeAttributeDisabledSliderButtonNext()
+				});
+			}
 		},
 	}.init();
 
@@ -159,13 +455,13 @@ $(function () {
 
 			if ($(".js-nav-toggle").length) {
 				$(".js-nav-toggle").on("click", function (e) {
+					e.preventDefault();
+
 					$(this).toggleClass("active");
 
 					if ($(".nav__second-level").length) {
 						$(".nav__second-level").toggleClass("open");
 					}
-
-					e.preventDefault();
 				});
 			}
 
@@ -187,6 +483,8 @@ $(function () {
 			
 			if ($('.js-tabs-contacts').length) {
 				$('.js-tabs-contacts').on('click', function (e) {
+					e.preventDefault();
+
 					const _t = $(this);
 					const _tData = _t.data('btn');
 					const _tParents = _t.parents('.section-contacts__tabs');
@@ -208,8 +506,6 @@ $(function () {
 							_self.yaMap().init(tabMapId, tabMapIdCoords);
 						}, 300);
 					}
-
-					e.preventDefault()
 				})
 			}
 			
@@ -259,11 +555,11 @@ $(function () {
 				});
 			}
 
-			if ($('.js-swiper-history-gallery-thumbs').length && $('.js-swiper-history-gallery-big'.length)) {
+			if ($('.js-swiper-history-gallery-thumbs').length && $('.js-swiper-history-gallery-big').length) {
 				const swiperHistoryGalleryThumbs = new Swiper('.js-swiper-history-gallery-thumbs', {
 					loop: true,
 					speed: 400,
-					spaceBetween: 8,
+					spaceBetween: 12,
 					slidesPerView: 4,
 					freeMode: true,
 					watchSlidesProgress: true,
@@ -276,8 +572,31 @@ $(function () {
 					// 	swiper: swiperHistoryGalleryThumbs,
 					// },
 					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
+						nextEl: '.section-history .swiper-button-next',
+						prevEl: '.section-history .swiper-button-prev',
+					},
+				});
+			}
+
+			if ($('.js-swiper-card-gallery-big').length && $('.js-swiper-card-gallery-thumbs').length) {
+				const swiperCardGalleryThumbs = new Swiper('.js-swiper-card-gallery-thumbs', {
+					loop: true,
+					speed: 400,
+					spaceBetween: 8,
+					slidesPerView: 4,
+					freeMode: true,
+					watchSlidesProgress: true,
+				});
+
+				const swiperCardGalleryBig = new Swiper('.js-swiper-card-gallery-big', {
+					loop: true,
+					speed: 400,
+					thumbs: {
+						swiper: swiperCardGalleryThumbs,
+					},
+					navigation: {
+						nextEl: '.section-card .swiper-button-next',
+						prevEl: '.section-card .swiper-button-prev',
 					},
 				});
 			}
@@ -313,6 +632,67 @@ $(function () {
 					_tParents.addClass("active");
 					_tParents.find(".section-faq__item-dropdown").slideDown(350);
 				});
+			}
+
+			if ($('.js-component-toggle').length) {
+				$('.js-component-toggle').on('click', function(e) {
+					e.preventDefault();
+
+					const _t = $(this);
+					const _tParents = _t.parents(".section-components__item");
+					const _tItemActive = _t
+						.parents(".section-components")
+						.find(".section-components__item.active");
+					
+					if (_tParents.hasClass("active")) {
+						_tParents.removeClass("active");
+						_tParents.find(".section-components__item-body").slideUp(350);
+
+						return;
+					}
+					
+					if (_tItemActive.length) {
+						_tItemActive.removeClass("active");
+						_tItemActive
+							.find(".section-components__item-body")
+							.slideUp(350);
+					}
+
+					_tParents.addClass("active");
+					_tParents.find(".section-components__item-body").slideDown(350);
+				})
+			}
+
+			if ($('.js-tabs-card').length) {
+				let isTabsAnim = true;
+
+				$('.js-tabs-card').on('click', function (e) {
+					e.preventDefault();
+
+					const _t = $(this);
+					const _tData = _t.data('tab-btn');
+					const _tParents = _t.parents('.section-card__tabs');
+					const _tTabsBtns = _tParents.find('.section-card__tabs-controls-button');
+					const _tTabsItems = _tParents.find('.section-card__tabs-item');
+					const nextTab = _tParents.find('.section-card__tabs-item[data-tab-item="'+ _tData +'"]');
+					
+					if (!_t.hasClass('active') && nextTab && isTabsAnim) {
+						isTabsAnim = false;
+						_tTabsBtns.removeClass('active');
+						_tTabsItems.removeClass('active');
+						_t.addClass('active')
+
+						setTimeout(function () {
+							nextTab.addClass('active')
+
+							setTimeout(function () {
+								isTabsAnim = true;
+							}, 300);
+						}, 300);
+
+						
+					}
+				})
 			}
 
 			$(window).on("scroll", function () {

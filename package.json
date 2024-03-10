@@ -45,7 +45,6 @@
 		"Android >= 4",
 		"not dead",
 		"not OperaMini all",
-		"ie >= 11",
 		"Edge >= 12"
 	],
 	"dependencies": {

@@ -1,0 +1,297 @@
+.section-card
+	padding-top 9px
+	background-color #fbfbfb
+	&__main
+		display grid
+		grid-template-columns calc(50% + 48px) calc(50% - 48px)
+		grid-template-rows auto
+		margin-bottom 30px
+		padding-bottom 30px
+		border-bottom 2px solid whitesmoke
+	&__head
+		display flex
+		flex-direction column
+		row-gap 18px
+	&__head-row
+		display flex
+		justify-content space-between
+		align-items flex-start
+		gap 12px
+	&__title
+		font-size 30px
+		line-height 34px
+		font-weight 600
+	&__info
+		display grid
+		grid-row-gap 4px
+		flex-shrink 0
+		max-width 144px
+		padding-top 7px
+	&__info-item
+		position relative
+		padding-left 22px
+		font-size 11px
+		line-height 13px
+		&:before
+			@extend .psElem
+			position absolute
+			top 2px
+			left 0
+			width 13px
+			height 13px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAzFBMVEXxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQD///9VjrpQAAAAQnRSTlMAH5Xd6MNhfLip1vA7HIxvzE8qNV4iwOS7t1suukzHFzByYnT5Y7za4AjcpDo5WA/s4ZJmFs0bhK+hzu8lJp7f6WdsrGgOAAAAAWJLR0RDZ9ANYgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+gCGQ0EIUHPPjMAAACHSURBVAjXLU0HEoIADIviQBQHbkVw4N57r/z/UbQHvWvaNGkLAImkkUpnEEWWNHMW8wXYQJElndnlikNUWYs9dTZgNWPisAWIr90R0qUryB48+ugLGQzBEWAEY05EMDGdAfMFl7q4wpob8W8ld3uBA4968nTmReuVwe3+4PMVfXp/vj/vr10IVbMPA8uJWFwAAAAASUVORK5CYII=') no-repeat center
+			z-index 1
+		strong
+			font-weight 600
+	&__gallery
+		position relative
+		width 100%
+		.swiper-container,
+		.swiper
+			height 100%
+		.swiper
+			padding-bottom 0
+	&__favorite
+		display flex
+		align-items center
+		column-gap 4px
+		position absolute
+		right 22px
+		top 21px
+		height 25px
+		padding 12px 10px 11px
+		color #787878
+		font-size 12px
+		line-height 12px
+		font-weight 600
+		background-color white
+		border-radius 12px
+		z-index 2
+		&:after
+			@extend .psElem
+			flex-shrink 0
+			width 11px
+			height 9px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJCAMAAADTuiYfAAAAPFBMVEUAAAB4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHhGG4lkAAAAE3RSTlMAEd7kZe3ApJldRyb1zamObkwgr/hNcgAAAEJJREFUCNctx8kRgCAAwMAIqBze6b9XBzSvDZy6PodmyF5JLckVE7S9QRFvvqos/naBLQzGGZjsE5wYM9fYOSYYO1+s+gJ5a61pwQAAAABJRU5ErkJggg==') no-repeat center
+			transition background $duration
+		&--active
+			&:after
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJBAMAAAAWSsseAAAAKlBMVEUAAADvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWflSCUpAAAADXRSTlMAE6aZDfXw49zBv44g0koN+wAAADdJREFUCNdj4L6ro3uZgcH2LhAoMNwFgQswai2ImsDACiSvMTAwAqkrDAwMsnfvCgAplt5CBgYAMC8eoCghwNsAAAAASUVORK5CYII=')
+	&__gallery-big
+		width 100%
+		height 400px
+		margin-bottom 14px
+		& ^[0]__card-gallery-overimg
+			border-radius 16px
+		.swiper-button-prev,
+		.swiper-button-next
+			margin 0
+			transform translateY(calc(-50% + 4px))
+	&__gallery-overimg
+		display flex
+		justify-content center
+		align-items center
+		width 100%
+		height 100%
+		border-radius 10px
+		overflow hidden
+	&__gallery-img
+		max-width 100%
+		max-height 100%
+		margin auto
+	&__gallery-thumbs
+		width 100%
+		height 94px
+	&__content
+		padding-top 51px
+		padding-left 33px
+	&__content-title
+		margin-bottom 17px
+		color #b5b5b5
+		font-size 13px
+		line-height 15px
+		font-weight 700
+		letter-spacing .25em
+		text-transform uppercase
+	&__content-rows
+		display grid
+		grid-row-gap 18px
+	&__content-row
+		padding-top 18px
+		border-top 2px solid whitesmoke
+	&__properties
+		display grid
+		grid-template-columns calc(47% - 14px) calc(53% - 10px)
+		grid-template-rows auto
+		gap 9px 24px
+	&__property
+		display flex
+		width 100%
+	&__property-title,
+	&__property-data
+		font-size 14px
+		line-height 17px
+	&__property-title
+		color #6e6e6e
+		padding-right 4px
+	&__property-data
+		font-weight 600
+		word-break break-word
+	&__text
+		color #6e6e6e
+		font-size 13px
+		line-height 18px
+	&__advantages
+		display grid
+		grid-template-columns calc(47% - 14px) calc(53% - 10px)
+		grid-template-rows auto
+		gap 24px
+	&__advantage
+		display flex
+	&__advantage-overico
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 42px
+		height 42px
+		flex-shrink 0
+		margin-right 15px
+	&__advantage-ico
+		max-width 100%
+		max-height 100%
+	&__advantage-text
+		padding-top 4px
+		font-size 12px
+		line-height 14px
+	&__prices
+		display grid
+		grid-template-columns calc(47% - 14px) calc(53% - 10px)
+		grid-template-rows auto
+		gap 24px
+		margin-bottom 23px
+	&__price
+		&--credit
+			& ^[0]__price-item
+				strong
+					color #b1b1b1
+	&__price-label
+		margin-bottom 4px
+		color #6e6e6e
+		font-size 11px
+		line-height 13px
+	&__price-item
+		font-size 13px
+		line-height 24px
+		font-weight 600
+		strong
+			color $accent
+			font-size 24px
+			font-weight 700
+	&__buttons
+		display flex
+		justify-content space-between
+		align-items flex-start
+		column-gap 24px
+		width 100%
+	&__order-btn
+		font-size 14px
+		padding 21px 60px
+		border-radius 28px
+	&__watch-video-btn
+		display flex
+		align-items center
+		flex-shrink 0
+		user-select none
+		i
+			display flex
+			justify-content center
+			align-items center
+			position relative
+			width 56px
+			height 56px
+			background-color #da2f2f
+			border-radius 28px
+			box-shadow 0 5px 10px rgba(191, 62, 62, 0.35), inset 0 0 11.2px 0.8px rgba(255, 255, 255, 0.27)
+			z-index 1
+			&:before
+				@extend .psElem
+				position absolute
+				top 50%
+				left 50%
+				width 14px
+				height 16px
+				margin-left 2px
+				background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAV1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////+ORg7oAAAAHHRSTlMA7IfWqZ16TSkS9vXo4uDIvLCVZllFPzkhHgwHxNLpUgAAAFZJREFUCNdVz0cOwCAMRFEbEkjvPb7/OWOhSGP+7i0YgFxXVIRYpHG1odavYGrcwVSaAKXVCSUaYkbhnLMlh9ewvM3ydJp7/WZexeGhP6+HLvzoWCKhDwbqDKiTAsSFAAAAAElFTkSuQmCC') no-repeat center
+				transform translate(-50%, -50%)
+				z-index 1
+		span
+			display -webkit-box
+			-webkit-line-clamp 2
+			-webkit-box-orient vertical
+			max-width 200px
+			margin-left -22px
+			padding 13px 0 13px 36px
+			color $default
+			font-size 12px
+			line-height 14px
+			text-overflow ellipsis
+			overflow hidden
+			strong
+				display block
+	// &__tabs
+	&__tabs-controls
+		display flex
+		flex-wrap wrap
+		gap 16px
+		width 100%
+		margin-bottom 30px
+	&__tabs-controls-button
+		padding-left 28px
+		padding-right 28px
+		background-color transparent
+		transition background $duration, color $duration
+		&.active,
+		&:hover
+			color #fff
+			background-color $default
+	&__tabs-items
+		position relative
+		z-index 1
+		&:after
+			@extend .psElem
+			position absolute
+			left 50%
+			top 0
+			width 100vw
+			height 100%
+			background-color #fff
+			transform translateX(-50%)
+			z-index -1
+	&__tabs-item
+		position absolute
+		top 0
+		left 0
+		width 100%
+		opacity 0
+		visibility hidden
+		pointer-events none
+		&.active
+			position relative
+			opacity 1
+			visibility visible
+			pointer-events auto
+			transition opacity ease-in .3s, visibility ease-in .3s
+	&__tabs-item-container
+		padding-top 38px
+		padding-bottom 38px
+	&__tabs-item-title
+		margin-bottom 44px
+		color $default
+		font-size 24px
+		line-height 27px
+		font-weight 600
+		strong
+			font-weight 700
+	& + .section-reviews
+		padding-top 82px

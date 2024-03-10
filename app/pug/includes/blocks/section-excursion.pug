@@ -21,12 +21,13 @@
 						+e.row
 							+e.field
 								+e('label').field-label Укажите дату:
-								+e('input')(type="text").field-input.js-datepicker
+								+e('input')(type="text" data-req="required").field-input.js-datepicker
 							+e.field
 								+e('label').field-label Введите номер телефона:
-								+e('input')(type="text" placeholder="+7 ___ ___ __ __").field-input
+								+e('input')(type="text" placeholder="+7 ___ ___ __ __" data-req="required").field-input.js-phone
 						+e.row
 							+e.field
 								+e('button')(type="submit").submit-btn.btn.--accent.--large Запишитесь на экскурсию
 								+e('p').agreement Нажимая на кнопку, вы соглашаетесь с&nbsp;условиями 
-									a(href="#" target="_blank") Политики конфиденциальности
+									a(href="#" target="_blank") 
+										strong Политики конфиденциальности
