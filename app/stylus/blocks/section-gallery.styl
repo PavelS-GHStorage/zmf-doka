@@ -2,17 +2,36 @@
 	padding-top 52px
 	padding-bottom 59px
 	background-color #fbfbfb
+	@media $mLandscapeMax
+		padding-top 34px
+		padding-bottom 40px
 	&__container
 		@extend .container
 	&__title
 		margin-bottom 20px
+		@media $mLandscapeMax
+			margin-bottom 14px
 	&__text
 		margin-bottom 58px
+		@media $mLandscapeMax
+			margin-bottom 20px
 	&__items
 		display grid
 		grid-template-columns repeat(3, 1fr)
 		grid-template-rows auto
 		gap 24px
+		@media $mLandscapeMax
+			grid-template-columns repeat(2, 1fr)
+			gap 12px
+		@media $mPortraitMax
+			gap 8px
+	&__item
+		@media $mLandscapeMax
+			for num in (11..16)
+				&:nth-child({num})
+					display none
+			& /.show-all &
+				display block
 	&__item-card
 		display block
 		position relative
@@ -21,6 +40,8 @@
 		background-position center
 		background-size cover
 		border-radius 12px
+		@media $mPortraitMax
+			border-radius 4px
 	&__item-card-play
 		display flex
 		position absolute

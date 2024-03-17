@@ -10,10 +10,12 @@
 		padding-top 31px
 		padding-bottom 27px
 	@media $mLandscapeMax
-		padding-top 30px
-		padding-bottom 56px
+		padding-top 32px
+		padding-bottom 36px
 	&__container
 		@extend .container
+		@media $mLandscapeMax
+			display grid
 	&__breadcrumbs
 		margin-bottom 25px
 	&__title
@@ -29,16 +31,44 @@
 			font-size 32px
 			line-height 38px
 		@media $mLandscapeMax
-			margin-bottom 21px
-			font-size 18px
-			line-height 22px
+			margin-bottom 24px
+			font-size 20px
+			line-height 24px
 		strong
 			font-weight 600
+	&__rating
+		display none
+		align-items center
+		margin-bottom 28px
+		@media $mLandscapeMax
+			display flex
+		&:before
+			@extend .psElem
+			width 90px
+			height 13px
+			margin-right 10px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAANCAMAAAAe/Yl/AAAATlBMVEUAAAD/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQj/wQjZAwt0AAAAGXRSTlMAluyPnA7xo4dTLBMK5Ne9u6yAdHJjWRkGPY5/zAAAAIZJREFUOMuVkEkKxDAMBC05zj772v//aBCJILeW+mKqKDCo7GvXX/ERlY0qOnu4SkcrgOZAVDKqAMSBqHg0T2+5w3aT1zTHVCx64rzREq6CkZyw+1vCVTSqTn4jphKR+EcGXGWi78EfA64y0XDww4CrTHQB+kEBNeAqEa2qdSnLqH0z5CoYba8pKg5v7NlMAAAAAElFTkSuQmCC') no-repeat left center
+	&__rating-text
+		color #a3a3a3
+		font-size 16px
+		font-weight 400
+		line-height 16px
+		strong
+			color #3c3736
+			font-weight 600
+		a
+			color $blue
+			line-height 16px
+			border-bottom 1px solid $blue
+			transition border $duration
+			&:hover
+				border-bottom-color transparent
 	&__text
 		position relative
 		padding-left 45px
 		max-width 668px
 		margin-bottom 36px
+		color $default
 		font-size 18px
 		line-height 22px
 		@media $tPortraitMax
@@ -46,9 +76,10 @@
 			font-size 16px
 			line-height 19px
 		@media $mLandscapeMax
-			margin-bottom 26px
-			font-size 12px
-			line-height 14px
+			margin-bottom 25px
+			padding-left 0
+			font-size 14px
+			line-height 17px
 		&:before
 			@extend .psElem
 			position absolute
@@ -57,9 +88,18 @@
 			width 27px
 			height 2px
 			background-color $accent
+			@media $mLandscapeMax
+				position relative
+				display inline-block
+				vertical-align top
+				top auto
+				margin-top 8px
+				margin-right 10px
 	&__info
 		max-width 630px
 		margin-bottom 35px
+		@media $mLandscapeMax
+			display none
 	&__info-items
 		display grid
 		grid-template-columns repeat(3, minmax(156px, auto))
@@ -91,7 +131,9 @@
 		@media $tPortraitMax
 			margin-bottom 27px
 		@media $mLandscapeMax
-			margin-bottom 24px
+			display block
+			order 2
+			margin-bottom 0
 	&__callback-btn
 		display block
 		margin-right 38px
@@ -101,12 +143,15 @@
 		box-shadow -3.6px 3.5px 10px rgba(38,38,38,0.35), inset 0 0 12px 6px rgba(255,255,255,0.27)
 		transition background $duration, box-shadow $duration
 		user-select none
+		@media $mLandscapeMax
+			max-width 324px
+			margin-right 0
+			margin-bottom 12px
+			padding 24px
+			text-align center
 		&:hover
 			background-color $accent
 			box-shadow -3.6px 3.5px 10px rgba(38,38,38, 0), inset 0 0 12px 6px rgba(255, 255, 255, 0)
-		@media $mLandscapeMax
-			margin-right 0
-			padding 16px 46px
 		span
 			text-shadow -1.4px 1.4px 0 rgba(86, 186, 86, 0.3)
 			color white
@@ -115,16 +160,12 @@
 			line-height 16px
 			text-transform uppercase
 			white-space nowrap
+			@media $mLandscapeMax
+				font-size 12px
 	&__watch-video-btn
 		display flex
 		align-items center
 		user-select none
-		@media $mLandscapeMax
-			position absolute
-			left 50%
-			bottom -35px
-			transform translateX(-50%)
-			z-index 1
 		i
 			display flex
 			justify-content center
@@ -137,9 +178,8 @@
 			box-shadow inset 0 0 11.2px 0.8px rgba(255, 255, 255, 0.13)
 			z-index 1
 			@media $mLandscapeMax
-				width 70px
-				height 70px
-				flex-shrink 0
+				width 72px
+				height 72px
 			&:before,
 			&:after
 				@extend .psElem
@@ -150,8 +190,8 @@
 				border-radius 28px
 				box-shadow -3.6px 3.5px 10px rgba(86, 186, 86, 0.35), inset 0 0 11.2px 0.8px rgba(255, 255, 255, 0.27)
 				@media $mLandscapeMax
-					width 48px
-					height 48px
+					width 49px
+					height 49px
 			&:after
 				position absolute
 				top 50%
@@ -165,7 +205,7 @@
 				@media $mLandscapeMax
 					width 14px
 					height 14px
-					background-size contain
+					margin-left 0
 		span
 			display -webkit-box
 			-webkit-line-clamp 2
@@ -178,14 +218,14 @@
 			font-size 12px
 			line-height 14px
 			text-overflow ellipsis
-			background-color #fff
+			background-color $white
 			border-radius 0 28px 28px 0
 			overflow hidden
 			@media $mLandscapeMax
-				width 148px
-				padding 14px 12px 14px 23px
-				font-size 10px
-				line-height 12px
+				max-width 286px
+				padding-left 57px
+			@media $mPortraitIphoe6Max
+				max-width calc(100% - 48px)
 	&__advantages
 		display grid
 		grid-template-columns repeat(3, minmax(194px, auto))
@@ -193,8 +233,23 @@
 		gap 24px 48px
 		width 100%
 		max-width 680px
+		@media $tPortraitMax
+			grid-template-columns auto
+			max-width 324px
+			gap 10px
+		@media $mLandscapeMax
+			order 1
+			margin-bottom 21px
 	&__advantage
 		display flex
+		@media $tPortraitMax
+			align-items center
+			padding 10px 24px
+			background-color #fff
+			border-radius 30px
+		@media $mLandscapeMax
+			align-items flex-start
+			padding 7px 15px 11px 15px
 	&__advantage-overico
 		display flex
 		flex-direction column
@@ -221,3 +276,7 @@
 		background-position center bottom
 		background-size auto
 		z-index -1
+		@media $desktopMax
+			right calc((100% - 994px) / 2 - 280px)
+		@media $mLandscapeMax
+			display none

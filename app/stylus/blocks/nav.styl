@@ -1,5 +1,9 @@
 .nav
 	width 100%
+	>
+		& ^[0]__list
+			position relative
+			padding-right 58px
 	&__list
 		display flex
 		align-items center
@@ -24,14 +28,21 @@
 					border-width 5px 3px 0 3px
 					border-color #b3b3b3 transparent transparent transparent
 					transition border $duration, transform $duration
+					@media $desktopMax
+						top 21px
 			&:hover
 				& ^[0]__sublist
 					opacity 1
 					visibility visible
 					transition opacity $duration, opacity $duration
 		&--button
-			margin-left auto
-			background-color #fff
+			position absolute
+			top 9px
+			right -2px
+			background-color $white
+			z-index 1
+			@media $desktopMax
+				top 4px
 	&__list-href
 		display block
 		position relative
@@ -63,7 +74,7 @@
 		left 0
 		top 100%
 		padding 12px 20px
-		background-color #fff
+		background-color $white
 		border-radius 12px
 		box-shadow 0px 10px 10px 0px rgba(215, 215, 215, 0.15)
 		opacity 0
@@ -142,6 +153,8 @@
 		visibility hidden
 		transition opacity $duration, visibility $duration, margin $duration
 		z-index 1
+		@media $desktopMax
+			margin-top -48px
 		&.open
 			opacity 1
 			visibility visible

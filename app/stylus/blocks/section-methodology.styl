@@ -2,16 +2,33 @@
 	padding-top 32px
 	padding-bottom 50px
 	background-color #fbfbfb
+	@media $mLandscapeMax
+		padding-top 20px
+		padding-bottom 40px
 	&__container
 		@extend .container
 	&__title
 		margin-bottom 39px
+		@media $mLandscapeMax
+			margin-bottom 25px
 	&__items
 		display grid
 		grid-template-columns repeat(3, 1fr)
 		grid-template-rows auto
-		grid-column-gap 24px
-		grid-row-gap 70px
+		gap 70px 24px
+		@media $tPortraitMax
+			grid-template-columns repeat(2, 1fr)
+		@media $mLandscapeMax
+			gap 35px 12px
+		@media $mPortraitMax
+			grid-template-columns auto
+	&__item
+		@media $mPortraitMax
+			display none
+		&:first-child,
+		&:nth-child(2),
+		&:nth-child(3)
+			display block
 	&__item-card
 		display flex
 		flex-direction column
@@ -23,6 +40,8 @@
 		margin-bottom 16px
 		background-color #efefef
 		border-radius 16px
+		@media $mLandscapeMax
+			height 190px
 	&__item-card-img
 		max-width 100%
 		max-hight 100%
@@ -33,12 +52,13 @@
 		font-size 18px
 		line-height 22px
 		font-weight 600
+		@media $mLandscapeMax
+			margin-bottom 14px
 	&__item-card-text
 		color #777
 		font-size 16px
 		line-height 19px
-	&__bottom
-		display flex
-		justify-content center
-		margin-top 45px
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 17px
 

@@ -11,7 +11,7 @@
 		padding-bottom 62px
 	@media $mLandscapeMax
 		padding-top 38px
-		padding-bottom 44px
+		padding-bottom 42px
 	&__container
 		position relative
 		padding-right 500px
@@ -41,9 +41,9 @@
 			color #3c3736
 			font-weight 600
 		a
-			color #2865d4
+			color $blue
 			line-height 16px
-			border-bottom 1px solid #2865d4
+			border-bottom 1px solid $blue
 			transition border $duration
 			&:hover
 				border-bottom-color transparent
@@ -53,18 +53,18 @@
 		@media $tPortraitMax
 			line-height 30px
 		@media $mLandscapeMax
-			margin-bottom 23px
+			margin-bottom 16px
 			line-height 22px
 	&__text
 		margin-bottom 32px
-		color #767676
+		color $gray
 		font-size 18px
 		line-height 22px
 		@media $tPortraitMax
 			font-size 14px
 			line-height 17px
 		@media $mLandscapeMax
-			margin-bottom 22px
+			margin-bottom 17px
 	&__reviews-all-href
 		display inline-block
 		vertical-align baseline
@@ -94,12 +94,12 @@
 		left calc(100% - 549px)
 		z-index 1
 		@media screen and (max-width: 1660px)
-			top -8px
+			top 8px
 		@media $desktopMax
 			display none
 	&__reviews-overimg
 		width 806px
 		@media screen and (max-width: 1660px)
-			width 500px
+			width 580px
 	&__reviews-img
 		max-width 100%

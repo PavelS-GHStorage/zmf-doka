@@ -6,11 +6,24 @@
 	&__columns
 		display flex
 		gap 130px
+		@media $tPortraitMax
+			display grid
+			grid-template-columns repeat(2, 1fr)
+			grid-template-rows auto
+			gap 32px 24px
+			@media $mLandscapeMax
+				grid-template-columns auto
+				gap 32px 12px
 	&__column
 		max-width 290px
 		min-width 136px
+		@media $tPortraitMax
+			max-width none
+			min-width auto
 		&--about
 			max-width 230px
+			@media $tPortraitMax
+				max-width none
 	&__column-title
 		margin-bottom 8px
 		color #c4c4c4
@@ -34,11 +47,14 @@
 		font-size 12px
 		line-height 16px
 		font-weight 500
-		border-bottom 1px solid #c4c4c4
-		transition color $duration, border $duration
+		transition color $duration
+		span
+			border-bottom 1px solid #c4c4c4
+			transition color border $duration
 		&:hover
-			color #fff
-			border-bottom-color transparent
+			color $white
+			span
+				border-bottom-color transparent
 	&__list-item
 		margin-bottom 8px
 		color #c4c4c4
@@ -49,20 +65,20 @@
 			color #c4c4c4
 			transition color $duration, border $duration
 			&:hover
-				color #fff
+				color $white
 		a[href^="tel:"]
 			font-weight bold
 			white-space nowrap
 		a[href^="mailto:"]
 			border-bottom 1px solid #c4c4c4
 			&:hover
-				color #fff
+				color $white
 				border-bottom-color transparent
 	&__list-item-link
 		color #c4c4c4
 		transition color $duration
 		&:hover
-			color #fff
+			color $white
 	&__city
 		position relative
 	&__city-togglle

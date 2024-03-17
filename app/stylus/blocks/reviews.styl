@@ -8,12 +8,13 @@
 		width 100%
 		padding-top 20px
 		padding-bottom 20px
-		border-bottom 1px solid #f7f7f7
+		border-bottom 1px solid $border-gray
 		&:last-child
 			border-bottom none
 		@media $mLandscapeMax
-			flex-wrap wrap
-			justify-content flex-start
+			display block
+			padding-top 16px
+			padding-bottom 16px
 	&__item-left
 		width 135px
 		@media $mLandscapeMax
@@ -47,9 +48,9 @@
 		margin-bottom 17px
 		user-select none
 		@media $mLandscapeMax
-			width 45px
-			height 45px
-			margin-right 20px
+			width 70px
+			height 70px
+			margin-right 12px
 			margin-bottom 0
 	&__item-left-bottom
 		line-height 0
@@ -87,8 +88,6 @@
 			line-height 22px
 		@media $mLandscapeMax
 			margin-bottom 5px
-			font-size 16px
-			line-height 18px
 	&__item-rating
 		display flex
 		align-items flex-end
@@ -101,14 +100,14 @@
 		font-weight 300
 		line-height 14px
 	&__item-text
+		margin-bottom 23px
 		color #767575
 		font-size 18px
 		line-height 24px
-		margin-bottom 23px
 		@media $tPortraitMax
+			margin-bottom 15px
 			font-size 14px
 			line-height 17px
-			margin-bottom 18px
 		&:last-child
 			margin-bottom 0
 		p + p
@@ -125,7 +124,9 @@
 		font-size 14px
 		line-height 17px
 		@media $tPortraitMax
-			margin-top 18px
+			margin-top 15px
+			font-size 12px
+			line-height 14px
 		a
 			color $blue
 			border-bottom 1px solid transparent

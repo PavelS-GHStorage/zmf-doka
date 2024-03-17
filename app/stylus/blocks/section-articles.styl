@@ -1,19 +1,28 @@
 .section-articles
 	padding 45px 0 54px
+	@media $mLandscapeMax
+		padding-top 34px
+		padding-bottom 40px
 	&__container
 		@extend .container
 	&__head
 		margin-bottom 51px
+		@media $mLandscapeMax
+			margin-bottom 32px
 	&__all-link
 		display inline-block
 		vertical-align middle
 		flex-shrink 0
 		margin-top 15px
-		color #767676
+		color $gray
 		font-size 14px
 		line-height 16px
-		border-bottom 1px solid #767676
+		border-bottom 1px solid $gray
 		transition border $duration
+		@media $tPortraitMax
+			margin-top 7px
+		@media $mLandscapeMax
+			margin-top 0
 		&:hover
 			border-bottom-color transparent
 	&__items
@@ -21,15 +30,30 @@
 		grid-template-columns repeat(4, 1fr)
 		grid-template-rows repeat(2, 1fr)
 		gap 24px
+		@media $tPortraitMax
+			grid-template-columns repeat(2, 1fr)
+			grid-template-rows auto
+		@media $mLandscapeMax
+			gap 12px
+		@media $mPortraitMax
+			grid-template-columns auto
 	&__item
 		&:first-child
 			grid-area 1 / 1 / 3 / 3
+			@media $tPortraitMax
+				grid-area auto
 		&:nth-child(2)
 			grid-area 1 / 3 / 1 / 3
+			@media $tPortraitMax
+				grid-area auto
 		&:nth-child(3)
 			grid-area 1 / 4 / 1 / 4
+			@media $tPortraitMax
+				grid-area auto
 		&:nth-child(4)
 			grid-area 2 / 3 / 2 / 5
+			@media $tPortraitMax
+				grid-area auto
 	&__item-card
 		display flex
 		align-items flex-end
@@ -37,10 +61,15 @@
 		width 100%
 		height 284px
 		background-repeat no-repeat
+		background-position center
 		background-size cover
 		border-radius 20px
 		overflow hidden
 		z-index 1
+		@media $desktopMax
+			height 230px
+		@media $mLandscapeMax
+			border-radius 10px
 		&:after
 			@extend .psElem
 			position absolute
@@ -56,13 +85,20 @@
 			z-index -1
 		&--big
 			height 100%
+			@media $mPortraitMax
+				height 230px
 			& ^[0]__item-card-title
 				font-size 24px
 				line-height 27px
+				@media $tPortraitMax
+					font-size 18px
+					line-height 22px
 		&--big,
 		&--middle
 			& ^[0]__item-card-title
 				min-height auto
+				@media $tPortraitMax
+					min-height 44px
 	&__item-card-content
 		display flex
 		flex-direction column
@@ -71,10 +107,14 @@
 		width 100%
 		padding 25px 25px 25px 21px
 		z-index 1
+		@media $desktopMax
+			padding 24px
+		@media $mLandscapeMax
+			padding 20px
 	&__item-card-type
 		margin-bottom 18px
 		padding 6px 16px
-		color #fff
+		color $white
 		font-size 10px
 		line-height 12px
 		text-transform uppercase
@@ -86,14 +126,16 @@
 		-webkit-box-orient vertical
 		min-height 44px
 		margin-bottom 44px
-		color #fff
+		color $white
 		font-size 18px
 		line-height 22px
 		font-weight 500
 		overflow hidden
+		@media $desktopMax
+			margin-bottom 20px
 	&__item-card-date
 		display block
-		color #fff
+		color $white
 		font-size 11px
 		line-height 13px
 		text-transform uppercase

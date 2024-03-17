@@ -1,15 +1,30 @@
 mixin nav-mobile()
 	+b('nav').nav-mobile
+		+e('button')(type="button").back-btn.js-back-nav Назад
 		+e('button')(type="button").close-btn.js-close-nav
 		+e.scroll
 			+e('ul').list
-				each item in nav.desktop
+				each item in nav.mobile
 					+e('li').list-item
-						+e('a').list-href(href=item.href, class=item.active ? '--active' : '', data-anchor-btn=item.anchor) #{item.title}
+						+e('a').list-href(href=item.href, class=item.active ? '--active' : '') #{item.title}
+						if (item.subitems)
+							+e('button')(type="button").list-btn.js-show-sublist
+							+e('ul').sublist
+								each subItem in item.subitems
+									+e('li').sublist-item
+										+e('a')(href=subItem.href).sublist-href #{subItem.title}
 			+e.bottom
 				+e('ul').list
-					+e('li').list-item.--address
-						address Москва, ул. Иловайская, д. 12Ас1 Круглосуточно, без выходных
 					+e('li').list-item.--phone
-						+e('a')(href="tel:89268448545").list-href +7 (926) 844-85-45
+						+e('a')(href="tel:88006003499").list-href
+							strong 8 (800) 600-34-99
+					+e('li').list-item.--address
+						address Челябинск, ул. Механическая, 40
+							span 10:00 - 20:00, без выходных
+					+e('li').list-item.--address
+						address Екатеринбург, ул. Горнощитская, 42
+							span 10:00 - 20:00, без выходных
+					+e('li').list-item.--address
+						address Тюмень, ул. Федюнинского, 8 
+							span 10:00 - 20:00, без выходных
 				include ../blocks/social.pug 

@@ -1,6 +1,6 @@
 .header
 	position relative
-	background-color  #fff
+	background-color $white
 	@media $mLandscapeMax
 		position fixed
 		top 0
@@ -8,7 +8,7 @@
 		width 100%
 		height 45px
 		box-shadow 0 5px 10px #f4f4f4
-		z-index 1
+		z-index 10
 	&__wrapper
 		position relative
 		width 100%
@@ -36,8 +36,8 @@
 		max-height 50px
 		margin-right 24px
 		@media $mLandscapeMax
-			width 45px
-			height 45px
+			width 111px
+			height 40px
 			margin-right 0
 	&__logo-img
 		width 100%
@@ -51,7 +51,7 @@
 		position relative
 		max-width 160px
 		padding-top 8px
-		color #222
+		color $default
 		font-size 12px
 		line-height 14px
 		@media $tPortraitMax
@@ -63,16 +63,22 @@
 	&__right-item
 		&--rating
 			margin-right 46px
+			@media $tPortraitMax
+				margin-right 24px
 			@media $mLandscapeMax
 				display none
 		&--social
 			margin-right 82px
+			@media $desktopMax
+				margin-right 46px
+			@media $tPortraitMax
+				margin-right 24px
 			@media $mLandscapeMax
 				display none
 	&__rating
 		display block
 		width 190px
-		color #222222
+		color $default
 		font-size 12px
 		line-height 14px
 		user-select none
@@ -86,9 +92,9 @@
 		strong
 			font-weight 700
 		span
-			color #2865d4
+			color $blue
 			font-weight 600
-			border-bottom 1px solid #2865d4
+			border-bottom 1px solid $blue
 			white-space nowrap
 			transition border $duration
 			&:hover
@@ -102,7 +108,7 @@
 		padding-left 14px
 		font-size 12px
 		line-height 14px
-		@media $tPortraitMax
+		@media $desktopMax
 			display none
 		strong
 			display block
@@ -172,19 +178,24 @@
 		font-weight 700
 		line-height 24px
 		white-space nowrap
+		@media $tPortraitMax
+			font-size 23px
 		@media $mLandscapeMax
 			width 36px
 			height 36px
-			border-radius 18px
+			margin-bottom 0
 			font-size 0
 			line-height 0
-			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAMAAADHVLbdAAAAVFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU4H24AAAAG3RSTlMA8suj5in2wqeCJd7PtbCakYZ7aGBNPDUaEw/z2IqjAAAAXUlEQVQI103MWQ6AIAxF0ZZBEed5ePvfpxYSy/2AnDQtBWY2D/1BOtVOvKtrcVDP4kbtP1plWoilI2CobAF6+Q9POQt0Xt7W5MMjAIcUpdYKuYpy18Q6T92bNY6HF9FUBylnGxA4AAAAAElFTkSuQmCC') no-repeat center, #fff
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAMAAADHVLbdAAAAVFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU4H24AAAAG3RSTlMA8suj5in2wqeCJd7PtbCakYZ7aGBNPDUaEw/z2IqjAAAAXUlEQVQI103MWQ6AIAxF0ZZBEed5ePvfpxYSy/2AnDQtBWY2D/1BOtVOvKtrcVDP4kbtP1plWoilI2CobAF6+Q9POQt0Xt7W5MMjAIcUpdYKuYpy18Q6T92bNY6HF9FUBylnGxA4AAAAAElFTkSuQmCC') no-repeat center, $white
+			border-radius 18px
 	&__free-call
 		font-style italic
 		font-size 10px
 		line-height 12px
 		text-align right
 		color #8b8b8b
+		@media $mLandscapeMax
+			display none
 	&__burger
 		display none
 		position relative
@@ -193,7 +204,7 @@
 		margin-left 5px
 		margin-right -13px
 		padding 0
-		background-color #fff
+		background-color $white
 		@media $mLandscapeMax
 			display block
 		i
@@ -292,7 +303,7 @@
 			height 100%
 			pointer-events none
 		&:before
-			background-color #fff
+			background-color $white
 			z-index -2
 		&:after
 			box-shadow 0 5px 10px #f4f4f4

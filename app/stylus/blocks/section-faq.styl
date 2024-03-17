@@ -1,5 +1,8 @@
 .section-faq
 	padding 60px 0
+	@media $mLandscapeMax
+		padding-top 34px
+		padding-bottom 40px
 	&__container
 		@extend .container
 	&__grid
@@ -8,15 +11,31 @@
 		grid-template-rows auto
 		justify-content space-between
 		grid-column-gap 24px
+		@media $tPortraitMax
+			grid-template-columns auto
+			justify-content flex-start
+			grid-column-gap 0
+			grid-row-gap 24px
+		@media $mLandscapeMax
+			grid-row-gap 14px
 	&__title
 		margin-top -9px
 		margin-bottom 29px
+		@media $tPortraitMax
+			margin-top 0
+		@media $mLandscapeMax
+			margin-bottom 14px
 	&__text
-		color #767676
+		color $gray
 		font-size 16px
 		line-height 19px
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 17px
 		p
 			margin-bottom 19px
+			@media $mLandscapeMax
+				margin-bottom 16px
 			&:last-child
 				margin-bottom 0
 	&__items
@@ -27,7 +46,7 @@
 	&__item
 		&.active
 			& ^[0]__item-toggle
-				color #fff
+				color $white
 				background-color $accent
 				&:before
 					background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAKBAMAAABPkMOvAAAAFVBMVEUAAADxkQDxkQDxkQDxkQDxkQDxkQByJxekAAAABnRSTlMAgaWLb4xznjuGAAAAOUlEQVQI12MAAkYBBggQS4TQjGlpAhCBZLNEiIACE1hILImBQS0RLMDAABQCC4CFQAIgIQZniBkhAD86B/f1pXO7AAAAAElFTkSuQmCC')
@@ -38,7 +57,7 @@
 		width 100%
 		padding 16px 42px 17px 12px
 		text-align left
-		color #767676
+		color $gray
 		font-size 18px
 		line-height 24px
 		font-weight 600
@@ -46,23 +65,41 @@
 		border-radius 38px
 		transition background $duration, color $duration
 		user-select none
+		@media $mLandscapeMax
+			padding 7px 14px 7px 7px
+			font-size 12px
+			line-height 14px
+			border-radius 21px
 		&:before
 			@extend .psElem
 			width 42px
 			height 42px
+			flex-shrink 0
 			margin-right 64px
 			border-radius 50%
-			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAKBAMAAABPkMOvAAAAElBMVEUAAADS0tLS0tLS0tLS0tLS0tKPnEG+AAAABXRSTlMAiJ+DbEhjgVMAAAA9SURBVAjXHcixEQAQAAPAYAEFvUavMYARcPZfRZIUSe6x4BS8po0P9ej0jUAiZJAMEBlIdxJMAhPBSYP1AUe6BthfLZcsAAAAAElFTkSuQmCC') no-repeat center #fff
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAKBAMAAABPkMOvAAAAElBMVEUAAADS0tLS0tLS0tLS0tLS0tKPnEG+AAAABXRSTlMAiJ+DbEhjgVMAAAA9SURBVAjXHcixEQAQAAPAYAEFvUavMYARcPZfRZIUSe6x4BS8po0P9ej0jUAiZJAMEBlIdxJMAhPBSYP1AUe6BthfLZcsAAAAAElFTkSuQmCC') no-repeat center, $white
 			transition background $duration
 			z-index 1
+			@media $mLandscapeMax
+				width 28px
+				height 28px
+				margin-right 20px
+				background-size 10px
 	&__item-dropdown
 		display none
 	&__item-text
 		margin-left auto
 		padding 18px 40px 27px 117px
-		color #767676
+		color $gray
 		font-size 16px
 		line-height 19px
+		@media $mLandscapeMax
+			padding 12px 14px 12px 55px
+			font-size 14px
+			line-height 17px
+		@media $mPortraitMax
+			padding-bottom 4px
+			padding-left 18px
 		p
 			margin-bottom 16px
 			&:last-child

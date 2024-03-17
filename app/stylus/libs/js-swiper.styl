@@ -30,6 +30,10 @@
 	box-shadow 0 5px 10px 0 rgba(58, 58, 58, 0.15)
 	border-radius 50%
 	transform translateY(calc(-50% - 22px))
+	@media $mLandscapeMax
+		width 30px
+		height 30px
+		transform translateY(calc(-50% - 10px))
 	&:after
 		content ''
 		width 15px
@@ -38,9 +42,13 @@
 
 .swiper-button-prev
 	left -18px
+	@media $mLandscapeMax
+		left -18px
 	&:after
 		font-size 0
 		transform scaleX(-1)
 
 .swiper-button-next
 	right -18px
+	@media $mLandscapeMax
+		right -15px

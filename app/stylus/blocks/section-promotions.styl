@@ -1,15 +1,43 @@
 .section-promotions
 	padding-top 48px
 	padding-bottom 60px
+	@media $mLandscapeMax
+		padding-top 34px
+		padding-bottom 40px
 	&__container
 		@extend .container
 	&__title
 		margin-bottom 47px
+		@media $mLandscapeMax
+			margin-bottom 15px
+	&__slider
+		.swiper
+			&:not(.swiper-initialized)
+				& ~ .swiper-button-prev,
+				& ~ .swiper-button-next,
+				& ~ .swiper-pagination
+					display none
+				.swiper-wrapper
+					@media $mLandscapeMax
+						flex-direction column
+						row-gap 20px
+				.swiper-slide
+					@media $mLandscapeMax
+						display none
+					&:first-child
+					&:nth-child(2)
+						display block
+					/ ^[0]__slider.show-all &
+						display block
 	&__items
 		display grid
 		grid-template-columns repeat(2, 1fr)
 		grid-template-rows auto
 		gap 24px
+		@media $tPortraitMax
+			grid-template-columns auto
+		@media $mLandscapeMax
+			gap 20px
 	&__item-card
 		position relative
 		min-height 290px
@@ -20,39 +48,63 @@
 		background-size cover
 		border-radius 10px
 		z-index 1
+		@media $desktopMax
+			padding 32px
+		@media $mLandscapeMax
+			padding 25px 20px 34px
 		&--dark
 			background-image linear-gradient( 0deg, rgb(49,49,49) 0%, rgb(55,55,55) 49%, rgb(70,70,70) 100%)
 	&__item-card-content
 		max-width 310px
 	&__item-card-title
 		margin-bottom 26px
-		color #fff
+		color $white
 		font-size 24px
 		font-weight 500
 		line-height 27px
+		@media $mLandscapeMax
+			margin-bottom 22px
+			font-size 20px
+			line-height 24px
 	&__item-card-text
 		margin-bottom 34px
-		color #fff
+		color $white
 		font-size 13px
 		line-height 15px
+		@media $mLandscapeMax
+			margin-bottom 22px
 	&__item-card-button
 		letter-spacing .035em
+		@media $mLandscapeMax
+			padding 17px 45px
 	&__item-card-overimg
 		display flex
 		justify-content flex-end
 		align-items flex-end
 		position absolute
+		width 220px
 		height 100%
 		right 0
 		bottom 0
 		overflow hidden
 		pointer-events none
 		z-index -1
+		@media $desktopMax
+			width 160px
 	&__item-card-img
 		max-width 100%
 		max-height 100%
 		object-fit contain
+	&__bottom
+		display none
+		@media $mLandscapeMax
+			display flex
 	&--page
 		padding-top 7px
+		& ^[0]__title
+			@media $mLandscapeMax
+				margin-bottom 24px
+		& ^[0]__bottom
+			display flex
 	&--card
 		padding 0

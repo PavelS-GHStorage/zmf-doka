@@ -1,6 +1,12 @@
 .section-social
 	padding-top 52px
 	padding-bottom 48px
+	@media $tPortraitMax
+		padding-top 48px
+		padding-bottom 60px
+	@media $mLandscapeMax
+		padding-top 36px
+		padding-bottom 36px
 	&__container
 		@extend .container
 	&__grid
@@ -12,12 +18,19 @@
 		color #262626
 		font-size 16px
 		line-height 24px
+		@media $tPortraitMax
+			margin-bottom 15px
+			font-size 20px
+			font-weight 600
 		strong
 			font-size 23px
 			font-weight 600
+			@media $tPortraitMax
+				font-size 20px
 	&__btn
 		display block
-		width 310px
+		width 100%
+		max-width 310px
 		height 74px
 		margin-bottom 16px
 		font-size 0
@@ -25,6 +38,8 @@
 		background-repeat no-repeat
 		background-size contain
 		background-position left top
+		@media $tPortraitMax
+			margin-bottom 10px
 		&--youtube
 			background-image url('../images/btn-ytb.png')
 		&--vk
@@ -33,6 +48,9 @@
 		color #ababab
 		font-size 12px
 		line-height 14px
+		@media $tPortraitMax
+			font-size 14px
+			line-height 17px
 	&__gallery-items
 		display grid
 		width 100%
@@ -72,6 +90,8 @@
 		background-size cover
 		border-radius 10px
 		overflow hidden
+		@media $mLandscapeMax
+			margin-bottom 16px
 		&:hover
 			&:before
 				opacity 0
@@ -98,11 +118,13 @@
 			z-index 2
 	&__gallery-card-title
 		display block
+		margin-bottom 14px
 		color #262626
 		font-size 14px
 		line-height 17px
 		font-weight 600
-		margin-bottom 14px
+		@media $mLandscapeMax
+			margin-bottom 8px
 	&__gallery-card-props
 		display flex
 		flex-wrap wrap
@@ -132,18 +154,29 @@
 		& ^[0]__grid
 			grid-template-columns 314px minmax(auto, 640px)
 			grid-template-rows auto
+			@media $tPortraitMax
+				grid-template-columns auto
 		& ^[0]__gallery-items
 			grid-template-columns repeat(2, 1fr)
 			grid-template-rows auto
 			gap 24px
+			@media $mLandscapeMax
+				gap 26px
+			@media $mPortraitMax
+				grid-template-columns auto
 	&--vk
 		& ^[0]__grid
 			grid-template-columns 340px minmax(auto, 640px)
 			grid-template-rows auto
+			@media $tPortraitMax
+				grid-template-columns auto
 		& ^[0]__gallery-items
 			grid-template-columns repeat(3, 1fr)
 			grid-template-rows auto
 			gap 12px
+			@media $mPortraitMax
+				gap 8px
+				grid-template-columns repeat(2, 1fr)
 	&--reverse
 		& ^[0]__grid
 			grid-auto-flow dense

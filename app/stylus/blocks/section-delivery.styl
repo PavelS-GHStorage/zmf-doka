@@ -2,12 +2,21 @@
 	padding-top 44px
 	padding-bottom 50px
 	background-color #fbfbfb
+	@media $mLandscapeMax
+		padding-top 36px
+		padding-bottom 36px
 	&__container
 		@extend .container
 	&__title
 		margin-bottom 24px
+		@media $mLandscapeMax
+			margin-bottom 17px
 	&__text
 		margin-bottom 56px
+		@media $desktopMax
+			margin-bottom 48px
+		@media $mLandscapeMax
+			margin-bottom 24px
 	&__grid
 		display grid
 		grid-template-columns 494px minmax(990px, 1fr)
@@ -15,39 +24,72 @@
 		justify-content space-between
 		grid-column-gap 47px
 		width 100%
+		@media screen and (max-width: 1660px)
+			grid-template-columns 494px minmax(820px, 1fr)
+		@media $LargeDesktopMax
+			grid-template-columns 494px minmax(640px, 1fr)
+		@media $desktopMax
+			grid-template-columns auto
+			grid-column-gap 0
+			grid-row-gap 48px
+		@media $mLandscapeMax
+			grid-row-gap 26px
 	&__col
 		&--content
 			padding-top 3px
+			@media $desktopMax
+				padding-top 0
+				order 2
+		&--video
+			@media $desktopMax
+				order 1
 	&__items
 		display flex
 		flex-direction column
 		gap 44px
+		@media $mLandscapeMax
+			gap 28px 0
 	&__item
 		display flex
 		justify-content space-between
 		gap 21px
 		width 100%
+		@media $mLandscapeMax
+			display block
 	&__item-overico
 		width 50px
 		flex-shrink 0
+		@media $mLandscapeMax
+			display none
 	&__item-ico
 		max-width 100%
 	&__item-title
 		margin-bottom 12px
-		color #222
+		color $default
 		font-size 18px
 		line-height 22px
 		font-weight 600
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 17px
 	&__item-text
-		color #767676
+		color $gray
 		font-size 16px
 		line-height 24px
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 17px
 		strong
 			color $accent
 		ul
 			li
 				position relative
 				padding-left 27px
+				@media $mLandscapeMax
+					padding-left 17px
+					margin-bottom 16px
+				&:last-child
+					margin-bottom 0
 				&:before
 					content ''
 					display block
@@ -58,5 +100,8 @@
 					height 5px
 					background-color $accent
 					border-radius 3px
+					@media $mLandscapeMax
+						top 6px
+						left 0
 				strong
-					color #767676
+					color $gray

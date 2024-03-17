@@ -13,16 +13,28 @@
 		margin-bottom 18px
 		@media $desktopMax
 			margin-bottom 24px
+		@media $mLandscapeMax
+			margin-bottom 14px
 	&__text
 		margin-bottom 48px
 		@media $desktopMax
 			margin-bottom 32px
+		@media $mLandscapeMax
+			margin-bottom 23px
 	&__tabs
 		min-height 778px
+		@media $tPortraitMax
+			min-height 940px
 	&__tabs-controls
 		display flex
 		gap 12px
 		margin-bottom 50px
+		@media $mLandscapeMax
+			margin-bottom 18px
+			padding-bottom 4px
+			overflow auto hidden
+		@media $mPortraitMax
+			gap 8px
 	&__tabs-controls-btn
 		display block
 		padding 16px 38px 15px
@@ -32,6 +44,11 @@
 		text-transform none
 		letter-spacing .025em
 		border-radius 25px
+		@media $mLandscapeMax
+			padding 9px 18px
+			font-size 12px
+			line-height 14px
+			border-radius 16px
 		span
 			display block
 			color #262626
@@ -42,7 +59,7 @@
 		&.active
 			background-color $accent
 			span
-				color #fff
+				color $white
 				border-bottom-color transparent
 	&__tabs-items
 		position relative
@@ -62,10 +79,33 @@
 		display grid
 		grid-template-columns repeat(4, 1fr)
 		grid-template-rows auto
-		gap 24px
+		gap 32px 24px
 		width 100%
+		@media $tPortraitMax
+			grid-template-columns repeat(2, 1fr)
+		@media $mLandscapeMax
+			gap 12px 24px
+			grid-template-columns auto
 	&__item
 		display flex
+		position relative
+		@media $mLandscapeMax
+			padding-bottom 15px
+			&:after
+				@extend .psElem
+				position absolute
+				width 100vw
+				height 1px
+				left 50%
+				bottom 0
+				transform translateX(-50%)
+				background-color $border-gray
+		&:last-child
+			@media $mLandscapeMax
+				padding-bottom 0
+				&:after
+					content none
+					display none
 		&:hover
 			@media $desktop
 				& ^[0]__item-ico
@@ -75,6 +115,9 @@
 		width 55px
 		margin-right 17px
 		flex-shrink 0
+		@media $mLandscapeMax
+			width 50px
+			margin-right 15px
 	&__item-ico
 		display flex
 		justify-content center
@@ -91,31 +134,43 @@
 			max-width 231px
 	&__item-label
 		display block
+		margin-bottom 9px
 		color #c5c5c5
 		font-size 12px
 		font-weight 300
 		line-height 14px
-		margin-bottom 9px
+		@media $mLandscapeMax
+			margin-bottom 5px
 	&__item-data
 		display flex
 		flex-direction column
 		align-items flex-start
-		color #3a3835
+		color $default
 		font-size 16px
 		line-height 20px
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 17px
 		address, p
 			width 100%
 			display block
 		a
-			color #3a3835
+			color $default
 	&__item-data-subtext
 		color #a6a6a6
 		font-size 10px
 		line-height 12px
 		font-style italic
+		@media $mLandscapeMax
+			margin-top 2px
+			font-size 9px
+			line-height 11px
 	&__map
 		height 459px
 		margin-top 52px
 		margin-bottom 54px
+		@media $mLandscapeMax
+			margin-top 30px
+			margin-bottom 30px
 	&--page
 		padding-top 7px

@@ -1,19 +1,39 @@
 .section-history
 	padding 60px 0
+	@media $mLandscapeMax
+		padding-top 32px
+		padding-bottom 40px
 	&__container
 		@extend .container
 	&__title
 		margin-bottom 18px
+		@media $mLandscapeMax
+			margin-bottom 12px
 	&__text
 		margin-bottom 49px
+		@media $mLandscapeMax
+			margin-bottom 16px
 	&__items
 		display flex
 		flex-direction column
 		width 100%
 		grid-row-gap 50px
+		@media $mLandscapeMax
+			grid-row-gap 25px
 	&__item
 		padding-bottom 29px
-		border-bottom 1px solid #f7f7f7
+		border-bottom 1px solid $border-gray
+		@media $mLandscapeMax
+			padding-bottom 14px
+		@media $mPortraitMax
+			display none
+		&:first-child,
+		&:nth-child(2)
+			@media $mPortraitMax
+				display block
+		/ ^[0]__items.show-all &
+			@media $mPortraitMax
+				display block
 		&:last-child
 			padding-bottom 0
 			border-bottom none
@@ -24,23 +44,45 @@
 		width 100%
 		margin-bottom 10px
 		padding-bottom 31px
-		border-bottom 1px solid #f7f7f7
+		border-bottom 1px solid $border-gray
+		@media $tPortraitMax
+			display block
+		@media $mPortraitMax
+			margin-bottom 0
+			padding-bottom 17px
 	&__card-gallery,
 	&__card-content
 		width 50%
+		@media $tPortraitMax
+			width 100%
 	&__card-gallery
+		@media $tPortraitMax
+			max-width 580px
+			margin-bottom 24px
+		@media $mPortraitMax
+			margin-bottom 14px
+		.swiper-container,
+		.swiper
+			height 100%
 		.swiper
 			padding-bottom 0
 	&__card-gallery-big
 		width 100%
 		height 328px
 		margin-bottom 8px
+		@media $mLandscapeMax
+			height 255px
+		@media $mPortraitMax
+			height 162px
+			margin-bottom 6px
 		& ^[0]__card-gallery-overimg
 			border-radius 16px
 		.swiper-button-prev,
 		.swiper-button-next
 			margin 0
 			transform translateY(calc(-50% + 4px))
+			@media $mLandscapeMax
+				transform translateY(-50%)
 	&__card-gallery-overimg
 		display flex
 		justify-content center
@@ -54,52 +96,105 @@
 	&__card-gallery-thumbs
 		width 100%
 		height 78px
+		@media $mLandscapeMax
+			height 58px
+		@media $mPortraitMax
+			height 52px
 		& ^[0]__card-gallery-overimg
 			border-radius 2px
 	&__card-content
 		padding-left 24px
+		@media $tPortraitMax
+			padding-left 0
 	&__card-content-rows
 		display flex
 		flex-direction column
-		gap 27px
+		row-gap 27px
+		@media $desktopMax
+			row-gap 20px
+		@media $mPortraitMax
+			row-gap 9px
 	&__card-content-row
 		padding-bottom 24px
-		border-bottom 1px solid #f7f7f7
+		border-bottom 1px solid $border-gray
+		@media $desktopMax
+			padding-bottom 20px
+		@media $mPortraitMax
+			padding-bottom 9px
 		&:last-child
 			padding-bottom 0
 			border-bottom none
 	&__card-title
-		color #222
+		color $default
 		font-size 24px
 		line-height 27px
 		font-weight bold
 		margin-top -4px
 		margin-bottom 22px
+		@media $tPortraitMax
+			display none
+		@media $mLandscapeMax
+			margin-top 0
+			margin-bottom 12px
+			font-size 20px
+			line-height 24px
+			font-weight bold
+		&--mobile
+			display none
+			@media $tPortraitMax
+				display block
 	&__card-items
 		display grid
 		grid-template-columns repeat(3, 1fr)
 		grid-template-rows auto
+		align-items flex-end
 		gap 24px 48px
+		@media $desktopMax
+			gap 24px
+		@media $mPortraitMax
+			grid-template-columns repeat(2, 1fr)
+			gap 8px 12px
 	&__card-item-title
 		margin-bottom 5px
 		color #8c8c8c
 		font-size 14px
 		line-height 17px
+		@media $mLandscapeMax
+			margin-bottom 2px
+			font-size 10px
+			line-height 12px
 	&__card-item-data
 		color $accent
 		font-size 30px
 		line-height 34px
 		font-weight 700
+		@media $desktopMax
+			font-size 24px
+			line-height 30px
+		@media $mLandscapeMax
+			font-size 16px
+			line-height 19px
 		span
 			margin-left 8px
 			color $default
 			font-size 18px
 			line-height 24px
+			@media $mLandscapeMax
+				font-size 10px
+				line-height 19px
 	&__card-props
 		display grid
 		grid-template-columns repeat(2, minmax(0, 1fr))
 		grid-template-rows auto
 		gap 10px 62px
+		@media $desktopMax
+			grid-template-columns repeat(2, 1fr)
+			gap 10px 24px
+		@media $mLandscapeMax
+			grid-template-columns auto
+			gap 8px 12px
+		@media $mPortraitMax
+			gap 0
 	&__card-prop
 		display flex
 		width 100%
@@ -107,6 +202,9 @@
 	&__card-prop-data
 		font-size 16px
 		line-height 20px
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 18px
 	&__card-prop-title
 		color #8c8c8c
 		padding-right 4px
@@ -118,6 +216,11 @@
 		align-items flex-start
 		grid-column-gap 24px
 		width 100%
+		@media $mPortraitMax
+			flex-direction column
+			grid-column-gap 0
+			grid-row-gap 12px
+			padding-top 8px
 	&__card-video-item
 		display flex
 		flex-shrink 0
@@ -129,6 +232,13 @@
 		background-size cover
 		border-radius 7px
 		overflow hidden
+		@media $desktopMax
+			width 226px
+			height 122px
+		@media $mPortraitMax
+			width 100%
+			height auto
+			padding-top 50.34%
 		&:before,
 		&:after
 			@extend .psElem
@@ -148,14 +258,31 @@
 			height 14px
 			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANAAAAAOCAMAAABpTmIZAAAAgVBMVEUAAAD5+fn9/f3////////////////////////////5+fn////////7+/v5+fnxkQDxkQDJycn8/Pz5+fn////5+fn5+fnxkQD5+fn////5+fn5+fnJycnJycn5+fn5+fn////xkQDxkQD////5+fn5+fnJycn5+fn////smBjxkQDjoQi/AAAAJnRSTlMA8Gs674aCcxn25r94aPLm4NXKtpaNS0gs+ezS0c6xrltNRjQQDSVyBc8AAACrSURBVEjH3dbJDoIwFIXhY5kHZVDAeZZbeP8HVIg2lrBCE0q/3Vn+SXNT/M81jguMb+kzdOzLQaq6rsqxHUBEaQ5JUg6gSFCCBb2c1vhdEUUXjG9GrewBTbyDyJ9DDzP6gB60Ddpq9uSyO4Qzur5i3cB1DCisPdtH6Wwz2KYtVjNCMVacG4EDhRHRLoeEweQbCB435aBU6aCerw+D5VliNSOc0JPrcUPXhAqeoH9F2OTuhpUAAAAASUVORK5CYII=') no-repeat center
 			z-index 2
+			@media $mPortraitMax
+				width 100%
+				left 9px
+				bottom 7px
+				height 67px
+				max-width calc(100% - 18px)
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFAAAABDCAMAAACMVAEoAAABDlBMVEUAAAD////////5+fn////////////////////////+/v7////////////////////////////9/f3////////////////+/v7////8/Pz+/v7+/v7////////+/v7+/v79/f3////5+fn8/PzxkQDxkQDxkQDxkgT////////xkQD5+fn+/v7+/v7+/v79/f38/Pz////9/f3Jycn////5+fn5+fn////////5+fn////////5+fn8/Pz5+fnxkQD+/v7+/v7////JycnJycnxkQDJycnJycn5+fn8/Pz////5+fn////////xkQDxkQDxkQDxkQDxkQDJycn5+fn////xkQDko0HsmBnXtYGzU4umAAAAU3RSTlMA3e7smXdEzbsRZ6vKM1XYiCIJwf3mThnhYQa7o5AUth7y542KUwb99uvd2INaR0A6MCX8+vny49HJrw2omIFbLCn01dSsWFbhoJx6blLk4/PXXOjO/vUAAAaxSURBVHja7N1pU9NQGMXxk5C0TUPpguwoKq6oFVfABcV939pT9ft/EZPQcptmCrW5FRzO70WnnczN8Ib/9D4JASIiw5SKkBPmyrPXG1evbrx+dgUi/xf6kJPl8kana+MyRI5TxSGdCgDuK6On7pYAj13oKjMAUCDppJYnghLp+v3nlcm71OlzCSLHp0C3VnNZAPyY69bRU4rfe/RjdNI7nsD3HSe1POEw9B16/QdkYkxPVBQ5IRw3AOA6SHgso6eWvPeISJl+ZsdTcpBdPgMgZKHvgEzY5c4A7Xrk2Mzs98HnzP4nD5EAkQJLSUqS16Lbt+MxQUktDwC3mCxn2H9AJurK186AL5rMynHxWNivh5cMTRxEHNbjVxcHKgz7dzwmKGZ5vKpCDzHHSZ8Xz59cfLizuwD73ry81zrdfncyfrdEJuLeyzdHBQUJeskHOjNA0Q32dy8Vt4xEyAq6XN8EJbU8WlVguXskfd5mO/FgvQHL3rZOvZ+djJ8tkUl5O3pQCn7N5QwONj+9QMAtZnY8maBEhgSl0e65WIZdr1qn3q9Oxq+WyKS8GnXLk6izhEjgupV6fYa1egDAZzmz48lseSJDtjy7bWO6CZtO+34ncrWTcbUlMin3Rh7K9mIQKbPHS49T3BowZCiLYUPZ6Xa/cE/fUBQU+W+9GvWysX8wfg1Q8WM1hn4hrkbN7HjqwJDLxsGwy8YX22nrjzVDsUVbHvnH3o54Y1uNrud7ZKV7lcfMRIrpuYl53788XjXkxrap9oCLZV3lsURDWfl3zFWeUW69Lzski/XuVR4TlApL6R2PCYpZnqwacuv9VDtjR3fQ2vKsk/EDIv8Ds+MZmQlKWngXohvb5FQrOcgbFGO9AdGt9yJ5g2JGKaI/DhQZLygapaTo8QUieYKiUUqaHrAkkiMoGqVMgnkE5LfvegSknAK9oGiUIiKTCoqxchsiIvmCYrw/DxGRXEExHuxCRCRfUIwbSxARGTUoGqWIiLWgaJQiItaColGKiFgLikYpIjLZoGSt7UFEJF9QjHmIiOQLiqH/sS4i1oLyDiIi+YJiQETEUlAeQkRE31BEJOUEBGUKIiKWgqJHzYqIraDoEW4iYikoN/T9RETsBOXhR4iIWAnK03MQEbERlLVNiIjYCMqNWxAROdyUhici8k+D8nQBY6k6sK5ahYhMyPlZd/YuRrN+gXQbSMyRL84uA1OTHJ6Q6FPempvHX5tfdJYy5xxXc/EsEo3nEJGMKsk5jKRIVqtry0iE1Wr0cRlTdocnw4Nyu2h+0r+xRXJ6005QmuQiEkV+gogMaDB2DiNY52oD/ZY9epiyOTwZHpTzIRP4a4ydWV2wEJRm3CYkVkhdtBLpFwCFWcam54Ejo8JrGOTyiKA8WYCNoDRuXmOeoEQu+Mt5g9KkCQqqnIOI9Dx+9GJ7lT2rxWsrRySF2xg0fXhQdjYBG0G5tUjmCkrC+Tx+UBZuLS357Abl3Owj4C6pR/iLHHjEQSUcitcxaPGwoLxbAmwE5c4smScoxsremEG584I909En0gNCFiEiXey5P+Jv69YaBoVzQ4PyYHcZNoJy7sMZ2goK758NxgrKGvuDgnXyOQokRKSryES4uVBZZWLb4n0oT87bid68S+YPinG9Oc45ZtNBwRzPIjijoIgcqG8zsoZYyEh1z1pQdjZhBblFu0Hh4jjnWBkIyp927qenUSiKAvhprVKlGWLB/kGo4mzaWNO06cwkbZo4sxujO8/3/yoKliC4kDyfCcbz2xBYEDacwH333ZhdYKRAESkckQxWSA0DkgOYOLBfPCmQM9uBcmYjUA7Tg6dAESn8ILnGi4TkjZ1A+TUPkWrmL097YCNQXG6ARIEiUvlCOf3oF8pVtXhyCntITDoWi7LBbgKTe/TKgTIJeI+/KsqKFC4dPnORirKarFEUXJeLJwu80rRlY39puGw8LwXKscNpH4dMICLllYtoub29Y8aBgZ+PhasxKprU2Da6MW9si72W184DZUEOgBnvICJ7zCU131bPRVXUwuRV8aSPt5rSej/Nn46EmW13Hyjh/ASIyRVEZO+CVb5JpyzG73SeNGJzIN1LC5sDu8VenjEZQ0Ryx93A2zC38QJ/aLKXBzg6P/h9vVvCCvvjC85IOgs74wt8soUM1XgvUjYEBj2mnIf07B38h6o2YZn9AUsPsz8n1gYsXSTnyNxHfYhIxZapIWqI2Xlz5T8+Ffk17ikiL0YkZ6gj9Lh2HDdEJnKcKVt91KSZsiLfwcpv925RS7hbk0kxU3bd2eIJG1ug9uKTSdUAAAAASUVORK5CYII=')
+				background-position left bottom
+				background-size contain
 		span
 			display flex
 			width 44px
 			height 44px
 			margin auto
 			border-radius 22px
-			background-color #fff
+			background-color $white
 			z-index 3
+			@media $mPortraitMax
+				position absolute
+				top 50%
+				left 50%
+				width 56px
+				height 56px
+				transform translate(-50%, calc(-50% - 8px))
+				border-radius 28px
 			&:before
 				content ''
 				display block
@@ -166,6 +293,9 @@
 				border-width 5.5px 0 5.5px 9px
 				border-color transparent transparent transparent $accent
 				transform translateX(2px)
+				@media $mLandscapeMax
+					border-width 9.5px 0 9.5px 13px
+					transform translateX(2px)
 	&__card-video-text
 		position relative
 		color #959595
@@ -179,6 +309,9 @@
 			width 66px
 			height 32px
 			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAAgCAMAAACRtl6LAAAAflBMVEUAAADxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQAmPUfvAAAAKXRSTlMABJErBrYQ9ebEcSYVzGVMGgqZhllFQPDt1dOtnzcxIBPbvKZ8al88aG3Bg2IAAADwSURBVEjHpdVHbsMwEAXQYROrerGKVdyj+18wiPehbPwPcEc8gjMshKZ8wYQbYGJvQECSYGAh+JnA8NOKErcOBGZ4F7N2DCTsAxTaB4HJdY0SaQ3u4p4TJhTqIiCAsReXkJBUlrCEQSUQ0F0ZVgXJdQU1QlQh3yJt4gd6QrxXITLhac7RGvl6WLvIDLakpoms32VkVLtRRKj6ev2nfMG3wZwUHcTsZvLJQvKPew9GJZEX9+Kp+4kVx7ch25tbm+37yJRNt59r6gp70cGONmfzhwfZ6XfLSloyJ7zLcmq8YCS/e8kJjhphQqYT/sFzAvILRgwLLR4Z32UAAAAASUVORK5CYII=') no-repeat center
+			@media $mPortraitMax
+				content none
+				display none
 		span
 			display -webkit-box
 			-webkit-line-clamp 5

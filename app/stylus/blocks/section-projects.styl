@@ -13,11 +13,19 @@
 		grid-row-gap 59px
 	&__row
 		display grid
-		grid-template-columns 1fr 1fr
+		grid-template-columns repeat(2, 1fr)
 		grid-template-rows auto
 		grid-column-gap 118px
 		padding-bottom 59px
 		border-bottom 1px solid #e8e8e8
+		@media $desktopMax
+			grid-column-gap 60px
+		@media $tPortraitMax
+			grid-template-columns auto
+			grid-column-gap 0
+			grid-row-gap 60px
+			padding-bottom 0
+			border-bottom none
 		&:last-child
 			padding-bottom 0
 			border-bottom none
@@ -39,23 +47,23 @@
 		align-items flex-start
 		margin-bottom 20px
 	&__card-title
-		color #222
+		color $default
 		font-size 28px
 		font-weight 600
 		line-height 32px
 	&__card-price
 		margin-top 5px
-		color #222
+		color $default
 		font-size 14px
 		line-height 24px
 		font-weight 600
 		span
-			color #f19100
+			color $accent
 			font-size 24px
 			font-weight 700
 	&__card-text
 		margin-bottom 26px
-		color #767676
+		color $gray
 		font-size 16px
 		line-height 19px
 	&__card-buttons

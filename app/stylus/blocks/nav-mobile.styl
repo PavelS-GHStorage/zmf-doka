@@ -6,24 +6,49 @@
 	top 0
 	bottom 0
 	padding-top 45px
-	background-color #292825
+	background-color #272524
 	z-index 15
 	@media $tPortrait
 		display none !important
 	&__scroll
 		height 100%
 		overflow-y auto
+	&__back-btn
+		position absolute
+		padding-left 20px
+		left 16px
+		top 5px
+		height 34px
+		color grey
+		font-size 10px
+		font-weight 300
+		line-height 34px
+		opacity 0
+		transition opacity $duration
+		z-index 1
+		&.show
+			opacity 1
+		&:before
+			@extend .psElem
+			position absolute
+			left 0
+			top 12px
+			width 12px
+			height 10px
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfoAxEXLR8tjZuKAAAAhklEQVQI112PIQ7CQBBFX+kKTBOOgEd0PYZeAssZygV29iJ4PIQEsaR1nAGJxJJUkakgm7Tzx/z8n/nJQ/mfnKXNXlEWABATe3omcgDxSU0VvqaIV35hiVEhiYYjA6tZ/nE0gMebh5djS6IPBztVPt7djUtX7e6mURTZiMppSqFkvLXoHHAE8ew6BTeBzx0AAAAASUVORK5CYII=') no-repeat center
 	&__close-btn
 		display block
 		position absolute
-		top 0
-		right 0
+		top 4px
+		right 4px
 		width 34px
 		height 34px
 		padding 0
-		background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANBAMAAACAxflPAAAAMFBMVEUAAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDKBS+1AAAAD3RSTlMAraiyo76b+vTp4sa3DQV03v4xAAAAUklEQVQI12PoYQAC5gaG/QpA2n8DA+MnBgaWz0C2vAKDvwGQZvzyDMgFAv31AmCa6ycDGOTPTwBRLB8vfQJSQMVALWC9YDPOg/TKBzCUguRYCwANWxN89UPYMgAAAABJRU5ErkJggg==') no-repeat center
+		background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAQAAAADHm0dAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfoAxEWMzhdBHsJAAABC0lEQVQoz33SzyqEURgH4GecpggbKwtXICWNJIVT0jBkw9INcBUW1rY2dvZKkthMivzJbFyALZGSjbJhwdc335yZ+a1Ovc/i9Hvf0s6BZbv2dUvFkbfSzg/Y7oIr7gRC/LKIFa8eukGnIV77ttARZ/BCLUSuENviHFYJES4F8wkuwIxST3ALzGkzftEwplGEzTTHqwbsGSzCIs3xjH6cWW4eFil1wybBo9niqKelx3Fz/68Rm91oRcMonjDk0FanD2T1nJv2qdrac07zHpf8uEmXktGk8HQpf3TCfWvhKQ6RMffKCUxwiBNu9eJUTZq67OreQ3xWxrE17XP5f8+1EDf0ObGuc658m/LxCwB4XYsR5MtbAAAAAElFTkSuQmCC') no-repeat center
 		z-index 1
 	&__list-item
+		display flex
+		align-items center
 		position relative
 		border-top 1px solid #2E2D29
 		a[href*='tel']
@@ -33,9 +58,11 @@
 			display block
 			color grey
 			font-size 12px
-			font-weight 400
 			line-height 16px
+			font-weight 400
 			padding 10px 16px 9px 12px
+		span
+			display block
 		&--phone, &--address
 			padding-left 24px
 			&:before
@@ -51,14 +78,22 @@
 				left 15px
 				width 12px
 				height 12px
-				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAASFBMVEUAAAA9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQLevFvAAAAF3RSTlMA1fHPFwfcv7N+alUuEvTp38SEdWxdDf5XQEoAAABQSURBVAjXTctZDoAgDEXRMhSQwVnf/ndqQ6h6v3qSPorWmkYjSFWxCi5FEuyKDDivuIFCbxMMfRlsTHyUygK/IGQHoH94uXpjN/9A7UzBxgcvuARJouuYswAAAABJRU5ErkJggg==')
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfoAxEWNxAM3Rb3AAAAjElEQVQY013NvQpBAQCG4eeIO0DZbPKTBaNF3IM7sLoByWIzuQSXoGxsdgmThEUmg5TRcCjnvNNXz/AFq6UGrpoe/kpqgbJ8FBLO31UhCvvvKsRhATamcZiBsXscngYYCqIQrGCvZK3tLaXv4uAYQsZO1slETxUcQiBnrhb9CLupG3nFP36ldXUUZWw/QsAfmWc7pc4AAAAASUVORK5CYII=')
 		&--address
 			&:before
 				top 12px
 				left 15px
 				width 8px
 				height 12px
-				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAMCAMAAABoQAyvAAAAS1BMVEUAAAA9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkQ9rkRsO3/3AAAAGHRSTlMA185Y9/PHjYd7FAwG4cK0opWAc2xqNiYNzQZeAAAARklEQVQI1x3GxQHAMADDQIWpjN5/0qa5h2WY0uzt3Wv020kK7skSQQ5YhVSBUxhl6EuRthIlmoYFrnFewPYedNUrMjjb4AMGFgSZHII0EQAAAABJRU5ErkJggg==')
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAMCAQAAAD1lzQWAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfoAxEWNy7NvAtcAAAAkklEQVQI10XLIZMBcQDG4Wf/d0Yx29wXuLiJYsZogiAb5eYEkiL5AAqjG80XkK9aQZAE5cJ2SdoZumCNp/3emTdKKVno+fJvY/2p7CQBdXVJMJe4+9WwwDhKc7G+LfjTDWLsPO0JMkyLYcjHINbW8i2xVCNKK3LByyG4mXgbBaycipzJohSqLkqOmor31Y+zDjwAWOkdnV01nQEAAAAASUVORK5CYII=')
+	&__list-btn
+		display block
+		flex-shrink 0
+		width 36px
+		height 36px
+		margin-left auto
+		padding 0
+		background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAQAAAAnZu5uAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfoAxEXLDp/kn6MAAAAQElEQVQI12Ns8GFwZ6irf8/AwOxgztDOEHuQ5+ALFoZ3DAwMUgyNDLosDEIMDAw3GCYzrGVheMpQz9BZ/5OBAQCGiQ4m6NLwEQAAAABJRU5ErkJggg==') no-repeat center
 	&__list-href
 		display block
 		width 100%
@@ -66,13 +101,43 @@
 		font-size 12px
 		font-weight 400
 		line-height 16px
-		padding 12px 15px 7px
+		padding 10px 15px 9px
+	&__sublist
+		position fixed
+		width 100%
+		left 100%
+		top 45px
+		bottom 0
+		background-color #272524
+		transition left .5s
+		z-index 2
+		&.show
+			left 0
+	&__sublist-item
+		border-top 1px solid #2E2D29
+		&:last-child
+			border-bottom 1px solid #2E2D29
+	&__sublist-href
+		display inline-block
+		vertical-align top
+		color grey
+		font-size 12px
+		font-weight 400
+		line-height 16px
+		padding 10px 15px 9px
 	&__bottom
 		& ^[0]__list
-			margin-bottom 18px
+			margin-bottom 14px
+			border-bottom 1px solid #2E2D29
 
 	.social
 		margin-left 16px
 		@media $mPortraitIphoe6Max
 			justify-content center
 			margin-left 0
+		&__item
+			@media $mPortraitIphoe6Max
+				margin-right 32px
+			&:last-child
+				@media $mPortraitIphoe6Max
+					margin-right 0

@@ -8,7 +8,7 @@
 	font-weight 600
 	line-height 14px
 	text-transform uppercase
-	background-color #fff
+	background-color $white
 	border-radius 24px
 	transition background $duration, box-shadow $duration
 	user-select none
@@ -17,10 +17,10 @@
 		padding 23px 55px
 		border-radius 30px
 	&--more
-		color white
+		color $white
 		background-color #171717
 	&--secondary
-		color white
+		color $white
 		background-color #262626
 		&:hover
 			background-color #171717
@@ -30,12 +30,15 @@
 		padding 30px 99px
 		border-radius 36px
 		box-shadow -3.6px 3.5px 10px rgba(38,38,38,0.35), inset 0 0 12px 6px rgba(255,255,255,0.27)
+		@media $mPortraitIphoe6Max
+			width 100%
+			padding 30px
 		&:hover
 			background-color $accent
 			box-shadow -3.6px 3.5px 10px rgba(38,38,38, 0), inset 0 0 12px 6px rgba(255, 255, 255, 0)
 	&--accent
-		color white
+		color $white
 		background-color $accent
 	&--dark
-		color white
+		color $white
 		background-color $default

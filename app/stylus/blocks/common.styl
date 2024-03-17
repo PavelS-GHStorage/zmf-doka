@@ -5,17 +5,26 @@
 	gap 24px
 	width 100%
 	margin-bottom 32px
+	@media $mLandscapeMax
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		gap 12px
 
 .common-bottom
 	display flex
 	justify-content center
 	position relative
 	margin-top 50px
+	@media $mLandscapeMax
+		margin-top 32px
 	.pagination
 		position absolute
 		top 20px
 		right 0
 		z-index 1
+		@media $mLandscapeMax
+			display none
 
 .common-title-h2
 	font-size 36px
@@ -24,15 +33,18 @@
 		font-size 24px
 		line-height 30px
 	@media $mLandscapeMax
-		font-size 18px
-		line-height 22px
+		font-size 20px
+		line-height 24px
 	strong
 		font-weight 600
 
 .common-title-h3
-	color #222222
+	color $default
 	font-size 30px
 	line-height 36px
+	@media $tPortraitMax
+		font-size 20px
+		line-height 24px
 	strong
 		font-weight 600
 
@@ -40,6 +52,12 @@
 	color #767676
 	font-size 24px
 	line-height 27px
+	@media $tPortraitMax
+		font-size 16px
+		line-height 19px
+	@media $mLandscapeMax
+		font-size 14px
+		line-height 17px
 	a
 		color $accent
 		border-bottom 1px solid $accent

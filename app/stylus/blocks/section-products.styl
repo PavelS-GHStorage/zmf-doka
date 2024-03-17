@@ -10,6 +10,8 @@
 		margin-bottom 25px
 		& + ^[0]__itmes
 			margin-top 44px
+			@media $mLandscapeMax
+				margin-top 24px
 	&__text
 		& + ^[0]__itmes
 			margin-top 35px
@@ -18,6 +20,10 @@
 		grid-template-columns repeat(3, 1fr)
 		grid-template-rows auto
 		gap 24px
+		@media $desktopMax
+			grid-template-columns repeat(2, 1fr)
+		@media $mLandscapeMax
+			grid-template-columns auto
 	&__card
 		width 100%
 		min-height 574px
@@ -108,7 +114,7 @@
 			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAzFBMVEXxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQDxkQD///9VjrpQAAAAQnRSTlMAH5Xd6MNhfLip1vA7HIxvzE8qNV4iwOS7t1suukzHFzByYnT5Y7za4AjcpDo5WA/s4ZJmFs0bhK+hzu8lJp7f6WdsrGgOAAAAAWJLR0RDZ9ANYgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+gCGQ0EIUHPPjMAAACHSURBVAjXLU0HEoIADIviQBQHbkVw4N57r/z/UbQHvWvaNGkLAImkkUpnEEWWNHMW8wXYQJElndnlikNUWYs9dTZgNWPisAWIr90R0qUryB48+ugLGQzBEWAEY05EMDGdAfMFl7q4wpob8W8ld3uBA4968nTmReuVwe3+4PMVfXp/vj/vr10IVbMPA8uJWFwAAAAASUVORK5CYII=') no-repeat center
 			z-index 1
 		strong
-			color #222
+			color $default
 			font-weight 600
 	&__card-properties
 		display grid
@@ -157,7 +163,7 @@
 		display flex
 		justify-content flex-end
 		align-items flex-end
-		color #222
+		color $default
 		font-size 13px
 		line-height 15px
 		font-weight bold
@@ -165,7 +171,7 @@
 		display flex
 		align-items flex-end
 		column-gap 4px
-		color #222
+		color $default
 		font-size 13px
 		line-height 17px
 		font-weight 700

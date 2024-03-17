@@ -7,10 +7,14 @@ mixin section-head(data)
 			if (breadcrumbs)
 				+e.breadcrumbs
 					+breadcrumbs(breadcrumbs)(class="--section-head")
-
 			+e('h1').title Готовые модульные дома и&nbsp;бани от&nbsp;306&nbsp;400&nbsp;₽ под ключ
 				strong  в&nbsp;рассрочку на&nbsp;12&nbsp;месяцев 
 				| без процентов
+			+e.rating
+				+e.rating-text
+					strong 4,9
+					|  на 
+					a(href="#" target="_blank") Яндекс картах
 			+e('p').text
 				strong Скидка при покупке дома или бани до&nbsp;50&nbsp;000&nbsp;₽ только до 20&nbsp;ноября 
 				| за бесплатную экскурсию по нашему производству
@@ -37,11 +41,11 @@ mixin section-head(data)
 						+e('img').advantage-ico(src="static/images/advantage-ico.png" alt="")
 					+e('p').advantage-text Собственное, крытое, 
 						strong тёплое&nbsp;производство 
-						| S = 2000 м²
+						| Sе&nbsp;=е&nbsp;2000е&nbsp;м²
 				+e.advantage
 					+e.advantage-overico
 						+e('img').advantage-ico(src="static/images/advantage-ico2.png" alt="")
-					+e('p').advantage-text 40 опытых строительных&nbsp;бригад 
+					+e('p').advantage-text 40е&nbsp;опытых строительных&nbsp;бригад 
 						strong Cтаж&nbsp;более&nbsp;10&nbsp;лет
 				+e.advantage
 					+e.advantage-overico

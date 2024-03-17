@@ -2,6 +2,12 @@
 	padding-top 77px
 	padding-bottom 86px
 	background-color #fbfbfb
+	@media $tPortraitMax
+		padding-top 48px
+		padding-bottom 60px
+	@media $mLandscapeMax
+		padding-top 34px
+		padding-bottom 40px
 	&__container
 		@extend .container
 	&__wrap
@@ -12,20 +18,34 @@
 		background-repeat no-repeat
 		background-position calc(100% + 2px) 4px
 		background-size cover
-		background-color #fff
-		box-shadow: 0 16px 32px 0 rgb(215,215,215,0.15)
+		background-color $white
 		border-top-left-radius 138px
 		border-bottom-right-radius 138px
-		outline 22px solid #fff
+		box-shadow 0 16px 32px 0 rgb(215,215,215,0.15)
+		outline 22px solid $white
+		@media $LargeDesktopMax
+			width 100%
+			margin-left 0
+			padding 68px 48px 48px
+		@media $tPortraitMax
+			padding 0
+			background none
+			border-radius 0
+			box-shadow none
+			outline none
 	&__content
 		max-width 760px
 	&__title
 		margin-bottom 28px
+		@media $mLandscapeMax
+			margin-bottom 23px
 	&__text,
 	&__info
 		max-width 660px	
 	&__text
 		margin-bottom 39px
+		@media $mLandscapeMax
+			margin-bottom 19px
 	&__info
 		display grid
 		grid-template-columns repeat(3, minmax(156px, 200px))
@@ -33,6 +53,10 @@
 		gap 24px
 		max-width 660px
 		margin-bottom 36px
+		@media $mLandscapeMax
+			grid-template-columns auto
+			gap 18px
+			margin-bottom 27px
 	&__info-item
 		position relative
 		padding-left 40px
