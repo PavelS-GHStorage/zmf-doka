@@ -3,18 +3,38 @@
 		display grid
 		grid-template-columns repeat(2, 1fr)
 		grid-template-rows auto
-		column-gap 74px
+		grid-column-gap 74px
 		border-bottom 2px solid whitesmoke
+		@media $tPortraitMax
+			grid-column-gap 32px
+		@media $mLandscapeMax
+			grid-template-columns auto
+			gap 0
 		&:first-child
 			& ^[0]__item
 				padding-top 0
+				@media $mLandscapeMax
+					padding-top 19px
 		&:last-child
 			border-bottom none
 			& ^[0]__item
 				padding-bottom 0
+				@media $mLandscapeMax
+					padding-bottom 19px
 	&__item
 		padding-top 40px
 		padding-bottom 40px
+		@media $mLandscapeMax
+			padding-top 12px
+			padding-bottom 12px
+			border-bottom 2px solid whitesmoke
+		@media $mPortraitMax
+			width calc(100% + 30px)
+			margin-left -15px
+			padding 19px 15px
+		&:last-child
+			@media $mLandscapeMax
+				border-bottom none
 		&.active
 			& ^[0]__item-toggle
 				&:before
@@ -24,9 +44,13 @@
 		align-items center
 		width 100%
 		column-gap 19px
+		@media $mLandscapeMax
+			column-gap 14px
 	&__item-overico
 		width 59px
 		flex-shrink 0
+		@media $mLandscapeMax
+			width 44px
 	&__item-ico
 		max-width 100%
 	&__item-title
@@ -35,10 +59,16 @@
 		font-size 18px
 		line-height 22px
 		font-weight 600
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 17px
 	&__item-body
 		display none
 		padding-top 22px
 		padding-right 44px
+		@media $mLandscapeMax
+			padding-top 16px
+			padding-right 0
 	&__item-text
 		margin-bottom 15px
 		color #6e6e6e
@@ -50,6 +80,11 @@
 		flex-wrap wrap
 		width 100%
 		gap 10px
+		@media $mPortraitMax
+			display grid
+			grid-template-columns repeat(4, 1fr)
+			grid-template-rows auto
+			gap 6px
 	&__item-gallery-img
 		display block
 		width 117px
@@ -58,6 +93,10 @@
 		background-position center
 		background-size cover
 		border-radius 6px
+		@media $mPortraitMax
+			width 100%
+			height 46px
+			border-radius 4px
 	&__item-toggle
 		width 32px
 		height 32px
@@ -69,4 +108,7 @@
 			height 32px
 			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAACxsbEgQzELAAAAAXRSTlMAQObYZgAAABZJREFUCNdjYGBsYKAS8R8IwAQVDQUAMHgXF/qZaHMAAAAASUVORK5CYII=') no-repeat center
 			transition transform $duration
-		
+			@media $mPortraitMax
+				width 26px
+				height 26px
+				background-size contain

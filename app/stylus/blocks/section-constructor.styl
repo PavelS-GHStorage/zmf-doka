@@ -1,29 +1,48 @@
 .section-constructor
-	padding-top 48px
+	padding-top 41px
 	padding-bottom 60px
 	background-color #fbfbfb
+	@media $mLandscapeMax
+		padding-top 34px
+		padding-bottom 40px
 	&__container
 		@extend .container
 	&__title
-		margin-bottom 24px
+		margin-bottom 28px
+		@media $mLandscapeMax
+			margin-bottom 21px
 	&__text
-		margin-bottom 32px
+		margin-bottom 41px
+		@media $mLandscapeMax
+			margin-bottom 10px
 	&__indicator
 		display none
 		grid-row-gap 16px
-		margin-bottom 45px
-		padding 27px 36px
+		margin-bottom 41px
+		padding 27px 36px 23px
 		background-color white
 		border-radius 28px
+		@media $tPortraitMax
+			padding 24px
+		@media $mLandscapeMax
+			grid-row-gap 10px
+			margin-bottom 15px
+			padding 10px
+			border-radius 8px
 	&__indicator-items
 		display flex
 		column-gap 25px
+		@media $mLandscapeMax
+			column-gap 6px
 	&__indicator-item
 		width 100%
 		height 6px
 		background-color #e8e8e8
 		border-radius 3px
 		transition background $duration
+		@media $mLandscapeMax
+			height 4px
+			border-radius 2px
 		&--active
 			background-color $accent
 	&__indicator-numbers
@@ -31,26 +50,43 @@
 		font-size 14px
 		line-height 17px
 		font-weight 400
+		@media $mLandscapeMax
+			font-size 12px
+			line-height 14px
 	&__item
 		position relative
 		margin-bottom 16px
+		@media $mLandscapeMax
+			margin-bottom 8px
 	&__info
 		display none
 		position absolute
 		top 0
 		right 0
 		z-index 2
+		@media $mLandscapeMax
+			position relative
+			top auto
+			left auto
+			margin-bottom 15px
 	&__info-total
 		margin-bottom 7px
 		color $default
 		font-size 24px
 		line-height 27px
 		font-weight 600
+		@media $tPortraitMax
+			margin-bottom 3px
+			font-size 18px
+			line-height 22px
 	&__info-credit
 		font-size 14px
 		line-height 17px
 		color #777
 		font-weight 400
+		@media $tPortraitMax
+			font-size 12px
+			line-height 14px
 		span
 			color $accent
 			font-weight 600
@@ -60,23 +96,33 @@
 	&__steps
 		.swiper
 			padding-bottom 24px
+			@media $mLandscapeMax
+				padding-bottom 12px
 	&__step-top
 		min-height 68px
+		margin-bottom 26px
 		padding-right 300px
-		margin-bottom 30px
+		@media $mLandscapeMax
+			min-height auto
+			margin-bottom 20px
+			padding-right 0
 	&__step-title
-		margin-bottom 10px
+		margin-bottom 9px
 		color $default
 		font-size 24px
 		line-height 27px
 		font-weight 600
+		@media $tPortraitMax
+			margin-bottom 14px
+			font-size 20px
+			line-height 24px
 		&:last-child
 			margin-bottom 0
 	&__step-info
 		display inline-flex
 		align-items center
-		column-gap 8px
-		padding 6px 12px 6px 9px
+		column-gap 5px
+		padding 6px 10px 5px 9px
 		color $default
 		font-size 12px
 		line-height 14px
@@ -97,6 +143,12 @@
 		grid-template-columns repeat(4, 1fr)
 		grid-template-rows auto
 		gap 24px
+		@media $desktopMax
+			grid-template-columns repeat(3, 1fr)
+		@media $tPortraitMax
+			grid-template-columns repeat(2, 1fr)
+		@media $mLandscapeMax
+			gap 20px 10px
 	&__option
 		position relative
 		user-select none
@@ -118,12 +170,17 @@
 		display block
 		position relative
 		width 100%
-		height 416px
+		min-height 416px
 		padding-bottom 36px
 		border 1px solid #e8e8e8
 		border-radius 6px
 		cursor pointer
 		transition border $duration
+		@media $mLandscapeMax
+			min-height 228px
+			padding-bottom 16px
+		@media $mPortraitIphone
+			min-height 264px
 		*
 			pointer-events none
 		&:after
@@ -141,6 +198,12 @@
 			visibility hidden
 			transition opacity $duration, visibility $duration
 			z-index 1
+			@media $mLandscapeMax
+				bottom -12px
+				width 24px
+				height 24px
+				background-size 10px 8px
+				border-radius 12px
 		&:hover
 			border-color $accent
 			& ^[0]__option-price
@@ -148,39 +211,55 @@
 					color $accent
 	&__option-cover
 		width 100%
-		height 180px
-		margin-bottom 12px
+		height 182px
+		margin-bottom 22px
 		background-repeat no-repeat
 		background-position center
 		background-size contain
 		border-top-left-radius 6px
 		border-top-right-radius 6px
+		@media $mLandscapeMax
+			height 89px
+			margin-bottom 10px
 	&__option-img
 		max-width 100%
 		max-height 100%
 	&__option-title
-		margin-bottom 12px
+		margin-bottom 15px
 		text-align center
 		color $default
 		font-size 17px
 		line-height 19px
 		font-weight 600
+		@media $mLandscapeMax
+			margin-bottom 10px
+			font-size 11px
+			line-height 13px
 	&__option-properties
 		display grid
 		row-gap 8px
-		margin-bottom 12px
-		padding 12px 16px 20px
+		margin-bottom 18px
+		padding 12px 16px 13px
 		border-top 1px solid $border-gray
 		border-bottom 1px solid $border-gray
+		@media $mLandscapeMax
+			row-gap 6px
+			margin-bottom 10px
+			padding 7px 10px
 	&__option-property
 		display grid
-		grid-template-columns 1fr 1fr
+		grid-template-columns repeat(2, 1fr)
 		grid-template-rows auto
+		@media $mPortraitIphone
+			grid-template-columns auto
 	&__option-property-title,
 	&__option-property-data
 		font-size 14px
 		line-height 17px
 		font-weight 400
+		@media $mLandscapeMax
+			font-size 10px
+			line-height 12px
 	&__option-property-title
 		color #6e6e6e
 	&__option-property-data
@@ -192,31 +271,50 @@
 		font-size 17px
 		font-weight 500
 		line-height 25px
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 14px
 		span
 			color #b1b1b1
 			font-size 25px
 			font-weight 600
 			transition color $duration
+			@media $mLandscapeMax
+				font-size 14px
+				line-height 14px
 	&__table
 		display grid
-		grid-row-gap 24px
-		margin-bottom 44px
-		padding-top 40px
-		padding-bottom 40px
+		grid-row-gap 26px
+		margin-bottom 41px
+		padding-top 37px
+		padding-bottom 35px
 		border-top 1px solid #f1f1f1
 		border-bottom 1px solid #f1f1f1
+		@media $mLandscapeMax
+			grid-row-gap 12px
+			margin-bottom 24px
+			padding-top 24px
+			padding-bottom 24px
 		&:last-child
 			margin-bottom 0
 	&__table-row
 		display grid
-		grid-template-columns 1fr 150px
+		grid-template-columns 1fr 120px
 		grid-template-rows auto
 		grid-column-gap 24px
+		@media $tPortraitMax
+			grid-column-gap 12px
 	&__table-cell
 		color $default
 		font-size 18px
 		line-height 22px
 		font-weight 400
+		@media $tPortraitMax
+			font-size 16px
+			line-height 19px
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 17px
 		&--price
 			text-align right
 			font-weight 600
@@ -224,6 +322,8 @@
 		display flex
 		justify-content flex-end
 		column-gap 30px
+		@media $mLandscapeMax
+			column-gap 10px
 	&__controls-button
 		display flex
 		align-items center
@@ -236,6 +336,11 @@
 		text-transform uppercase
 		border-radius 36px
 		transition opacity $duration
+		@media $mLandscapeMax
+			column-gap 8px 
+			padding 17px 37px
+			font-size 11px
+			line-height 12px
 		&:disabled
 			pointer-events none
 			opacity .7
@@ -247,6 +352,9 @@
 				width 17px
 				height 15px
 				background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAS1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////+DmQsHAAAAGHRSTlMAvndQkoRxVPfHt5eWimr86cajn3hMKRT1+wcBAAAAVUlEQVQY02XLSw6AIBAE0VEQFQT/Wvc/qQuDyYy16ryk5c0vTlQegoIEWcEEnYJswTMXexm22HxFwSY9DKG0tSOIOEiiO2E01MP6p/HW5KATQ/tV5wPVywVw9TKZIQAAAABJRU5ErkJggg==') no-repeat center
+				@media $mLandscapeMax
+					width 14px
+					height 12px
 		&--next
 			background-color $accent
 			&:after
@@ -255,3 +363,9 @@
 				width 17px
 				height 15px
 				background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAMAAADeWG8gAAAAS1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////+DmQsHAAAAGHRSTlMAvndMEOPfXBTny7ClnTjRzca1eEYyIwh3uFdeAAAAVUlEQVQY023MWQ6AIAxF0aIMIuA8vP2v1GhMTSv38+S1xJW4kWoGWkW2/xtNFavt0mPZfCWD26BbKKwNFzLgDvHqHOE7IQPgrZAdcHqjhSJfcaG8cgENJgWGDWNMRgAAAABJRU5ErkJggg==') no-repeat center
+				@media $mLandscapeMax
+					width 14px
+					height 12px
+
+	& + .section-delivery
+		background-color #fff

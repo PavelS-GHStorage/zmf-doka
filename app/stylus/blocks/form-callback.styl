@@ -118,6 +118,11 @@
 			font-size 14px
 			line-height 17px
 			font-weight 500
+			@media $mLandscapeMax
+				color $gray
+				font-size 12px
+				line-height 14px
+				font-weight 400
 		& ^[0]__field-input
 			background-color $white
 			border 1px solid #d8d8d8
@@ -142,13 +147,28 @@
 		& ^[0]__agreement
 			padding-left 0
 			text-align center
+		& ^[0]__submit-btn
+			font-size 14px
 	&--default
 		row-gap 8px
+		@media $mLandscapeMax
+			row-gap 10px
 		& ^[0]__row
 			align-items flex-end
 			grid-template-columns repeat(3, 1fr)
+			@media $tPortraitMax
+				grid-template-columns repeat(2, 1fr)
+			@media $mLandscapeMax
+				grid-template-columns auto
+				gap 18px
+		& ^[0]__field
+			&--empty
+				@media $tPortraitMax
+					display none
 		& ^[0]__agreement
 			margin-top 0
+			@media $tPortraitMax
+				text-align left
 	&--popup
 		row-gap 29px
 		text-align left

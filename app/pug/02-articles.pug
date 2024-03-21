@@ -10,5 +10,4 @@ block main
 
 	+breadcrumbs(breadcrumbsData, true)
 
-	+section-products({ title: 'Дома, которые <strong>вам понравились</strong>', hasDownloadMore: true })
-
+	+section-articles({ items: articles.max, hasDownloadMore: true })(class="--page")

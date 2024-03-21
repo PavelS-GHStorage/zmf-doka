@@ -139,14 +139,26 @@
 		flex-wrap wrap
 		gap 10px
 		width 100%
+		@media $mLandscapeMax
+			display grid
+			grid-template-columns repeat(2, 1fr)
+			grid-template-rows auto
+			gap 12px
+		@media $mPortraitMax
+			gap 8px
 	&__item-gallery-img
 		display block
 		width 146px
-		height 93px
+		// height 93px
+		padding-top 72%
 		background-repeat no-repeat
 		background-position center
 		background-size cover
 		border-radius 8px
+		@media $mLandscapeMax
+			width 100%
+			// height auto
+			// padding-top 72%
 	&--card
 		& ^[0]__item
 			padding-top 0

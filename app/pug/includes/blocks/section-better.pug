@@ -1,0 +1,22 @@
++b('section').section-better
+	+e.container
+		+e('h2').title.common-title-h2 Наши чаны 
+			strong нагреваются быстрее
+			|  многих аналогов и остывают дольше
+		+e('p').text.common-subtext В летнее время чан будет остывать несколько дней. Зимой 4-5 часов.
+		+e.grid
+			+e.characteristics
+				+e.characteristic
+					+e.characteristic-overico
+						+e('img')(src=(rootPath + "better-ico.png") alt="").characteristic-ico
+					+e.characteristic-content
+						+e('p').characteristic-title Объём воды и площадь нагрева
+						+e.characteristic-text
+							p Объём воды, который следует набрать - 1800 литров. Если Вы набираете воду в чан для одного человека, то можно уменьшить объем воды на 50-100 литров.
+							p Площадь нагрева 2 m², что в несколько раз больше многих аналогов. Именно поэтому даже в мороз (-30*) надо 2-3 загрузить дрова в печь и чан нагреется. В аналоговых чанах до 18 раз.
+						+e.characteristic-info
+							+e('p').characteristic-info-title Скорость нагрева чана
+							+e('p').characteristic-info-text Нагрев чана до 40 градусов длится 
+								a(href="#") около 30-40 минут
+								|  при температуре +10 и околок 4 часов при температуре -30
+			+e.cover(style="background-image: url('" + rootPath + "better-img.png');")

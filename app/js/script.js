@@ -133,8 +133,8 @@ $(function () {
 				const indicatorNumberAll = constructor.find('.section-constructor__indicator-number--all');
 				
 				const info = constructor.find('.section-constructor__info');
-				const infoTotalPrice = constructor.find('.section-constructor__info-total-price');
-				const infoCreditPrice = constructor.find('.section-constructor__info-credit-price');
+				const infoTotalPrice = info.find('.section-constructor__info-total-price');
+				const infoCreditPrice = info.find('.section-constructor__info-credit-price');
 
 				const slider = constructor.find('.section-constructor__steps .swiper');
 				const sliderButtons = constructor.find('.section-constructor__controls');
@@ -236,44 +236,6 @@ $(function () {
 					}
 				}
 
-				function costCalculation() {
-					let totalPrice = 0;
-
-					Object.keys(selectedOptionsData).forEach(function(key) {
-						selectedOptionsData[key].forEach(function(option) {
-							if (option.price) {
-								totalPrice += Number(option.price.replace(/\s/g,''));
-							}
-						})
-					})
-
-					if (!totalPrice) {
-						info.fadeOut(300);
-
-						return;
-					}
-
-					const calcCreditPercent = creditPercent ? (totalPrice * Number(creditPercent)) / 100 : 0;
-					const calcCreditMonths = creditMonths ? Number(creditMonths) : 6;
-
-					let creditPrice = parseInt(((totalPrice + calcCreditPercent) / calcCreditMonths));
-
-					if (totalPrice > 999) {
-						totalPrice = totalPrice.toLocaleString();
-					}
-
-					if (creditPrice > 999) {
-						creditPrice = creditPrice.toLocaleString();
-					}
-
-					infoTotalPrice.text(totalPrice);
-					infoCreditPrice.text(creditPrice);
-
-					if (!info.is(":visible")) {
-						info.fadeIn(300);
-					}
-				}
-
 				const swiperConstructor = new Swiper(slider[0], {
 					speed: 400,
 					navigation: false,
@@ -317,6 +279,44 @@ $(function () {
 						swiperConstructor.slideNext();
 					}
 				});
+
+				function costCalculation() {
+					let totalPrice = 0;
+
+					Object.keys(selectedOptionsData).forEach(function(key) {
+						selectedOptionsData[key].forEach(function(option) {
+							if (option.price) {
+								totalPrice += Number(option.price.replace(/\s/g,''));
+							}
+						})
+					})
+
+					if (!totalPrice) {
+						info.fadeOut(300);
+
+						return;
+					}
+
+					const calcCreditPercent = creditPercent ? (totalPrice * Number(creditPercent)) / 100 : 0;
+					const calcCreditMonths = creditMonths ? Number(creditMonths) : 6;
+
+					let creditPrice = parseInt(((totalPrice + calcCreditPercent) / calcCreditMonths));
+
+					if (totalPrice > 999) {
+						totalPrice = totalPrice.toLocaleString();
+					}
+
+					if (creditPrice > 999) {
+						creditPrice = creditPrice.toLocaleString();
+					}
+
+					infoTotalPrice.text(totalPrice);
+					infoCreditPrice.text(creditPrice);
+
+					if (!info.is(":visible")) {
+						info.fadeIn(300);
+					}
+				}
 
 				stepOption.on('change', function() {
 					const _t = $(this);

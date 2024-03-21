@@ -1,0 +1,110 @@
+.section-better
+	padding-top 51px
+	padding-bottom 26px
+	background-color #fbfbfb
+	@media $tPortraitMax
+		padding-top 34px
+		padding-bottom 40px
+	&__container
+		@extend .container
+	&__title
+		margin-bottom 27px
+		@media $mLandscapeMax
+			margin-bottom 16px
+	&__text
+		margin-bottom 60px
+		@media $mLandscapeMax
+			margin-bottom 32px
+	&__grid
+		display grid
+		grid-template-columns 1fr minmax(450px, auto)
+		grid-template-rows auto
+		grid-column-gap 110px
+		@media $desktopMax
+			grid-column-gap 48px
+		@media $tPortraitMax
+			grid-template-columns auto
+			grid-column-gap 0
+	&__characteristic
+		display flex
+		column-gap 23px
+		@media $mLandscapeMax
+			column-gap 16px
+		@media $mPortraitMax
+			flex-direction column
+			column-gap 0
+			row-gap 16px
+	&__characteristic-overico
+		width 50px
+		flex-shrink 0
+	&__characteristic-ico
+		max-width 100%
+	&__characteristic-title
+		margin-bottom 15px
+		color $default
+		font-size 18px
+		font-weight 600
+		line-height 22px
+		@media $mLandscapeMax
+			margin-bottom 12px
+			font-size 16px
+			line-height 19px
+	&__characteristic-text
+		margin-bottom 51px
+		color #777
+		font-size 16px
+		line-height 24px
+		font-weight 400
+		@media $mLandscapeMax
+			margin-bottom 32px
+			font-size 14px
+			line-height 17px
+		&:last-child
+			margin-bottom 0
+		p
+			margin-bottom 23px
+			@media $mLandscapeMax
+				margin-bottom 17px
+			&:last-child
+				margin-bottom 0
+		strong
+			font-weight 600
+	&__characteristic-info
+		padding-left 27px
+		border-left 3px solid $accent
+		@media $mLandscapeMax
+			padding-left 16px
+	&__characteristic-info-title
+		margin-bottom 7px
+		color $default
+		font-size 18px
+		font-weight 700
+		line-height 22px
+		text-transform uppercase
+		@media $mLandscapeMax
+			margin-bottom 4px
+			font-size 16px
+			line-height 19px
+	&__characteristic-info-text
+		color $gray
+		font-size 16px
+		font-weight 500
+		line-height 24px
+		@media $mLandscapeMax
+			font-size 14px
+			line-height 17px
+		a
+			color $accent
+			border-bottom 1px solid $accent
+			transition border $duration
+			&:hover
+				border-bottom-color transparent
+	&__cover
+		width 449px
+		height 441px
+		background-repeat no-repeat
+		background-position center
+		background-size contain
+		transform translate(7px, -52px)
+		@media $tPortraitMax
+			display none

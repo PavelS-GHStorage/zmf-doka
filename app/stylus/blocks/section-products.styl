@@ -23,9 +23,14 @@
 		@media $desktopMax
 			grid-template-columns repeat(2, 1fr)
 		@media $mLandscapeMax
+			gap 12px
+		@media $mPortraitIphone
 			grid-template-columns auto
 	&__card
+		display flex
+		flex-direction column
 		width 100%
+		height 100%
 		min-height 574px
 		background-color white
 		border-radius 11px
@@ -68,31 +73,56 @@
 			width 11px
 			height 9px
 			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJBAMAAAAWSsseAAAAKlBMVEUAAADvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWfvcWflSCUpAAAADXRSTlMAE6aZDfXw49zBv44g0koN+wAAADdJREFUCNdj4L6ro3uZgcH2LhAoMNwFgQswai2ImsDACiSvMTAwAqkrDAwMsnfvCgAplt5CBgYAMC8eoCghwNsAAAAASUVORK5CYII=') no-repeat center
+	&__card-body
+		display flex
+		flex-direction column
+		flex-grow 1
 	&__card-row
 		padding 15px 20px
 		border-bottom 1px solid whitesmoke
+		@media $mLandscapeMax
+			padding 12px
 		&:last-child
 			border-bottom none
 		&--head
 			display flex
 			justify-content space-between
 			gap 12px
+			@media $mLandscapeMax
+				flex-direction column
+				justify-content flex-start
 		&--characteristics
 			padding-top 16px
 			padding-bottom 16px
+			@media $mLandscapeMax
+				padding-top 12px
+				padding-bottom 12px
 		&--properties
 			padding-top 17px
 			padding-bottom 17px
+			@media $mLandscapeMax
+				padding-top 12px
+				padding-bottom 12px
 		&--buttons
 			display flex
 			column-gap 10px
 			width 100%
+			margin-top auto
 			padding-top 20px
 			padding-bottom 20px
+			@media $mLandscapeMax
+				flex-direction column
+				column-gap 0
+				row-gap 12px
+				padding-top 12px
+				padding-bottom 12px
 	&__card-title
 		font-size 24px
 		line-height 27px
 		font-weight 700
+		@media $mLandscapeMax
+			font-size 20px
+			line-height 24px
 	&__card-info
 		display grid
 		grid-row-gap 4px
@@ -121,6 +151,9 @@
 		grid-template-columns calc(50% - 36px) auto
 		grid-template-rows auto
 		gap 9px 12px
+		@media $mLandscapeMax
+			grid-template-columns auto
+			gap 8px 12px
 	&__card-property
 		display flex
 		column-gap 4px
@@ -128,10 +161,24 @@
 		font-size 13px
 		line-height 15px
 		overflow hidden
+		// @media $mPortraitMax
+		@media $lessThanLandscapeMaxAndMoreThanPortraitIphone
+			flex-direction column
+		@media $mPortraitIphone
+			justify-content space-between
 		&:nth-child(even)
 			justify-content flex-end
+			@media $mLandscapeMax
+				justify-content flex-start
+			@media $mPortraitIphone
+				justify-content space-between
 			& ^[0]__card-prop-data
 				text-align right
+				// @media $mLandscapeMax
+				@media $lessThanLandscapeMaxAndMoreThanPortraitIphone
+					text-align left
+				@media $mPortraitIphone
+					text-align right
 	&__card-property-title
 		flex-shrink 0
 	&__card-prop-data
@@ -144,6 +191,11 @@
 		display flex
 		justify-content space-between
 		align-items flex-end
+		// @media $mLandscapeMax
+		@media $lessThanLandscapeMaxAndMoreThanPortraitIphone
+			flex-direction column
+			justify-content flex-start
+			align-items flex-start
 	&__card-characteristic-title
 		display flex
 		align-items flex-start
@@ -167,6 +219,8 @@
 		font-size 13px
 		line-height 15px
 		font-weight bold
+		@media $lessThanLandscapeMaxAndMoreThanPortraitIphone
+			padding-left 16px
 	&__price
 		display flex
 		align-items flex-end
@@ -180,9 +234,14 @@
 			font-size 24px
 			line-height 24px
 			white-space nowrap
+			@media $mLandscapeMax
+				font-size 18px
+				line-height 20px
 		&--old
 			color #acacac
 			text-decoration line-through
+			@media $mLandscapeMax
+				display none
 			span
 				color #acacac
 				font-size 14px
@@ -196,6 +255,9 @@
 			position relative
 			margin-left 10px
 			padding-left 10px
+			@media $mLandscapeMax
+				margin-left 0
+				padding-left 0
 			&:before
 				@extend .psElem
 				position absolute

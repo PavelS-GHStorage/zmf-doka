@@ -14,7 +14,7 @@ block main
 		.container
 			+e.main
 				+e.head
-					+e.head-row
+					+e.head-row.--title
 						+e('h1').title Каркасная баня «A-frame»
 						+e('ul').info
 							+e('li').info-item
@@ -41,6 +41,18 @@ block main
 												+e.gallery-overimg
 													+e('img')(src=(rootPath + img) alt="").gallery-img
 				+e.content
+					+e('h1').title.--mobile Каркасная баня «A-frame»
+					+e.prices.--mobile
+						+e.price
+							+e('p').price-label Стоимость:
+							+e('p').price-item от 
+								strong 950 000
+								|  ₽
+						+e.price.--credit
+							+e('p').price-label Рассрочка:
+							+e('p').price-item от 
+								strong 31 000
+								|  ₽/мес.
 					+e('p').content-title Характеристики  проекта
 					+e.content-rows
 						+e.content-row
