@@ -280,3 +280,82 @@
 			right calc((100% - 994px) / 2 - 280px)
 		@media $mLandscapeMax
 			display none
+	&--one
+		min-height 414px
+		padding 40px 0 34px
+		background-color #fbfbfb
+		@media $tPortraitMax
+			min-height auto
+		& ^[0]__grid
+			display grid
+			grid-template-columns minmax(auto, 650px) auto
+			gap 24px
+			@media $mLandscapeMax
+				grid-template-columns auto
+				gap 0
+		& ^[0]__cell
+			&--decor
+				@media $tPortraitMax
+					display none
+		& ^[0]__title
+			margin-bottom 16px
+			color $default
+			font-size 30px
+			line-height 48px
+			font-weight 400
+			@media $mLandscapeMax
+				font-size 20px
+				line-height 24px
+			strong
+				font-weight 600
+		& ^[0]__text
+			margin-bottom 42px
+			padding-left 0
+			color #767676
+			font-size 14px
+			line-height 17px
+			font-weight 400
+			&:last-child
+				margin-bottom 0
+			&:before
+				content none
+				display none
+		& ^[0]__buttons
+			margin-bottom 0
+		& ^[0]__callback-btn
+			padding-left 97px
+			padding-right 97px
+			margin-bottom 0
+			@media $mLandscapeMax
+				max-width 324px
+				padding 24px
+		& ^[0]__overimg
+			display flex
+			justify-content flex-end
+			align-items center
+			position relative
+			max-width 100%
+			min-height 350px
+			padding-right 15px
+			padding-bottom 8px
+			text-align right
+			&:before
+				@extend .psElem
+				position absolute
+				top 50%
+				right 0
+				width 304px
+				height 304px
+				margin-top 4px
+				border-radius 50%
+				background-color #fff3e0
+				transform translateY(calc(-50% - 4px))
+				z-index -2
+		& ^[0]__img
+			position relative
+			width auto
+			height auto
+			right auto
+			bottom auto
+			max-width 100%
+			z-index auto

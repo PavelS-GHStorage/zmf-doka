@@ -1,0 +1,77 @@
+extends includes/template/base.pug
+
+block variables
+	- const title = 'Банная печь в подарок';
+	- const rootPath = 'static/images/';
+	- const breadcrumbsData = [ 'Главная', 'Акции', title];
+	- const mainClass = '';
+
+block main
+
+	+section-head-one({
+		breadcrumbs: breadcrumbsData,
+		title: "При покупке бани - банная печь <strong>“Протопи Парилка”</strong> в подарок!",
+		text: "Достоинство печи в том, что в каменку подается воздух, нагреваемый от стенок топки. Это позволяет ускорить прогрев камней, быстрее достигнуть комфортной температуры воздуха, улучшить парообразование.",
+		buttonLabel: "Участвую в акции",
+		img: rootPath + "section-head-img2.png",
+	})(class="--one")
+
+	.main__content
+		.container
+			+b.common-info.--promotion
+				+e.items
+					+e.item.--time
+						+e('p').item-label Срок действия: 
+						+e.item-data Бессрочная
+					+e.item.--from
+						+e('p').item-label Действует для:
+						+e.item-data Бань серии: 
+							a(href="#") Тайга
+							| , 
+							a(href="#") Таганай
+							| , 
+							a(href="#") A-Frame
+							| , 
+							a(href="#") Классика
+							| , 
+							a(href="#") Урал
+							| , 
+							a(href="#") Тайга 2.0.
+							| , 
+							a(href="#") Таганай
+							| , 
+							a(href="#") A-Frame
+							button(type="button") Развернуть
+				+e.right
+					.ya-share2(data-services="vkontakte,odnoklassniki,moimir,twitter,viber,whatsapp,telegram")
+
+			.main__row
+				.text
+					h4 Условия акции
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+						a(href="#")
+							strong sed do eiusmod tempor
+						| incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+
+				+b('section').section-promotions.--item
+					+e.items
+						each item in promotions
+							+e.item
+								+e.item-card(class=(item.dark ? '--dark' : ''))
+									+e.item-card-content
+										+e.item-card-title !{item.title}
+										+e.item-card-text #{item.text}
+										+e('a')(href="#").item-card-button.btn Перейти к акции
+									+e.item-card-overimg
+										+e('img')(src=(rootPath + item.img) alt="").item-card-img
+					+e.bottom.common-bottom
+						+e('a')(href="#").more.btn--more Загрузить еще
+						+b.pagination
+							+e('input')(type="text" value="1").input
+							+e.count из 6
+							+e.buttons
+								+e('a')(href="#").button.--prev.--disabled
+								+e('a')(href="#").button.--next
+	
+	+section-articles({items: articles.min, hasLinkAll: true})

@@ -2,5 +2,13 @@
 	flex-grow 1
 	@media $mLandscapeMax
 		padding-top 45px
+	&__content
+		& > .container:first-child > .text:first-child
+			padding-top 30px
+	&__row
+		padding-bottom 47px
+		border-bottom 1px solid $border-gray
+		@media $mLandscapeMax
+			padding-bottom 35px
 	&--gray
 		background-color #fbfbfb

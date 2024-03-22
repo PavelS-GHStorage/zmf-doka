@@ -1,0 +1,51 @@
+extends includes/template/base.pug
+
+block variables
+	- const title = 'Тема статьи';
+	- const rootPath = 'static/images/';
+	- const breadcrumbsData = [ 'Главная', 'Статьи', title];
+	- const mainClass = '';
+
+block main
+
+	+section-head-one({
+		breadcrumbs: breadcrumbsData,
+		title: "<strong>Мобильная баня или обычная, что лучше и долговечнее?</strong>",
+		text: "Выбор между каркасной и модульной баней зависит от ваших потребностей и предпочтений. Если вы хотите индивидуальность и прочность, то каркасная баня - ваш выбор. Если же вы хотите экономить время и деньги, то модульная баня - лучший вариант для вас. В любом случае, обе эти бани обеспечат вам комфорт и удовольствие от пребывания в них.",
+		img: rootPath + "section-head-img.png",
+	})(class="--one")
+
+	.main__content
+		.container
+			+b.common-info
+				+e.items
+					+e.item.--time
+						+e('p').item-label Время чтения: 
+						+e.item-data 3 минуты
+					+e.item.--date
+						+e('p').item-label Опубликовано: 
+						+e.item-data 24.06.2024 г.
+					+e.item.--views
+						+e('p').item-label Просмотрено:: 
+						+e.item-data более 1053 раз(а)
+				+e.right
+					.ya-share2(data-services="vkontakte,facebook,twitter,viber,whatsapp,odnoklassniki,moimir,telegram")
+
+			.main__row
+				.text
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+						a(href="#")
+							strong sed do eiusmod tempor
+						| incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+					ol
+						li Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							a(href="#")
+								strong sed do eiusmod tempor
+							|  incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. 
+						li Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+						li Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. 
+						strong Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+	
+	+section-articles({items: articles.min, hasLinkAll: true})

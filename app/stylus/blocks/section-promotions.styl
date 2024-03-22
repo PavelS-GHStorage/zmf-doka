@@ -99,12 +99,14 @@
 		display none
 		@media $mLandscapeMax
 			display flex
+	&--page,
+	&--item
+		& ^[0]__bottom
+			display flex
 	&--page
 		padding-top 7px
 		& ^[0]__title
 			@media $mLandscapeMax
 				margin-bottom 24px
-		& ^[0]__bottom
-			display flex
 	&--card
 		padding 0

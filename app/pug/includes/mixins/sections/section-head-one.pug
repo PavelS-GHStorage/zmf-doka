@@ -1,0 +1,22 @@
+mixin section-head-one(data)
+	- const breadcrumbs = data && (typeof data.breadcrumbs !== 'undefined') ? data.breadcrumbs : false;
+	- const title = data && (typeof data.title !== 'undefined') ? data.title : "";
+	- const text = data && (typeof data.text !== 'undefined') ? data.text : "";
+	- const buttonLabel = data && (typeof data.buttonLabel !== 'undefined') ? data.buttonLabel : "";
+	- const img = data && (typeof data.img !== 'undefined') ? data.img : "";
+	
+	+b('section').section-head&attributes(attributes)
+		+e.container
+			+e.grid
+				+e.cell.--content
+					+e.breadcrumbs
+						+breadcrumbs(breadcrumbs)(class="--section-head")
+					+e('h1').title !{title}
+					+e('p').text !{text}
+					if (buttonLabel)
+						+e.buttons
+							+e('a')(href="#").callback-btn
+								span !{buttonLabel}
+				+e.cell.--decor
+					+e.overimg
+						+e.img(src=img alt="")

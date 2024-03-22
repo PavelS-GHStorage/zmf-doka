@@ -1,0 +1,91 @@
+.common-info
+	display grid
+	grid-template-columns 1fr minmax(224px, auto)
+	grid-template-rows auto
+	grid-column-gap 24px
+	width 100%
+	margin-bottom 36px
+	padding-top 27px
+	padding-bottom 27px
+	border-bottom 1px solid $border-gray
+	@media $mLandscapeMax
+		margin-bottom 30px
+		grid-template-columns auto
+		gap 20px 0
+	&__items
+		display grid
+		grid-template-columns repeat(3, 1fr)
+		grid-template-rows auto
+		gap 12px 24px
+		@media $tPortraitMax
+			grid-template-columns auto
+			gap 8px 0
+	&__item
+		display flex
+		flex-direction column
+		row-gap 2px
+		position relative
+		padding-left 27px
+		&:before
+			@extend .psElem
+			position absolute
+			left 0
+			background-repeat no-repeat
+			background-position center
+		&--time
+			&:before
+				top 3px
+				width 13px
+				height 13px
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA21BMVEX/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD///8mUgUfAAAAR3RSTlMAQr/w/PTIR8AdmrpnRmGb2bkmojQUfAoLgg+X1s1m3a8cPgL1Q/Yk7iFrDPIzbm/tiYauc5Xf3sb3Be9qHw3m8xiN6srcn+rN/84AAAABYktHREjwAtTqAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH6AMWEC0INsYwcQAAAIlJREFUCNc1itUWwlAMBBfXFrcibdEW14u75P//iOQe2Ic9mckCQCAYCkeiMcQTDElKpQ0zk81RHihQkRVKZaIKDDHVmlVvNFuA7fDDpTY6suj2hPoD6Hg+l0VD7pGD8UTclGaAT5gv9GS5EoU14R/aAGr7g92e66COp/PFNa+3u5aPp3q9vQ9fX3plDuVQxXFvAAAAAElFTkSuQmCC')
+		&--date
+			&:before
+				top 3px
+				width 13px
+				height 14px
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAMAAADDoWbgAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABOFBMVEX/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD///+ri/g8AAAAZnRSTlMAT0dITCC4vrcd2H4vioKDh9n2UD5LSlT578nAubvByvDoBuzaIYujCkOkQAyFI9+8e9fip+ai4dV5w9M7jJ4uVp9SiDwEP1cJWDoIxmHNZ9GEZMxgy05dtk3S81EiYvVT3KnEqtuFh2ugAAAAAWJLR0RnW9PpswAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+gDFhAtG7J4ca8AAAC/SURBVAjXY2BgYGBkAhLMLECCgZWNPS2NnR1EcHAycHHz8PLx8PDwC/DwCTIICYuIiomIiIiKiohLMEhKScvIyknLycpIyyswKDLAgZIyg4qqmrqGppa2jrqunj6DgaGRMa+JqZmAuYWlFYO1ja2dvYOjk72ds4sgg6KrmzuDhrsHg6eXtzKDj6+sn79zQGBQMFtIMENomIxfCF8Ad3hwRGQUQ7RYjC9DrC8rQ1xkZDxDQmKSerKMmUyyWUoqIwAIcx1n6GPu6wAAAABJRU5ErkJggg==')
+		&--views
+			&:before
+				top 3px
+				width 16px
+				height 10px
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAMAAAAM9FwAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAz1BMVEX/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD///9v0AhJAAAAQ3RSTlMATcLn3uLloR4XzqhYSlnYgD7KH9dAvI3W4TJgQrQBmxYKx8ys7RUJb/2Pf1S2yDiWpRA5l31m9uwjQ9zplWt8y/OHAQHlBwAAAAFiS0dERPm0mMEAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfoAxYQLSQEHlySAAAAfUlEQVQI1yWN1RKCYBgFF7DwFxC7sMXu7vje/50k9m7nzOyBAE03EslUOkOMmRWl5SzbkXzkrhSKqJJTxpZK5FWo1RtNaWGK10Y60JUe9AfBLIrhyGcsE5jOYC4LWIqLJStDB0/WYXUj293+cPRP58s1/r3dH8/X+/P9hfIHIZMNiMGwc8cAAAAASUVORK5CYII=')
+		&--from
+			&:before
+				top 3px
+				width 13px
+				height 13px
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD/qAD////dy499AAAAOnRSTlMALN/04jE2rkGoOjiTjT6SOzOQijn8o5wYARIaze/RHy3uNQXt01nyCC9KU/gd5+UXbi55gGh78PHzE+Q4GAAAAAFiS0dEOzkO9GwAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfoAxYRGSS+9sVSAAAAhklEQVQI1zWL2RaCMBBDoxV3VFRcqVi3Crgiiub/P8xWMA85uTMJYFSpipqDUnU2mi22C+iwa9xlr/j0f0eXA8DjsByMOIY/+c8xJTizYW5t4UN4wDKQqxBYK4gNtrv9IdBHRNJSTFNjYul0RnwxdE1w0+A9fdBJI2bpk3hplWsp5TtXn+wLLWsNWVLZ0XIAAAAASUVORK5CYII=')
+	&__item-label
+		color $default
+		font-size 14px
+		line-height 17px
+		font-weight 500
+	&__item-data
+		color #767676
+		font-size 14px
+		line-height 17px
+		font-weight 400
+		a,
+		button
+			transition border $duration
+			&:hover
+				border-bottom-color transparent
+		a
+			color $accent
+			font-weight 600
+			border-bottom 1px solid $accent
+		button
+			margin-left 4px
+			color $blue
+			font-weight 400
+			border-bottom 1px solid $blue
+
+	&--promotion
+		& ^[0]__items
+			max-width 740px
+			grid-template-columns 1fr 385px
+			@media $tPortraitMax
+				max-width 100%
+				grid-template-columns auto
+

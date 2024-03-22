@@ -1,6 +1,10 @@
 .section-thanks
 	padding-top 9px
 	padding-bottom 70px
+	@media $desktopMax
+		padding-bottom 48px
+	@media $mLandscapeMax
+		padding-bottom 40px
 	&__container
 		@extend .container
 	&__title
@@ -10,19 +14,34 @@
 		line-height 85px
 		font-weight 700
 		text-transform uppercase
+		@media $desktopMax
+			font-size 36px
+			line-height 48px
+		@media $mLandscapeMax
+			font-size 32px
+			line-height 40px
+		@media $mLandscapeMax
+			font-size 20px
+			line-height 24px
 	&__text
 		margin-bottom 21px
 		color #818181
 		font-size 18px
 		line-height 22px
 		font-weight 400
-	// &__info
+		@media $mLandscapeMax
+			margin-bottom 16px
+			font-size 16px
+			line-height 19px
 	&__info-text
 		margin-bottom 10px
 		color #818181
 		font-size 18px
 		line-height 22px
 		font-weight 400
+		@media $mLandscapeMax
+			font-size 16px
+			line-height 19px
 	&__info-phone
 		display inline-flex
 		align-items center
@@ -32,6 +51,9 @@
 		font-size 24px
 		line-height 27px
 		font-weight 600
+		@media $mLandscapeMax
+			font-size 20px
+			line-height 24px
 		&:before
 			@extend .psElem
 			flex-shrink 0
